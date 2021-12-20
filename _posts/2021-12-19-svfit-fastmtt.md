@@ -15,8 +15,8 @@ usemathjax: true
 ## Introduction
 Taus are challenging particles to measure at the Large Hadron Collider (LHC) because their decays always produce neutrinos, which are invisible to LHC detectors. For this reason, taus are typically "undermeasured" at the LHC, in the sense that we will never measure the full set of particles produced when a tau decays. Rather, we only have access to the particles "visible" to our detectors - for example, electrons, photons, and hadrons - that give us a partial picture of the taus that produced them. It's worth addressing this challenge, though, because taus give us insight into many interesting physics processes, like the decay of the Standard Model Higgs boson to two taus ($$H\rightarrow\tau\tau$$). These decays are among the most important to study Higgs couplings to fermions because the ratio $$\Gamma(H\rightarrow\tau\tau)/\Gamma(H\rightarrow\mu\mu)\approx288$$ guarentees an abundence of $$H\rightarrow\tau\tau$$ events with respect to other leptons and $$H\rightarrow\tau\tau$$ signals are easier to separate from background than $$H\rightarrow b\bar{b}$$ signals, despite the larger branching ratio of $$H\rightarrow b\bar{b}$$ (see Table 1). 
 
-| Decay              | Branching Ratio ($\Gamma$)   | Rel. Uncertainty       |
-| ----------------------------- | ----------------- | ---------------------- |
+| Decay | Branching Ratio ($\Gamma$) | Rel. Uncertainty |
+| :-: | :-: | :-: |
 | $H\rightarrow b\bar{b}$       | $0.582$$          | $^{+1.2\%}_{-1.3\%}$  | 
 | $H\rightarrow \tau^+\tau^-$   | $0.0627$          | $\pm1.6\%$            |
 | $H\rightarrow c\bar{c}$       | $0.0289$          | $^{5.5\%}_{-2.0\%}$   |
