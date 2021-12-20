@@ -2,16 +2,15 @@
 title: 'Correcting the Di-Tau Mass Spectrum'
 date: 2021-12-19 20:56:00
 featured_image: '/images/demo/demo-square.jpg'
-excerpt: Di-tau systems, or systems of two taus produced by some upstream parent particle like the Higgs, are underconstrained by detector measurements because of the neutrinos produced in tau decays. In practice, this means that if we looked at the mass spectrum of the di-taus measured in the detector, it would undershoot its true value. Several algorithms have been developed to leverage detector measurements and knowledge of tau decay physics to correct this effect. This post focuses on two such algorithms common to analyses involving $H\rightarrow\tau\tau$ decays.
+excerpt: Higgs boson decays to two tau leptons (a di-tau system) are critical to understanding how the Higgs boson interacts with fermionic matter. However, taus are difficult to measure because they produce neutrinos, which are invisible to particle detectors at the Large Hadron Collider, when they decay. This post focuses on how detector measurements and tau decay physics can be used to infer the hidden properties of a di-tau system.
 ---
 
-# Correcting the $H\rightarrow\tau\tau$ Mass Spectrum
 ## Table of Contents
- 1. [Introduction](#Introduction)
- 2. [Tau Decay Physics](#Tau-Decay-Physics)
- 3. [Di-Tau Systems](#Di-Tau-Systems)
- 4. [MET Constraints on Invisible Systems](#MET-Constraints-on-Invisible-Systems)
- 5. [Correcting the Di-Tau Mass Spectrum](#Correcting-the-Di-Tau-Mass-Spectrum)
+ 1. [Introduction](https://gagedezoort.github.io/blog/svfit-fastmtt#Introduction)
+ 2. [Tau Decay Physics](https://gagedezoort.github.io/blog/svfit-fastmtt#Tau-Decay-Physics)
+ 3. [Di-Tau Systems](https://gagedezoort.github.io/blog/svfit-fastmtt#Di-Tau-Systems)
+ 4. [MET Constraints on Invisible Systems](https://gagedezoort.github.io/blog/svfit-fastmtt#MET-Constraints-on-Invisible-Systems)
+ 5. [Correcting the Di-Tau Mass Spectrum](https://gagedezoort.github.io/blog/svfit-fastmtt#Correcting-the-Di-Tau-Mass-Spectrum)
 ## Introduction
 Taus are challenging particles to measure at the Large Hadron Collider (LHC) because their decays always produce neutrinos, which are invisible to LHC detectors. For this reason, taus are typically "undermeasured" at the LHC, in the sense that we will never measure the full set of particles produced when a tau decays. Rather, we only have access to the particles "visible" to our detectors - for example, electrons, photons, and hadrons - that give us a partial picture of the taus that produced them. It's worth addressing this challenge, though, because taus give us insight into many interesting physics processes, like the decay of the Standard Model Higgs boson to two taus ($H\rightarrow\tau\tau$). These decays are among the most important to study Higgs couplings to fermions because the ratio $\Gamma(H\rightarrow\tau\tau)/\Gamma(H\rightarrow\mu\mu)\approx288$ guarentees an abundence of $H\rightarrow\tau\tau$ events with respect to other leptons and $H\rightarrow\tau\tau$ signals are easier to separate from background than $H\rightarrow b\bar{b}$ signals, despite the larger branching ratio of $H\rightarrow b\bar{b}$ (see Table 1). 
 
