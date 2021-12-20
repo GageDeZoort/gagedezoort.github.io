@@ -8,13 +8,12 @@
 	<div class="header__content">
 
 	        <!-- for mathjax support -->
-	        {% if page.usemathjax %}
-	        <script type="text/javascript" async
-			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
-		</script>
-		
+	        {% if page.usemathjax %}	
 		<script type="text/x-mathjax-config">
 		  MathJax.Hub.Config({
+		      TeX: { equationNumbers: { autoNumber: "AMS" },
+			     tagSide: "right"
+			   },
 		      extensions: ["tex2jax.js"],
 		      jax: ["input/TeX", "output/HTML-CSS"],
 		      tex2jax: {
@@ -24,6 +23,18 @@
 		      },
 		      "HTML-CSS": { availableFonts: ["TeX"] }
 		  });
+		  MathJax.Hub.Register.StartupHook("TeX AMSmath Ready", function () {
+		      MathJax.InputJax.TeX.Stack.Item.AMSarray.Augment({
+			  clearTag() {
+			      if (!this.global.notags) {
+				  this.super(arguments).clearTag.call(this);
+			      }
+			  }
+		      });
+		  });
+		</script>
+		<script type="text/javascript" charset="utf-8"
+			src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML">
 		</script>
 	        {% endif %}
 	  

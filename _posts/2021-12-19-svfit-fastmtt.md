@@ -13,17 +13,17 @@ usemathjax: true
  4. [MET Constraints on Invisible Systems](https://gagedezoort.github.io/blog/svfit-fastmtt#MET-Constraints-on-Invisible-Systems)
  5. [Correcting the Di-Tau Mass Spectrum](https://gagedezoort.github.io/blog/svfit-fastmtt#Correcting-the-Di-Tau-Mass-Spectrum)
 ## Introduction
-Taus are challenging particles to measure at the Large Hadron Collider (LHC) because their decays always produce neutrinos, which are invisible to LHC detectors. For this reason, taus are typically "undermeasured" at the LHC, in the sense that we will never measure the full set of particles produced when a tau decays. Rather, we only have access to the particles "visible" to our detectors - for example, electrons, photons, and hadrons - that give us a partial picture of the taus that produced them. It's worth addressing this challenge, though, because taus give us insight into many interesting physics processes, like the decay of the Standard Model Higgs boson to two taus ($H\rightarrow\tau\tau$). These decays are among the most important to study Higgs couplings to fermions because the ratio $\Gamma(H\rightarrow\tau\tau)/\Gamma(H\rightarrow\mu\mu)\approx288$ guarentees an abundence of $H\rightarrow\tau\tau$ events with respect to other leptons and $H\rightarrow\tau\tau$ signals are easier to separate from background than $H\rightarrow b\bar{b}$ signals, despite the larger branching ratio of $H\rightarrow b\bar{b}$ (see Table 1). 
+Taus are challenging particles to measure at the Large Hadron Collider (LHC) because their decays always produce neutrinos, which are invisible to LHC detectors. For this reason, taus are typically "undermeasured" at the LHC, in the sense that we will never measure the full set of particles produced when a tau decays. Rather, we only have access to the particles "visible" to our detectors - for example, electrons, photons, and hadrons - that give us a partial picture of the taus that produced them. It's worth addressing this challenge, though, because taus give us insight into many interesting physics processes, like the decay of the Standard Model Higgs boson to two taus ($$H\rightarrow\tau\tau$$). These decays are among the most important to study Higgs couplings to fermions because the ratio $$\Gamma(H\rightarrow\tau\tau)/\Gamma(H\rightarrow\mu\mu)\approx288$$ guarentees an abundence of $$H\rightarrow\tau\tau$$ events with respect to other leptons and $$H\rightarrow\tau\tau$$ signals are easier to separate from background than $$H\rightarrow b\bar{b}$$ signals, despite the larger branching ratio of $$H\rightarrow b\bar{b}$$ (see Table 1). 
 
-| Decay                       | Branching Ratio ($\Gamma$) | Rel. Uncertainty     |
-| --------------------------- | --------------- | -------------------- |
-| $H\rightarrow b\bar{b}$     | $0.582$         | $^{+1.2\%}_{-1.3\%}$ | 
-| $H\rightarrow \tau^+\tau^-$ | $0.0627$        | $\pm1.6\%$           |
-| $H\rightarrow c\bar{c}$     | $0.0289$        | $^{5.5\%}_{-2.0\%}$  |
-| $H\rightarrow \mu^+\mu^-$   | $0.000218$      | $\pm1.7\%$           |
+| Decay                         | Branching Ratio ($$\Gamma$$) | Rel. Uncertainty     |
+| ----------------------------- | ----------------- | ---------------------- |
+| $$H\rightarrow b\bar{b}$$     | $$0.582$$         | $$^{+1.2\%}_{-1.3\%}$$ | 
+| $$H\rightarrow \tau^+\tau^-$$ | $$0.0627$$        | $$\pm1.6\%$$           |
+| $$H\rightarrow c\bar{c}$$     | $$0.0289$$        | $$^{5.5\%}_{-2.0\%}$$  |
+| $$H\rightarrow \mu^+\mu^-$$   | $$0.000218$$      | $$\pm1.7\%$$           |
 **Table 1**: The relative decay probabilities (branching ratios) of the most common Higgs boson decays to fermions, reproduced from the PDG Higgs Status Report [1]. 
 
-Di-tau systems, or systems of two taus produced by some upstream parent particle like the Higgs, are underconstrained by detector measurements because of the neutrinos produced in tau decays. In practice, this means that if we looked at the mass spectrum of the di-taus measured in the detector, it would undershoot its true value. Several algorithms have been developed to leverage detector measurements and knowledge of tau decay physics to correct this effect. This post focuses on two such algorithms common to analyses involving $H\rightarrow\tau\tau$ decays.
+Di-tau systems, or systems of two taus produced by some upstream parent particle like the Higgs, are underconstrained by detector measurements because of the neutrinos produced in tau decays. In practice, this means that if we looked at the mass spectrum of the di-taus measured in the detector, it would undershoot its true value. Several algorithms have been developed to leverage detector measurements and knowledge of tau decay physics to correct this effect. This post focuses on two such algorithms common to analyses involving $$H\rightarrow\tau\tau$$ decays.
 
 ## Tau Decay Physics
 Taus decay via the weak interaction as $\tau^\pm\rightarrow W^\pm\nu_{\tau}$. The $W^\pm$ is produced off-shell (note that $m_\tau=1.77$ GeV and $m_W=80.4$ GeV), decaying leptonically as $W^\pm\rightarrow e^\pm\nu_e$ or $W^\pm\rightarrow\mu^\pm\nu_{\mu}$, or hadronically as $W^\pm\rightarrow q\bar{q}$. Interestingly, taus are the only leptons heavy enough to produce hadronic showers. The set of tau decays and their corresponding branching fractions are listed in Table 2. 
@@ -37,10 +37,12 @@ Taus decay via the weak interaction as $\tau^\pm\rightarrow W^\pm\nu_{\tau}$. Th
 
 It's important to notice that *tau decays always produce neutrinos*, which are invisible to detectors like CMS and ATLAS. For this reason, tau four-vectors can be written as the sum of a visible system of electrons, muons, or hadrons, and an invisible system of neutrinos:
 
+<p>
 \begin{align}
     p_\tau &= (E_\tau, \vec{p}_\tau) = p_\mathrm{vis} + p_\mathrm{inv}\\
            &= (E_\mathrm{vis} + E_\mathrm{inv}, \vec{p}_\mathrm{vis} + \vec{p}_\mathrm{inv})
 \end{align}
+</p>
 
 Detector measurements give us $p_\mathrm{vis}$ but do not provide enough information to fully reconstruct $p_\mathrm{inv}$. Defining the ratio of the visible energy to the original tau energy as $x=E_\mathrm{vis}/E_\tau$, we can parametrize the invisible system with three additional quantities: 
 - $m_{\nu\nu}$, the mass of the neutrino system; note that $m_{\nu\nu}=0$ for hadronic tau decays as they produce only a single neutrino
