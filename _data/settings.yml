@@ -1,7 +1,7 @@
 basic_settings:
   site_title: Gage's Journal
   site_tagline: Physics, machine learning, music, etc. - random inspiration captured in beautiful markdown.  
-  favicon_image: /images/purple_cms_outline.pdf
+  favicon_image: /images/purple_cms_outline.png
 
 header_settings:
   logo_image: 
@@ -10,14 +10,10 @@ header_settings:
 
 menu_settings:
   menu_items:
-    - title: 'Latest'
+    - title: 'Entries'
       url: '/'
-    - title: 'Projects'
-      url: '/projects/'
     - title: 'About'
       url: '/about'
-    - title: 'Contact'
-      url: '/contact'
 
 grid_settings:
   grid_spacing: 10
@@ -154,7 +150,7 @@ font_settings:
     letter_spacing: 0
 
 advanced_settings:
-  ajax_loading: true
+  ajax_loading: false
   analytics_code: ""
   custom_styles: ""
   header_js: ""
