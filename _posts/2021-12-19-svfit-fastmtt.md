@@ -13,10 +13,10 @@ katex: true
  4. [MET Constraints on Invisible Systems](https://gagedezoort.github.io/blog/svfit-fastmtt#MET-Constraints-on-Invisible-Systems)
  5. [Correcting the Di-Tau Mass Spectrum](https://gagedezoort.github.io/blog/svfit-fastmtt#Correcting-the-Di-Tau-Mass-Spectrum)
 ## Introduction
-Taus are challenging particles to measure at the Large Hadron Collider (LHC) because their decays always produce neutrinos, which are invisible to LHC detectors. For this reason, taus are typically "undermeasured" at the LHC, in the sense that we will never measure the full set of particles produced when a tau decays. Rather, we only have access to the particles "visible" to our detectors - for example, electrons, photons, and hadrons - that give us a partial picture of the taus that produced them. It's worth addressing this challenge, though, because taus give us insight into many interesting physics processes, like the decay of the Standard Model Higgs boson to two taus ($$H\rightarrow\tau\tau$$). These decays are among the most important to study Higgs couplings to fermions because the ratio $$\Gamma(H\rightarrow\tau\tau)/\Gamma(H\rightarrow\mu\mu)\approx288$$ guarentees an abundence of $$H\rightarrow\tau\tau$$ events with respect to other leptons and $$H\rightarrow\tau\tau$$ signals are easier to separate from background than $$H\rightarrow b\bar{b}$$ signals, despite the larger branching ratio of $$H\rightarrow b\bar{b}$$ (see Table 1). 
+Taus are challenging particles to measure at the Large Hadron Collider (LHC) because their decays always produce neutrinos, which are invisible to LHC detectors. For this reason, taus are typically "undermeasured" at the LHC, in the sense that we will never measure the full set of particles produced when a tau decays. Rather, we only have access to the particles "visible" to our detectors - for example, electrons, photons, and hadrons - that give us a partial picture of the taus that produced them. It's worth addressing this challenge, though, because taus give us insight into many interesting physics processes, like the decay of the Standard Model Higgs boson to two taus ($H\rightarrow\tau\tau$). These decays are among the most important to study Higgs couplings to fermions because the ratio $$\Gamma(H\rightarrow\tau\tau)/\Gamma(H\rightarrow\mu\mu)\approx288$$ guarentees an abundence of $$H\rightarrow\tau\tau$$ events with respect to other leptons and $$H\rightarrow\tau\tau$$ signals are easier to separate from background than $$H\rightarrow b\bar{b}$$ signals, despite the larger branching ratio of $$H\rightarrow b\bar{b}$$ (see Table 1). 
 
 | Decay | Branching Ratio ($\Gamma$) | Rel. Uncertainty |
-| :-: | :-: | :-: |
+|:-----------------------------:|:-----------------:|:---------------------:|
 | $H\rightarrow b\bar{b}$       | $0.582$$          | $^{+1.2\%}_{-1.3\%}$  | 
 | $H\rightarrow \tau^+\tau^-$   | $0.0627$          | $\pm1.6\%$            |
 | $H\rightarrow c\bar{c}$       | $0.0289$          | $^{5.5\%}_{-2.0\%}$   |
@@ -28,14 +28,12 @@ Di-tau systems, or systems of two taus produced by some upstream parent particle
 ## Tau Decay Physics
 Taus decay via the weak interaction as $$\tau^\pm\rightarrow W^\pm\nu_{\tau}$$. The $$W^\pm$$ is produced off-shell (note that $$m_\tau=1.77$$ GeV and $$m_W=80.4$$ GeV), decaying leptonically as $$W^\pm\rightarrow e^\pm\nu_e$$ or $$W^\pm\rightarrow\mu^\pm\nu_{\mu}$$, or hadronically as $$W^\pm\rightarrow q\bar{q}$$. Interestingly, taus are the only leptons heavy enough to produce hadronic showers. The set of tau decays and their corresponding branching fractions are listed in Table 2. 
 
-<p>
-| Decay Mode                                     | Label    | Branching Ratio ($$\Gamma$$)  |
-| ---------------------------------------------- | -------- | --------------------------- |
-| $$\tau^\pm\rightarrow e^\pm\nu_e\nu_\tau$$     | Leptonic | $$0.1782$$                  |
-| $$\tau^\pm\rightarrow \mu^\pm\nu_\mu\nu_\tau$$ | Leptonic | $$0.1739$$                  |
-| $$\tau^\pm\rightarrow \tau_h\nu_\tau$$         | Hadronic | $$0.6479$$                  |
+| Decay Mode  | Label | Branching Ratio ($\Gamma$) |
+|:-----------:|:-----:|:--------------------------:|
+| $\tau^\pm\rightarrow e^\pm\nu_e\nu_\tau$ | Leptonic | $0.1782$ | 
+| $\tau^\pm\rightarrow \mu^\pm\nu_\mu\nu_\tau$ | Leptonic | $0.1739$ |
+| $\tau^\pm\rightarrow \tau_h\nu_\tau$ | Hadronic | $0.6479$ |
 **Table 2**: The decay modes of a single tau lepton and their probabilities as reported in the PDG tau properties table [^2]. The visible component of hadronic tau decays is usually called $$\tau_h$$, which accounts for varying cominations of charged and neutral hadrons (usually pions or kaons). It is also common to see the visible components of tau decays, electrons and muons, written as $$\tau_e$$ and $$\tau_\mu$$ respectively. 
-</p>
 
 It's important to notice that *tau decays always produce neutrinos*, which are invisible to detectors like CMS and ATLAS. For this reason, tau four-vectors can be written as the sum of a visible system of electrons, muons, or hadrons, and an invisible system of neutrinos:
 
