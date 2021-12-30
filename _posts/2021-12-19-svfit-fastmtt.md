@@ -13,7 +13,7 @@ katex: true
  4. [MET Constraints on Invisible Systems](https://gagedezoort.github.io/blog/svfit-fastmtt#MET-Constraints-on-Invisible-Systems)
  5. [Correcting the Di-Tau Mass Spectrum](https://gagedezoort.github.io/blog/svfit-fastmtt#Correcting-the-Di-Tau-Mass-Spectrum)
 ## Introduction
-Taus are challenging particles to measure at the Large Hadron Collider (LHC) because their decays always produce neutrinos, which are invisible to LHC detectors. For this reason, taus are typically "undermeasured" at the LHC, in the sense that we will never measure the full set of particles produced when a tau decays. Rather, we only have access to the particles "visible" to our detectors - for example, electrons, photons, and hadrons - that give us a partial picture of the taus that produced them. It's worth addressing this challenge, though, because taus give us insight into many interesting physics processes, like the decay of the Standard Model Higgs boson to two taus ($H\rightarrow\tau\tau$). These decays are among the most important to study Higgs couplings to fermions because the ratio $$\Gamma(H\rightarrow\tau\tau)/\Gamma(H\rightarrow\mu\mu)\approx288$$ guarentees an abundence of $$H\rightarrow\tau\tau$$ events with respect to other leptons and $$H\rightarrow\tau\tau$$ signals are easier to separate from background than $$H\rightarrow b\bar{b}$$ signals, despite the larger branching ratio of $$H\rightarrow b\bar{b}$$ (see Table 1). 
+Taus are challenging particles to measure at the Large Hadron Collider (LHC) because their decays always produce neutrinos, which are invisible to LHC detectors. For this reason, taus are typically "undermeasured" at the LHC, in the sense that we will never measure the full set of particles produced when a tau decays. Rather, we only have access to the particles "visible" to our detectors - for example, electrons, photons, and hadrons - that give us a partial picture of the taus that produced them. It's worth addressing this challenge, though, because taus give us insight into many interesting physics processes, like the decay of the Standard Model Higgs boson to two taus ($H\rightarrow\tau\tau$). These decays are among the most important to study Higgs couplings to fermions because the ratio $\Gamma(H\rightarrow\tau\tau)/\Gamma(H\rightarrow\mu\mu)\approx288$ guarentees an abundence of $H\rightarrow\tau\tau$ events with respect to other leptons and $H\rightarrow\tau\tau$ signals are easier to separate from background than $H\rightarrow b\bar{b}$ signals, despite the larger branching ratio of $H\rightarrow b\bar{b}$ (see Table 1). 
 
 | Decay | Branching Ratio ($\Gamma$) | Rel. Uncertainty |
 |:-----------------------------:|:-----------------:|:---------------------:|
@@ -21,28 +21,29 @@ Taus are challenging particles to measure at the Large Hadron Collider (LHC) bec
 | $H\rightarrow \tau^+\tau^-$   | $0.0627$          | $\pm1.6\%$            |
 | $H\rightarrow c\bar{c}$       | $0.0289$          | $^{5.5\%}_{-2.0\%}$   |
 | $H\rightarrow \mu^+\mu^-$     | $0.000218$        | $\pm1.7\%$            | 
+
 **Table 1**: The relative decay probabilities (branching ratios) of the most common Higgs boson decays to fermions, reproduced from the PDG Higgs Status Report [^1]. 
 
-Di-tau systems, or systems of two taus produced by some upstream parent particle like the Higgs, are underconstrained by detector measurements because of the neutrinos produced in tau decays. In practice, this means that if we looked at the mass spectrum of the di-taus measured in the detector, it would undershoot its true value. Several algorithms have been developed to leverage detector measurements and knowledge of tau decay physics to correct this effect. This post focuses on two such algorithms common to analyses involving $$H\rightarrow\tau\tau$$ decays.
+Di-tau systems, or systems of two taus produced by some upstream parent particle like the Higgs, are underconstrained by detector measurements because of the neutrinos produced in tau decays. In practice, this means that if we looked at the mass spectrum of the di-taus measured in the detector, it would undershoot its true value. Several algorithms have been developed to leverage detector measurements and knowledge of tau decay physics to correct this effect. This post focuses on two such algorithms common to analyses involving $H\rightarrow\tau\tau$ decays.
 
 ## Tau Decay Physics
-Taus decay via the weak interaction as $$\tau^\pm\rightarrow W^\pm\nu_{\tau}$$. The $$W^\pm$$ is produced off-shell (note that $$m_\tau=1.77$$ GeV and $$m_W=80.4$$ GeV), decaying leptonically as $$W^\pm\rightarrow e^\pm\nu_e$$ or $$W^\pm\rightarrow\mu^\pm\nu_{\mu}$$, or hadronically as $$W^\pm\rightarrow q\bar{q}$$. Interestingly, taus are the only leptons heavy enough to produce hadronic showers. The set of tau decays and their corresponding branching fractions are listed in Table 2. 
+Taus decay via the weak interaction as $\tau^\pm\rightarrow W^\pm\nu_{\tau}$$. The $W^\pm$ is produced off-shell (note that $m_\tau=1.77$ GeV and $m_W=80.4$ GeV), decaying leptonically as $W^\pm\rightarrow e^\pm\nu_e$ or $W^\pm\rightarrow\mu^\pm\nu_{\mu}$, or hadronically as $W^\pm\rightarrow q\bar{q}$. Interestingly, taus are the only leptons heavy enough to produce hadronic showers. The set of tau decays and their corresponding branching fractions are listed in Table 2. 
 
 | Decay Mode  | Label | Branching Ratio ($\Gamma$) |
 |:-----------:|:-----:|:--------------------------:|
 | $\tau^\pm\rightarrow e^\pm\nu_e\nu_\tau$ | Leptonic | $0.1782$ | 
 | $\tau^\pm\rightarrow \mu^\pm\nu_\mu\nu_\tau$ | Leptonic | $0.1739$ |
 | $\tau^\pm\rightarrow \tau_h\nu_\tau$ | Hadronic | $0.6479$ |
-**Table 2**: The decay modes of a single tau lepton and their probabilities as reported in the PDG tau properties table [^2]. The visible component of hadronic tau decays is usually called $$\tau_h$$, which accounts for varying cominations of charged and neutral hadrons (usually pions or kaons). It is also common to see the visible components of tau decays, electrons and muons, written as $$\tau_e$$ and $$\tau_\mu$$ respectively. 
+
+**Table 2**: The decay modes of a single tau lepton and their probabilities as reported in the PDG tau properties table [^2]. The visible component of hadronic tau decays is usually called $\tau_h$, which accounts for varying cominations of charged and neutral hadrons (usually pions or kaons). It is also common to see the visible components of tau decays, electrons and muons, written as $\tau_e$ and $\tau_\mu$ respectively. 
 
 It's important to notice that *tau decays always produce neutrinos*, which are invisible to detectors like CMS and ATLAS. For this reason, tau four-vectors can be written as the sum of a visible system of electrons, muons, or hadrons, and an invisible system of neutrinos:
 
-<p>
-\begin{align}
+
+$\begin{align}
     p_\tau &= (E_\tau, \vec{p}_\tau) = p_\mathrm{vis} + p_\mathrm{inv}\\
            &= (E_\mathrm{vis} + E_\mathrm{inv}, \vec{p}_\mathrm{vis} + \vec{p}_\mathrm{inv})
-\end{align}
-</p>
+\end{align}$
 
 Detector measurements give us $p_\mathrm{vis}$ but do not provide enough information to fully reconstruct $p_\mathrm{inv}$. Defining the ratio of the visible energy to the original tau energy as $x=E_\mathrm{vis}/E_\tau$, we can parametrize the invisible system with three additional quantities: 
 - $m_{\nu\nu}$, the mass of the neutrino system; note that $m_{\nu\nu}=0$ for hadronic tau decays as they produce only a single neutrino
@@ -158,12 +159,12 @@ and then multiply it by the phase space volume possible for the invisible system
 
 Fortunately, the integral above (call it $\mathcal{V}$ since it's a phase space volume) can be calculated analytically for each di-tau decay configuration [^4], yielding $\mathcal{V}_{\tau_h\tau_h}$ for fully-hadronic di-tau decays, $\mathcal{V}_{\tau_l\tau_h}$ for semi-leptonic di-tau decays, and $\mathcal{V}_{\tau_l\tau_l}$ for fully-leptonic di-tau decays. These volumes tell us how much phase space is available for a given test mass. FastMtt scans over $(x^{(1)}, x^{(2)})$ space in a grid of $100\times100$ points covering the range $[0,1]\times[0,1]$. The algorithm also includes artificial regularization of the form $m_{\tau_1\tau_2}^{-\kappa}$. Despite its simplifying assumptions, FastMtt's physics performance is comparable to SVfit's. Notably, though, FastMtt is $~100\times$ faster than SVfit. 
 
-[^1] [PDG Higgs Status Report](https://pdg.lbl.gov/2019/reviews/rpp2018-rev-higgs-boson.pdf)
-[^2] [PDG Tau Properties Table](https://pdglive.lbl.gov/Particle.action?node=S035)
-[^3] [Classic SVfit Algorithm](https://inspirehep.net/files/ff3326a782d43e44e94733a065eb9c31)
-[^4] FastMTT Algorithm: CMS AN-19-032 (available to CERN users)
-[^5] [Missing transverse energy performance of the CMS detector](https://arxiv.org/pdf/1106.5048.pdf)
-[^6] In the collinear approximation, we assume that each tau is energetic enough to be considered massless (i.e. $E_{\tau_i}\approx \vert\vec{p}_{\tau_i}\vert$) and each tau's decay products are collinear with the original tau direction (i.e. $\vec{p}_{\tau_i}\ \vert\vert\ \vec{p}_\mathrm{vis}^{(i)}$). Then, $m_{\tau_1\tau_2}$ is related to $m^\mathrm{vis}_{\tau_1\tau_2}$ through the variables $x^{(1)}=E_\mathrm{vis}^{(1)}/E_{\tau_1}$ and $x^{(2)}=E_\mathrm{vis}^{(2)}/E_{\tau_2}$ as follows:
+[^1]: [PDG Higgs Status Report](https://pdg.lbl.gov/2019/reviews/rpp2018-rev-higgs-boson.pdf)
+[^2]: [PDG Tau Properties Table](https://pdglive.lbl.gov/Particle.action?node=S035)
+[^3]: [Classic SVfit Algorithm](https://inspirehep.net/files/ff3326a782d43e44e94733a065eb9c31)
+[^4]: FastMTT Algorithm: CMS AN-19-032 (available to CERN users)
+[^5]: [Missing transverse energy performance of the CMS detector](https://arxiv.org/pdf/1106.5048.pdf)
+[^6]: In the collinear approximation, we assume that each tau is energetic enough to be considered massless (i.e. $E_{\tau_i}\approx \vert\vec{p}_{\tau_i}\vert$) and each tau's decay products are collinear with the original tau direction (i.e. $\vec{p}_{\tau_i}\ \vert\vert\ \vec{p}_\mathrm{vis}^{(i)}$). Then, $m_{\tau_1\tau_2}$ is related to $m^\mathrm{vis}_{\tau_1\tau_2}$ through the variables $x^{(1)}=E_\mathrm{vis}^{(1)}/E_{\tau_1}$ and $x^{(2)}=E_\mathrm{vis}^{(2)}/E_{\tau_2}$ as follows:
 \begin{align}
     m_{\tau_1\tau_2}^2 &= (p_{\tau_1} + p_{\tau_2})^2 = (E_{\tau_1} + E_{\tau_2})^2 - (\vec{p}_{\tau_1} + \vec{p}_{\tau_2})^2\\
     &\approx 2E_{\tau_1}E_{\tau_2} - 2\vec{p}_{\tau_1}\cdot\vec{p}_{\tau_2}\\
