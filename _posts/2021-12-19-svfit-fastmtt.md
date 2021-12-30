@@ -21,7 +21,7 @@ Taus are challenging particles to measure at the Large Hadron Collider (LHC) bec
 Di-tau systems, or systems of two taus produced by some upstream parent particle like the Higgs, are underconstrained by detector measurements because of the neutrinos produced in tau decays. In practice, this means that if we looked at the mass spectrum of the di-taus measured in the detector, it would undershoot its true value. Several algorithms have been developed to leverage detector measurements and knowledge of tau decay physics to correct this effect. This post focuses on two such algorithms common to analyses involving $H\rightarrow\tau\tau$ decays.
 
 ## Tau Decay Physics
-Taus decay via the weak interaction as $\tau^\pm\rightarrow W^\pm\nu_{\tau}$$. The $W^\pm$ is produced off-shell (note that $m_\tau=1.77$ GeV and $m_W=80.4$ GeV), decaying leptonically as $W^\pm\rightarrow e^\pm\nu_e$ or $W^\pm\rightarrow\mu^\pm\nu_{\mu}$, or hadronically as $W^\pm\rightarrow q\bar{q}$. Interestingly, taus are the only leptons heavy enough to produce hadronic showers. The set of tau decays and their corresponding branching fractions are listed in Table 2. 
+Taus decay via the weak interaction as $\tau^\pm\rightarrow W^\pm\nu_{\tau}$. The $W^\pm$ is produced off-shell (note that $m_\tau=1.77$ GeV and $m_W=80.4$ GeV), decaying leptonically as $W^\pm\rightarrow e^\pm\nu_e$ or $W^\pm\rightarrow\mu^\pm\nu_{\mu}$, or hadronically as $W^\pm\rightarrow q\bar{q}$. Interestingly, taus are the only leptons heavy enough to produce hadronic showers. The set of tau decays and their corresponding branching fractions are listed in Table 2. 
 
 | Decay Mode  | Label | Branching Ratio ($\Gamma$) |
 |:-----------:|:-----:|:--------------------------:|
@@ -33,11 +33,10 @@ Taus decay via the weak interaction as $\tau^\pm\rightarrow W^\pm\nu_{\tau}$$. T
 
 It's important to notice that *tau decays always produce neutrinos*, which are invisible to detectors like CMS and ATLAS. For this reason, tau four-vectors can be written as the sum of a visible system of electrons, muons, or hadrons, and an invisible system of neutrinos:
 
-
-$\begin{align}
+$$\begin{align*}
     p_\tau &= (E_\tau, \vec{p}_\tau) = p_\mathrm{vis} + p_\mathrm{inv}\\
            &= (E_\mathrm{vis} + E_\mathrm{inv}, \vec{p}_\mathrm{vis} + \vec{p}_\mathrm{inv})
-\end{align}$
+\end{align*}$$
 
 Detector measurements give us $p_\mathrm{vis}$ but do not provide enough information to fully reconstruct $p_\mathrm{inv}$. Defining the ratio of the visible energy to the original tau energy as $x=E_\mathrm{vis}/E_\tau$, we can parametrize the invisible system with three additional quantities: 
 - $m_{\nu\nu}$, the mass of the neutrino system; note that $m_{\nu\nu}=0$ for hadronic tau decays as they produce only a single neutrino
@@ -48,8 +47,12 @@ A quick calculation shows that $\theta_{GJ}$ is redundent, as it can be calculat
 
 $$ m_\mathrm{vis}^2 = E_\mathrm{vis}^2 - \vert\vec{p}_\mathrm{vis}\vert^2$$ 
 
+<br><br>
+![tau-decay-parametrization](/images/physics_diagrams/tau_decay_parametrization.png)
+<br><br>
 ## Di-Tau Systems
 A system of two taus is usually called a *di-tau* ($\tau_1\tau_2$) system.  Di-tau kinematics are determined by the individual decays of each tau; the full set of possibilities is listed in Table 3. In many cases, analyses target di-tau final states to measure a parent particle producing the taus, for example the Higgs boson. The parent would appear as a peak in the distribution of di-tau invariant mass, given by
+
 
 $\begin{align*}
 m_{\tau_1\tau_2}^2 = (p_{\tau_1}+ p_{\tau_2})^2
@@ -75,6 +78,10 @@ Since the visible quantities $p_\mathrm{vis}^{(1)}=(E_\mathrm{vis}^{(1)},\vec{p}
 Unfortunately, we do not measure the components of $\vec{a}$ directly in LHC detectors. Therefore, the visible di-tau mass typically undershoots its true value:
 
 $$m_{\tau_1\tau_2}^\mathrm{vis} = \sqrt{(p_\mathrm{vis}^{(1)} + p_\mathrm{vis}^{(2)})\cdot(p_\mathrm{vis}^{(1)} + p_\mathrm{vis}^{(2)})} < m_{\tau_1\tau_2}$$
+
+<br><br>
+![](/images/physics_diagrams/ditau_decay_parametrization.png)
+<br><br>
 
 ## MET Constraints on Invisible Systems
 All is not lost - because momentum is conserved in the transverse plane in collider events, the total transverse energy imbalance in an event 
@@ -112,6 +119,10 @@ $\begin{align*}
 \end{align*}$
 
 Events with significant MET signal the presence of unmeasured particles like the neutrinos produced in tau decays. It should be possible to leverage MET information to constrain the invisible systems produced by tau decays; this observation forms the basis of several algorithms designed to correct the di-tau mass spectrum. 
+
+<br><br>
+![](/images/physics_diagrams/svfit_inputs.png)
+<br><br>
 
 ## Correcting the Di-Tau Mass Spectrum
 
