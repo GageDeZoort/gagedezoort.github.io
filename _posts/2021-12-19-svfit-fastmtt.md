@@ -70,8 +70,8 @@ Since the visible quantities $$p_\mathrm{vis}^{(1)}=(E_\mathrm{vis}^{(1)},\vec{p
 
 | Decay Mode <br /> ($l=e,\mu$) | Label | Branching Ratio ($\Gamma$) | Unmeasured Params | 
 |:-:|:-:|:-:|:-:|
-| $\tau_1\tau_2\rightarrow (l_1\nu_{l_1}\nu_\tau)(l_2\nu_{l_2}\nu_\tau)$ | Fully-Leptonic | $0.032$<br />$(l_1,l_2=e)$<br />$0.030$<br />$(l_1, l_2=\mu)$<br />$0.062$<br />$(l_1=e,\mu,\  l_2=\mu,e)$ | $(x^{(1)},m_{\nu\nu}^{(1)},\phi^{(1)},$ <br /> $\ x^{(2)},m_{\nu\nu}^{(2)},\phi^{(2)})$
-| $\tau_1\tau_2\rightarrow (l\nu_l\nu_\tau)(\tau_h\nu_\tau)$             | Semi-Leptonic  | $0.231\ (l=e)$<br />$0.225\ \ (l=\mu)$   | $(x^{(1)},m_{\nu\nu}^{(1)},\phi^{(1)},$ <br /> $\ x^{(2)},\phi^{(2)})$                                                      |
+| $\tau_1\tau_2\rightarrow (l_1\nu_{l_1}\nu_\tau)(l_2\nu_{l_2}\nu_\tau)$ | Fully-Leptonic | $0.032$<br />$(l_1,l_2=e)$<br />$0.030$<br />$(l_1, l_2=\mu)$<br />$0.062$<br />$(l_1=e,\mu$<br />$\ \ \ l_2=\mu,e)$ | $(x^{(1)},m_{\nu\nu}^{(1)},\phi^{(1)},$ <br /> $\ x^{(2)},m_{\nu\nu}^{(2)},\phi^{(2)})$
+| $\tau_1\tau_2\rightarrow (l\nu_l\nu_\tau)(\tau_h\nu_\tau)$             | Semi-Leptonic  | $0.231$<br /> $(l=e)$<br />$0.225$<br />$(l=\mu)$   | $(x^{(1)},m_{\nu\nu}^{(1)},\phi^{(1)},$ <br /> $\ x^{(2)},\phi^{(2)})$                                                      |
 | $\tau_1\tau_2\rightarrow (\tau_h\nu_\tau)(\tau_h\nu_\tau)$             | Fully-Hadronic | $0.420$  | $(x^{(1)},\phi^{(1)},$ <br /> $\ x^{(2)},\phi^{(2)})$ | 
 
 **Table 3**: The di-tau decay branching ratios are calculated directly from the values in Table 2 by multiplying independent probabilities that each tau decays leptonically or hadronically. 
