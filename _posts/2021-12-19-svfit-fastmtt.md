@@ -40,12 +40,12 @@ $$\begin{align*}
 
 Detector measurements give us $p_\mathrm{vis}$ but do not provide enough information to fully reconstruct $p_\mathrm{inv}$. Defining the ratio of the visible energy to the original tau energy as $x=E_\mathrm{vis}/E_\tau$, we can parametrize the invisible system with three additional quantities: 
 - $m_{\nu\nu}$, the mass of the neutrino system; note that $m_{\nu\nu}=0$ for hadronic tau decays as they produce only a single neutrino
-- $\theta_{GJ}$, the Gottfried-Jackson angle, describing the opening angle between $\begin{aligned}\vec{p}_\mathrm{vis}\end{aligned}$ and $\vec{p}_\tau$ 
-- $\phi$, the angle of $\begin{aligned}\vec{p}_\tau\end{aligned}$ around a cone centered on $\begin{aligned}\vec{p}_\mathrm{vis}\end{aligned}$ and with opening angle $\theta_{GJ}$
+- $\theta_\mathrm{GJ}$, the Gottfried-Jackson angle, describing the opening angle between $\vec{p}_\mathrm{vis}$ and $\vec{p}_\tau$
+- $\phi$, the angle of $\vec{p}_\tau$ around a cone centered on $\vec{p}_\mathrm{vis}$ and with opening angle $\theta_\mathrm{GJ}$
 
-A quick calculation shows that $\theta_{GJ}$ is redundent, as it can be calculated from visible quantities, $x$ and $m_{\nu\nu}$ (see [^3]). That said, in addition to four measured quantities ($E_\mathrm{vis}, \vec{p}_\mathrm{vis}$), leptonic tau decays are specified by three additional parameters ($x$, $m_{\nu\nu}$, and $\phi$) and hadronic tau decays by two ($x$ and $\phi$.) Finally, note that the *visible mass* in a given tau decay is the mass of the lepton or hadronic shower appearing in the detector:
+A quick calculation shows that $\theta_\mathrm{GJ}$ is redundent, as it can be calculated from visible quantities, $x$ and $m_{\nu\nu}$ (see [^3]). That said, in addition to four measured quantities ($E_\mathrm{vis}, \vec{p}_\mathrm{vis}$), leptonic tau decays are specified by three additional parameters ($x$, $m_{\nu\nu}$, and $\phi$) and hadronic tau decays by two ($x$ and $\phi$.) Finally, note that the *visible mass* in a given tau decay is the mass of the lepton or hadronic shower appearing in the detector:
 
-$$ m_\mathrm{vis}^2 = E_\mathrm{vis}^2 - \vert\vec{p}_\mathrm{vis}\vert^2$$ 
+$$m_\mathrm{vis}^2 = E_\mathrm{vis}^2 - \vert\vec{p}_\mathrm{vis}\vert^2$$ 
 
 <br><br>
 ![tau-decay-parametrization](/images/physics_diagrams/tau_decay_parametrization.png)
