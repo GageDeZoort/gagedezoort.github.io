@@ -48,8 +48,9 @@ A quick calculation shows that $\theta_{GJ}$ is redundent, as it can be calculat
 $$ m_\mathrm{vis}^2 = E_\mathrm{vis}^2 - \vert\vec{p}_\mathrm{vis}\vert^2$$ 
 
 <br><br>
-![tau-decay-parametrization](/images/physics_diagrams/tau_decay_parametrization.png)
+![tau-decay-parametrization](/images/physics_diagrams/tau_decay_parametrization.png){: width=567, height=434}
 <br><br>
+
 ## Di-Tau Systems
 A system of two taus is usually called a *di-tau* ($\tau_1\tau_2$) system.  Di-tau kinematics are determined by the individual decays of each tau; the full set of possibilities is listed in Table 3. In many cases, analyses target di-tau final states to measure a parent particle producing the taus, for example the Higgs boson. The parent would appear as a peak in the distribution of di-tau invariant mass, given by
 
@@ -81,6 +82,7 @@ $$m_{\tau_1\tau_2}^\mathrm{vis} = \sqrt{(p_\mathrm{vis}^{(1)} + p_\mathrm{vis}^{
 
 <br><br>
 ![](/images/physics_diagrams/ditau_decay_parametrization.png)
+*image caption*
 <br><br>
 
 ## MET Constraints on Invisible Systems
