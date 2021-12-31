@@ -48,7 +48,7 @@ A quick calculation shows that $\theta_{GJ}$ is redundent, as it can be calculat
 $$ m_\mathrm{vis}^2 = E_\mathrm{vis}^2 - \vert\vec{p}_\mathrm{vis}\vert^2$$ 
 
 <br><br>
-![tau-decay-parametrization](/images/physics_diagrams/tau_decay_parametrization.png){: width=567, height=434}
+![tau-decay-parametrization](/images/physics_diagrams/tau_decay_parametrization.png)
 <br><br>
 
 ## Di-Tau Systems
