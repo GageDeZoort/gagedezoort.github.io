@@ -62,23 +62,10 @@
 	<!-- Extra Header JS Code -->
 	{{ site.data.settings.advanced_settings.header_js }}
 	{% endif %}
+
 	
 </head>
 
-
-<!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
-
-<!-- JavaScript -->
-<script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"
-	onload="renderMathInElement(document.body,{
-		delimiters: [
-		{ left: '$$',  right: '$$',  display: true  },
-		{ left: '$',   right: '$',   display: false },
-		{ left: '\\[', right: '\\]', display: true  },
-		{ left: '\\(', right: '\\)', display: false }
-		]});">
 
 <body class="loading{% if site.data.settings.advanced_settings.ajax_loading == true %} ajax-loading{% endif %}" data-site-url="{{ site.url }}" data-page-url="{{ page.url | replace: 'index.html', '' }}">
 
@@ -117,5 +104,20 @@
 
 
 </body>
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
+
+<!-- JavaScript -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"
+	onload="renderMathInElement(document.body,{
+		delimiters: [
+		{ left: '$$',  right: '$$',  display: true  },
+		{ left: '$',   right: '$',   display: false },
+		{ left: '\\[', right: '\\]', display: true  },
+		{ left: '\\(', right: '\\)', display: false }
+		]});">
 </script>
+
 </html>
