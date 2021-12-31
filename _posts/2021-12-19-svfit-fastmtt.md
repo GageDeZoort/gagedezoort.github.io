@@ -3,7 +3,6 @@ title: 'Correcting the Di-Tau Mass Spectrum'
 date: 2021-12-19 20:56:00
 featured_image: '/images/demo/demo-square.jpg'
 excerpt: Higgs boson decays to two tau leptons (a di-tau system) are critical to understanding how the Higgs boson interacts with fermionic matter. However, taus are difficult to measure because they produce neutrinos, which are invisible to particle detectors at the Large Hadron Collider, when they decay. This post focuses on how detector measurements and tau decay physics can be used to infer the hidden properties of a di-tau system.
-katex: true
 ---
 
 ## Introduction
@@ -193,19 +192,3 @@ $\begin{align*}
     &= 2E_\mathrm{vis}^{(1)}E_\mathrm{vis}^{(2)}\big(1-\cos\theta\big)\\
     \implies \ & \ m_{\tau_1\tau_2}^2 = (m^\mathrm{vis}_{\tau_1\tau_2})^2/(x^{(1)}x^{(2)})
 \end{align*}$
-
-<!--KaTeX-->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        renderMathInElement(document.body, {
-			delimiters: [
-			{ left: '$$',  right: '$$',  display: true  },
-			{ left: '$',   right: '$',   display: false },
-			{ left: '\\[', right: '\\]', display: true  },
-			{ left: '\\(', right: '\\)', display: false }
-			]});
-    });
-</script>
