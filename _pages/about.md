@@ -1,8 +1,8 @@
 ---
-title: About Journal
-subtitle: A stunning personal blog Jekyll theme with an image-focused design.
-description: A stunning personal blog Jekyll theme with an image-focused design.
-featured_image: /images/demo/demo-portrait.jpg
+title: About This Journal
+subtitle: Physics, machine learning, music, etc. - random inspiration caputred in beautiful markdown. 
+description:
+featured_image: /images/me.jpg
 ---
 
 ![](/images/me.jpg)
