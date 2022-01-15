@@ -1,7 +1,7 @@
 ---
 title: 'Correcting the Di-Tau Mass Spectrum'
 date: 2021-12-19 20:56:00
-featured_image: '/images/demo/demo-square.jpg'
+featured_image: '/images/higgs_to_tautau.png'
 excerpt: Higgs boson decays to two tau leptons (a di-tau system) are critical to understanding how the Higgs boson interacts with fermionic matter. However, taus are difficult to measure because they produce neutrinos, which are invisible to particle detectors at the Large Hadron Collider, when they decay. This post focuses on how detector measurements and tau decay physics can be used to infer the hidden properties of a di-tau system.
 katex: yes
 ---
