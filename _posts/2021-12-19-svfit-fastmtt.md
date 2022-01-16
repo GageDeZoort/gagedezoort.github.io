@@ -140,22 +140,26 @@ $$\begin{aligned}
     \mathcal{L}(\tau\rightarrow l\nu_l\nu_\tau) &\propto \frac{d\Gamma}{dx\ d\phi\ dm_{\nu\nu}} = \frac{m_{\nu\nu}}{4m_\tau^2}\big((m_{\tau}^2+2m_{\nu\nu}^2)(m_\tau^2-m_{\nu\nu}^2) \big)\\
     \mathcal{L}(\tau\rightarrow \tau_h\nu_\tau) &\propto\frac{d\Gamma}{dx\ d\phi}=\frac{1}{2\pi}\bigg(\frac{1}{1-(\frac{m_\mathrm{vis}}{m_\tau})^2}\bigg)
 \end{aligned}$$
-It's important to note that the kinematics of each tau decay are constrained. Recall that $$x=E_\mathrm{vis}/E_\tau$$. In leptonic tau decays, $$0<x<1$$, meaning the visible system may inherit any fraction of the original tau energy. However, in hadronic tau decays, $$(\frac{m_\mathrm{vis}}{m_\tau})^2<x<1$$ due to the denominator of $\frac{d\Gamma}{dx\ d\phi}$.  
+It's important to note that the kinematics of each tau decay are constrained. Recall that $$x=E_\mathrm{vis}/E_\tau$$. In leptonic tau decays, $$0<x<1$$, meaning the visible system may inherit any fraction of the original tau energy. However, in hadronic tau decays, $$(\frac{m_\mathrm{vis}}{m_\tau})^2<x<1$$ due to the denominator of $$\frac{d\Gamma}{dx\ d\phi}$$.  
 
-- The *MET Transfer Function* $$\mathcal{L}(\vec{E}_T^\mathrm{miss}\vert V, \vec{a})$$, describing the likelihood of an invisible system $$\vec{a}$$ producing a set of measured MET quantities $$\vec{E}_T^\mathrm{miss}$$. The key assumption here is that the tau decay neutrinos are the *only* source of MET in a given event. Given $$\vec{a}$$, we have a full description of the di-tau invisible system, including the exact MET it produces; let's call this value $$\vec{e}_T = (e_x,e_y)$$. In this case, the measured MET quantities $$\vec{E}_T^\mathrm{miss}=(E_x^\mathrm{miss}, E_y^\mathrm{miss})$$ should match $e_x$ and $e_y$ up to detector resolution. Assuming a Gaussian detector resolution, we take $$\mathcal{L}(\vec{E}_T^\mathrm{miss}\vert V, \vec{a})$$ to be the Gaussian likelihood of measuring residuals $$\vec{\epsilon}=\vec{E}_T^\mathrm{miss}-\vec{e}_T$$:
+- The *MET Transfer Function* $$\mathcal{L}(\vec{E}_T^\mathrm{miss}\vert V, \vec{a})$$, describing the likelihood of an invisible system $$\vec{a}$$ producing a set of measured MET quantities $$\vec{E}_T^\mathrm{miss}$$. The key assumption here is that the tau decay neutrinos are the *only* source of MET in a given event. Given $$\vec{a}$$, we have a full description of the di-tau invisible system, including the exact MET it produces; let's call this value $$\vec{e}_T = (e_x,e_y)$$. In this case, the measured MET quantities $$\vec{E}_T^\mathrm{miss}=(E_x^\mathrm{miss}, E_y^\mathrm{miss})$$ should match $$e_x$$ and $$e_y$$ up to detector resolution. Assuming a Gaussian detector resolution, we take $$\mathcal{L}(\vec{E}_T^\mathrm{miss}\vert V, \vec{a})$$ to be the Gaussian likelihood of measuring residuals $$\vec{\epsilon}=\vec{E}_T^\mathrm{miss}-\vec{e}_T$$:
+
 $$\mathcal{L}(\vec{E}_T^\mathrm{miss}\vert V, \vec{a}) = \frac{1}{2\pi\sqrt{\vert V\vert}}\exp\bigg(-\frac{1}{2}(\vec{\epsilon})^T \big(V^{-1}\big) (\vec{\epsilon})\bigg)$$
-- Artificial regularization terms of the form $$m_{\tau_1\tau_2}^{-\kappa}$$ are included, where $$\kappa$$ is a tunable parameter that suppresses the likelihood of high di-tau mass preedictions.
 
+- Artificial regularization terms of the form $$m_{\tau_1\tau_2}^{-\kappa}$$ are included, where $$\kappa$$ is a tunable parameter that suppresses the likelihood of high di-tau mass predictions.
 
-In practice, the distriution of $$\mathcal{L}(m_\mathrm{test} \mid \mathcal{D})$$ is computed for a discretized set of mass hypotheses $m_\mathrm{test}^i$ and the likelihood integral determining $$P(m_\mathrm{test}^i)$$ is performed numerically. 
+In practice, the distribution of $$\mathcal{L}(m_\mathrm{test} \mid \mathcal{D})$$ is computed for a discretized set of mass hypotheses $$m_\mathrm{test}^i$$ and the likelihood integral determining $$P(m_\mathrm{test}^i)$$ is performed numerically. 
 
 ### FastMtt
 The FastMtt algorithm was developed as a faster version of Classic SVfit. FastMtt makes several key simplifications:
 
 - Empirically, it was shown that the MET transfer function $$\mathcal{L}(\vec{E}^\mathrm{miss}_T \mid V, \vec{a})$$ dominates the tau decay likelihoods in the integral yielding $$\mathcal{L}(m_\mathrm{test} \mid \mathcal{D})$$. For this reason, the authors neglect contributions due to the tau decay matrix elements. 
 - Each visible tau decay product is assumed to move in the original tau direction; this is often called the *collinear approximation*. In this case, $$\theta_{GJ}=0$$ so that $$\phi$$ isn't well-defined. This assumption is justfied for highly-boosted taus, whose decay products are collimated in the original tau direction. The upshot is that the collinear approximation gives 
+
 $$m_{\tau_1\tau_2}\approx \frac{m_{\tau_1\tau_2}^\mathrm{vis}}{\sqrt{x^{(1)}x^{(2)}}}$$ 
+
 To see why, check out the calculation in [^6]. In this approximation, we only need to scan over $$x^{(1)}$$ and $$x^{(2)}$$ to specify the di-tau decay because $$E_\mathrm{vis}^{(i)} \approx \vert\vec{p}_\mathrm{vis}^{(i)}\vert$$ implies we can reconstruct the original tau four-vectors from visible measurements with just $$x^{(1)}$$ and $$x^{(2)}$$:
+
 $$\begin{aligned}
     p_{\tau_i} &= (E_{\tau_i}, \vec{p}_{\tau_i}) \\ &\approx (\frac{E_\mathrm{vis}^{(i)}}{x_i}, \frac{\vec{p}_\mathrm{vis}^{(i)}}{x_i}) = \frac{1}{x_i}p_\mathrm{vis}^{(i)}
 \end{aligned}$$
