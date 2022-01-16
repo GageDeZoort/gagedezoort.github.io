@@ -2,34 +2,12 @@
 title: About This Journal
 subtitle: Physics, machine learning, music, etc. - random inspiration caputred in beautiful markdown. 
 description:
-featured_image: /images/me.jpg
+featured_image: 
 ---
 
 ![](/images/me.jpg)
 
-## Features
+## About This Journal
+Hi! I'm a fourth-year PhD student in Princeton's Physics Department focused on the intersection of high energy particle physics and machine learning. Broadly speaking, I'm interested in applying graph neural networks to various physics tasks, for example extracting particle properties from raw detector data. I also love to explore scientific software and use state-of-the-art computational tools to search for new particles. I am passionate about matters related to equity, diversity, and inclusion (EDI) within physics, and spend a lot of time working on our department's EDI efforts. Outside of academia, I love to play guitar (prog metal preferred), read (high fantasy, sci-fi), work out (lift, run), and hang out with my dog (Fermi). 
 
-Journal is packed with powerful features to showcase your work:
-
-* Beautiful, minimal design
-* Fixed sidebar images that animate as you browse
-* Single column post layout
-* Responsive – works perfectly on all devices
-* Portfolio/projects post type to show your work
-* Blog with pagination
-* Sleek Ajax navigation and page transitions
-* Unique 'gallery' feature for image grids and carousels
-* Built-in contact form with Formspree integration
-* Full markdown support and code highlighting
-* Social media icons
-* Fast page rendering
-* Built with SEO best practices in mind
-* Customize everything – colors, spacing, fonts, sizes etc. – via a simple settings file
-* Works with GitHub Pages
-* Updated and supported by the developers
-
-## Get Index
-
-Journal is created and supported by [Jekyll Themes](https://jekyllthemes.io), and is available for $49.
-
-<a href="https://jekyllthemes.io/theme/journal-personal-jekyll-theme" class="button button--large">Get This Theme</a>
+I write a lot of notes, some of which may be useful to others, and some of which contain ideas I'd like to promote or otherwise discuss. That's really the purpose of this journal. That said, please feel free to reach out with comments or follow-up discussion!  
