@@ -2,12 +2,12 @@
 title: 'Correcting the Di-Tau Mass Spectrum'
 date: 2021-12-19 20:56:00
 featured_image: '/images/higgs_to_tautau.png'
-excerpt: Higgs boson decays to two tau leptons (a di-tau system) are critical to understanding how the Higgs boson interacts with fermionic matter. However, taus are difficult to measure because they produce neutrinos, which are invisible to particle detectors at the Large Hadron Collider, when they decay. This post focuses on how detector measurements and tau decay physics can be used to infer the hidden properties of a di-tau system.
+excerpt: Higgs boson decays to tau leptons are critical to understanding how the Higgs boson interacts with fermionic matter. However, taus are difficult to measure because they produce neutrinos, which are invisible to particle detectors at the Large Hadron Collider, when they decay. This post focuses on one key strategy used to infer the kinetmatics of tau decays given a set of incomplete measurements. 
 katex: yes
 ---
 
 ## Introduction
-Taus are challenging particles to measure at the Large Hadron Collider (LHC) because their decays always produce neutrinos, which are invisible to LHC detectors. For this reason, taus are typically "undermeasured" at the LHC, in the sense that we will never measure the full set of particles produced when a tau decays. Rather, we only have access to the particles "visible" to our detectors - for example, electrons, photons, and hadrons - that give us a partial picture of the taus that produced them. It's worth addressing this challenge, though, because taus give us insight into many interesting physics processes, like the decay of the Standard Model Higgs boson to two taus ($$H\rightarrow\tau\tau$$). These decays are among the most important to study Higgs couplings to fermions because the ratio $$\Gamma(H\rightarrow\tau\tau)/\Gamma(H\rightarrow\mu\mu)\approx288$$ guarentees an abundence of $$H\rightarrow\tau\tau$$ events with respect to other leptons and $$H\rightarrow\tau\tau$$ signals are easier to separate from background than $$H\rightarrow b\bar{b}$$ signals, despite the larger branching ratio of $$H\rightarrow b\bar{b}$$ (see Table 1). 
+Taus are challenging particles to measure at the Large Hadron Collider (LHC) because their decays always produce neutrinos, which are invisible to LHC detectors. For this reason, taus are typically "undermeasured" at the LHC, in the sense that we will never measure the full set of particles produced when a tau decays. Rather, we only have access to the particles "visible" to our detectors - for example, electrons, photons, and hadrons - that give us a partial picture of the taus that produced them. It's worth addressing this challenge because taus give us insight into many interesting physics processes like the decay of the Standard Model Higgs boson to two taus ($$H\rightarrow\tau\tau$$). These decays are among the most important to studying Higgs couplings to fermions because the ratio $$\Gamma(H\rightarrow\tau\tau)/\Gamma(H\rightarrow\mu\mu)\approx288$$ guarentees an abundence of $$H\rightarrow\tau\tau$$ events with respect to other leptons and $$H\rightarrow\tau\tau$$ signals are easier to separate from background than $$H\rightarrow b\bar{b}$$ signals, despite the larger branching ratio of $$H\rightarrow b\bar{b}$$ (see Table 1). 
 
 | Decay | Branching Ratio ($$\Gamma$$) | Rel. Uncertainty |
 |:-----------------------------:|:-----------------:|:---------------------:|
@@ -18,18 +18,18 @@ Taus are challenging particles to measure at the Large Hadron Collider (LHC) bec
 
 **Table 1**: The relative decay probabilities (branching ratios) of the most common Higgs boson decays to fermions, reproduced from the PDG Higgs Status Report [^1]. 
 
-Di-tau systems, or systems of two taus produced by some upstream parent particle like the Higgs, are underconstrained by detector measurements because of the neutrinos produced in tau decays. In practice, this means that if we looked at the mass spectrum of the di-taus measured in the detector, it would undershoot its true value. Several algorithms have been developed to leverage detector measurements and knowledge of tau decay physics to correct this effect. This post focuses on two such algorithms common to analyses involving $$H\rightarrow\tau\tau$$ decays.
+Di-tau systems, or systems of two taus produced by some upstream parent particle like the Higgs, are underconstrained by detector measurements because of the neutrinos produced in tau decays. In practice, this means that if we looked at the mass spectrum of the di-tau systems measured in the detector, it would undershoot its true distribution. This is a problem if the di-tau system is supposed to give you insight about the Higgs mass! Several algorithms have been developed to leverage detector measurements and knowledge of tau decay physics to correct for this "missing mass." This post focuses on two such algorithms common to analyses involving $$H\rightarrow\tau\tau$$ decays.
 
 ## Tau Decay Physics
 Taus decay via the weak interaction as $$\tau^\pm\rightarrow W^\pm\nu_{\tau}$$. The $$W^\pm$$ is produced off-shell (note that $$m_\tau=1.77$$ GeV and $$m_W=80.4$$ GeV), decaying leptonically as $$W^\pm\rightarrow e^\pm\nu_e$$ or $$W^\pm\rightarrow\mu^\pm\nu_{\mu}$$, or hadronically as $$W^\pm\rightarrow q\bar{q}$$. Interestingly, taus are the only leptons heavy enough to produce hadronic showers. The set of tau decays and their corresponding branching fractions are listed in Table 2. 
 
 | Decay Mode  | Label | Branching Ratio ($$\Gamma$$) |
 |:-----------:|:-----:|:--------------------------:|
-| $$\tau^\pm\rightarrow e^\pm\nu_e\nu_\tau$$ | Leptonic | $$0.1782$$ | 
-| $$\tau^\pm\rightarrow \mu^\pm\nu_\mu\nu_\tau$$ | Leptonic | $$0.1739$$ |
-| $$\tau^\pm\rightarrow \tau_h\nu_\tau$$ | Hadronic | $$0.6479$$ |
+| $$\tau^\pm\rightarrow e^\pm\nu_e\nu_\tau$$ | Leptonic ($$\tau_e$$) | $$0.1782$$ | 
+| $$\tau^\pm\rightarrow \mu^\pm\nu_\mu\nu_\tau$$ | Leptonic ($$\tau_\mu$$) | $$0.1739$$ |
+| $$\tau^\pm\rightarrow \tau_h\nu_\tau$$ | Hadronic ($$\tau_h$$) | $$0.6479$$ |
 
-**Table 2**: The decay modes of a single tau lepton and their probabilities as reported in the PDG tau properties table [^2]. The visible component of hadronic tau decays is usually called $$\tau_h$$, which accounts for varying cominations of charged and neutral hadrons (usually pions or kaons). It is also common to see the visible components of tau decays, electrons and muons, written as $$\tau_e$$ and $$\tau_\mu$$ respectively. 
+**Table 2**: The decay modes of a single tau lepton and their probabilities as reported in the PDG tau properties table [^2]. The visible component of a hadronic tau decays is usually called $$\tau_h$$, which accounts for varying cominations of charged and neutral hadrons (usually pions or kaons). It is also common to see the visible components of tau decays, electrons and muons, written as $$\tau_e$$ and $$\tau_\mu$$ respectively. 
 
 It's important to notice that *tau decays always produce neutrinos*, which are invisible to detectors like CMS and ATLAS. For this reason, tau four-vectors can be written as the sum of a visible system of electrons, muons, or hadrons, and an invisible system of neutrinos:
 
@@ -38,22 +38,20 @@ $$\begin{aligned}
            &= (E_\mathrm{vis} + E_\mathrm{inv}, \vec{p}_\mathrm{vis} + \vec{p}_\mathrm{inv})
 \end{aligned}$$
 
-Detector measurements give us $$p_\mathrm{vis}$$ but do not provide enough information to fully reconstruct $$p_\mathrm{inv}$$. Defining the ratio of the visible energy to the original tau energy as $x=E_\mathrm{vis}/E_\tau$, we can parametrize the invisible system with three additional quantities: 
+Detector measurements give us $$p_\mathrm{vis}$$ but do not provide enough information to fully reconstruct $$p_\mathrm{inv}$$. Defining the ratio of the visible energy to the original tau energy as $$x=E_\mathrm{vis}/E_\tau$$, we can parametrize the invisible system with three additional quantities: 
 - $$m_{\nu\nu}$$, the mass of the neutrino system; note that $$m_{\nu\nu}=0$$ for hadronic tau decays as they produce only a single neutrino
 - $$\theta_\mathrm{GJ}$$, the Gottfried-Jackson angle, describing the opening angle between $$\vec{p}_\mathrm{vis}$$ and $$\vec{p}_\tau$$
 - $$\phi$$, the angle of $$\vec{p}_\tau$$ around a cone centered on $$\vec{p}_\mathrm{vis}$$ and with opening angle $$\theta_\mathrm{GJ}$$
 
-A quick calculation shows that $$\theta_\mathrm{GJ}$$ is redundent, as it can be calculated from visible quantities, $$x$$ and $$m_{\nu\nu}$$[^3]. That said, in addition to four measured quantities ($$E_\mathrm{vis}, \vec{p}_\mathrm{vis}$$), leptonic tau decays are specified by three additional parameters ($$x$$, $$m_{\nu\nu}$$, and $$\phi$$) and hadronic tau decays by two ($$x$$ and $$\phi$$.) Finally, note that the *visible mass* in a given tau decay is the mass of the lepton or hadronic shower appearing in the detector:
+A quick calculation shows that $$\theta_\mathrm{GJ}$$ is redundent, as it can be computed from visible quantities, $$x$$ and $$m_{\nu\nu}$$[^3]. That said, in addition to four measured quantities ($$E_\mathrm{vis}, \vec{p}_\mathrm{vis}$$), leptonic tau decays are specified by three additional parameters ($$x$$, $$m_{\nu\nu}$$, and $$\phi$$) and hadronic tau decays by two ($$x$$ and $$\phi$$). 
 
-$$m_\mathrm{vis}^2 = E_\mathrm{vis}^2 - \vert\vec{p}_\mathrm{vis}\vert^2$$ 
-
-<br><br>
+<br /><br />
 ![tau-decay-parametrization](/images/physics_diagrams/tau_decay_parametrization.png)
 <img src="/images/physics_diagrams/tau_decay_parametrization.png" alt="tau-decay-parametrization" width="50%"/>
-<br><br>
+<br /><br />
 
 ## Di-Tau Systems
-A system of two taus is usually called a *di-tau* ($\tau_1\tau_2$) system.  Di-tau kinematics are determined by the individual decays of each tau; the full set of possibilities is listed in Table 3. In many cases, analyses target di-tau final states to measure a parent particle producing the taus, for example the Higgs boson. The parent would appear as a peak in the distribution of di-tau invariant mass, given by
+A system of two taus is usually called a *di-tau* ($$\tau_1\tau_2$$) system.  Di-tau kinematics are determined by the individual decays of each tau; the full set of possibilities is listed in Table 3. In many cases, analyses target di-tau final states to measure a parent particle producing the taus, for example the Higgs boson. The parent would appear as a peak in the distribution of di-tau invariant mass, given by
 
 $$\begin{aligned}
 m_{\tau_1\tau_2}^2 = (p_{\tau_1}+ p_{\tau_2})^2
@@ -66,46 +64,46 @@ $$\begin{aligned}
     p_{\tau_2} &= p_\mathrm{vis}^{(2)} + p_\mathrm{inv}^{(2)}
 \end{aligned}$$
 
-Since the visible quantities $$p_\mathrm{vis}^{(1)}=(E_\mathrm{vis}^{(1)},\vec{p}_\mathrm{vis}^{(1)})$$ and $$p_\mathrm{vis}^{(2)} =(E_\mathrm{vis}^{(2)},\vec{p}_\mathrm{vis}^{(2)})$$ are measured in the detector, the only remaining task is to parametrize the invisible system generated by the tau decay neutrinos. To do so, let's define a vector $$\vec{a}$$ containing the set of undetermined tau decay quantities and a vector $$\vec{y}=( E_\mathrm{vis}^{(1)},\vec{p}_\mathrm{vis}^{(1)}, E_\mathrm{vis}^{(2)},\vec{p}_\mathrm{vis}^{(2)})$$ containing the visible di-tau decay products. The components of $\vec{a}$ are shown for each di-tau decay mode in Table 3.
+Since the visible quantities $$p_\mathrm{vis}^{(1)}=(E_\mathrm{vis}^{(1)},\vec{p}_\mathrm{vis}^{(1)})$$ and $$p_\mathrm{vis}^{(2)} =(E_\mathrm{vis}^{(2)},\vec{p}_\mathrm{vis}^{(2)})$$ are measured in the detector, the only remaining task is to parametrize the invisible system generated by the tau decay neutrinos. To do so, let's define a vector $$\vec{a}$$ containing the set of undetermined tau decay quantities and a vector $$\vec{y}=( E_\mathrm{vis}^{(1)},\vec{p}_\mathrm{vis}^{(1)}, E_\mathrm{vis}^{(2)},\vec{p}_\mathrm{vis}^{(2)})$$ containing the visible di-tau decay products. The components of $$\vec{a}$$ are shown for each di-tau decay mode in Table 3.
 
 | Decay Mode <br /> ($$l=e,\mu$$) | Label | Branching Ratio ($$\Gamma$$) | Unmeasured Params | 
 |:-:|:-:|:-:|:-:|
-| $$\tau_1\tau_2\rightarrow (l_1\nu_{l_1}\nu_\tau)(l_2\nu_{l_2}\nu_\tau)$$ | Fully-Leptonic | $$0.032$$<br />$$(l_1,l_2=e)$$<br />$$0.030$$<br />$$(l_1, l_2=\mu)$$<br />$$0.062$$<br />$$(l_1=e,\mu$<br />$$\ \ \ l_2=\mu,e)$$ | $$(x^{(1)},m_{\nu\nu}^{(1)},\phi^{(1)},$$ <br /> $$\ x^{(2)},m_{\nu\nu}^{(2)},\phi^{(2)})$$
+| $$\tau_1\tau_2\rightarrow (l_1\nu_{l_1}\nu_\tau)(l_2\nu_{l_2}\nu_\tau)$$ | Fully-Leptonic | $$0.032$$<br />$$(l_1,l_2=e)$$<br />$$0.030$$<br />$$(l_1, l_2=\mu)$$<br />$$0.062$$<br />$$(l_1=e,\mu$$<br />$$\ \ \ l_2=\mu,e)$$ | $$(x^{(1)},m_{\nu\nu}^{(1)},\phi^{(1)},$$ <br /> $$\ x^{(2)},m_{\nu\nu}^{(2)},\phi^{(2)})$$
 | $$\tau_1\tau_2\rightarrow (l\nu_l\nu_\tau)(\tau_h\nu_\tau)$$             | Semi-Leptonic  | $$0.231$$<br /> $$(l=e)$$<br />$$0.225$$<br />$$(l=\mu)$$   | $$(x^{(1)},m_{\nu\nu}^{(1)},\phi^{(1)},$$ <br /> $$\ x^{(2)},\phi^{(2)})$$                                                      |
 | $$\tau_1\tau_2\rightarrow (\tau_h\nu_\tau)(\tau_h\nu_\tau)$$             | Fully-Hadronic | $$0.420$$  | $$(x^{(1)},\phi^{(1)},$$ <br /> $$\ x^{(2)},\phi^{(2)})$$ | 
 
 **Table 3**: The di-tau decay branching ratios are calculated directly from the values in Table 2 by multiplying independent probabilities that each tau decays leptonically or hadronically. 
 
-Unfortunately, we do not measure the components of $$\vec{a}$$ directly in LHC detectors. Therefore, the visible di-tau mass typically undershoots its true value:
+Unfortunately, we don't measure the components of $$\vec{a}$$ directly in LHC detectors. Therefore, the visible di-tau mass typically undershoots its true value:
 
 $$m_{\tau_1\tau_2}^\mathrm{vis} = \sqrt{(p_\mathrm{vis}^{(1)} + p_\mathrm{vis}^{(2)})\cdot(p_\mathrm{vis}^{(1)} + p_\mathrm{vis}^{(2)})} < m_{\tau_1\tau_2}$$
 
-<br><br>
+<br /><br/>
 ![](/images/physics_diagrams/ditau_decay_parametrization.png)
 *image caption*
-<br><br>
+<br /><br />
 
 ## MET Constraints on Invisible Systems
-All is not lost - because momentum is conserved in the transverse plane in collider events, the total transverse energy imbalance in an event 
+All is not lost - because momentum is conserved in the transverse plane in collider events, the total transverse momentum imbalance in an event 
 
 $$\begin{aligned}
 \vec{E}_T^\mathrm{miss} &= (E_x^\mathrm{miss}, E_y^\mathrm{miss}) = -\vec{E}_T^\mathrm{meas} = -\sum_{i=1}^{n_\mathrm{meas}} \vec{E}_T^{(i)} 
 \end{aligned}$$
 
-gives some indication of the invisible kinematics at play.  Here $i$ indexes every measured object in an event (for these purposes, particles reconstructed by the Particle Flow algorithm), and $\vec{E}_T^\mathrm{miss}$ is known as "missing $E_T$", or MET. Usually, we measure $$\vert\vec{E}_T^\mathrm{miss}\vert$$ and the polar angle of the MET, $\phi_{MET}$, to reconstruct the $x$ and $y$ MET components: 
+gives some indication of the invisible kinematics at play.  Here $$i$$ indexes every measured object in an event (for these purposes, particles reconstructed by the Particle Flow algorithm), and $$\vec{E}_T^\mathrm{miss}$$ is known as "missing $$E_T$$", or MET. I mentioned above the transverse *momentum*  imbalance - this is what we measure in the detector - but if we assume all invisible particles were massless, we can equate the missing transverse momentum with MET. Usually, we measure $$\vert\vec{E}_T^\mathrm{miss}\vert = -\vert\sum_{i=1}^{n_\mathrm{meas}} p_T^{(i)}\vert$$ and the polar angle of the MET, $$\phi_{MET}$$, to reconstruct the $$x$$ and $$y$$ MET components: 
 
 $$\begin{aligned}
     E_x^\mathrm{miss} &= \vert\vec{E}_T^\mathrm{miss}\vert\cos{\phi_{E_T^\mathrm{miss}}}\\
-    E_y^\mathrm{miss} &= \vert\vec{E}_T^\mathrm{miss}\vert\sin{\phi_{E_T^\mathrm{miss}}}\\
+    E_y^\mathrm{miss} &= \vert\vec{E}_T^\mathrm{miss}\vert\sin{\phi_{E_T^\mathrm{miss}}}
 \end{aligned}$$
 
-If MET is non-zero, then an event's transverse momentum has not been conserved because of either 1) mismeasurement or 2) invisible particles escaping the detector unmeasured. We can ask: how significant are these MET constraints? How can we know if we're looking at a real system of invisible particles or just noisy detector responses? Let's assume we've measured $$n_\mathrm{meas}$$ objects in the detector, each of which has a transverse energy vector $$\vec{E}^{(i)}_T$$. These measurements are imperfect because detectors have a finite resolution; let's call the true value of each measured object's transverse energy $$\vec{e}^{(i)}_T$$. The residual between these quantities, $$\vec{\epsilon}_i=\vec{E}^{(i)}_T-\vec{e}^{(i)}_T$$, is usually taken to be a 2D Gaussian with mean 0 and covariance matrix $$V_i$$:
+If the MET is non-zero, then an event's transverse momentum has not been conserved because of either 1) mismeasurement or 2) invisible particles escaping the detector unmeasured. We can ask: how significant are these MET constraints? How can we know if we're looking at a real system of invisible particles or just noisy detector responses? Let's assume we've measured $$n_\mathrm{meas}$$ objects in the detector, each of which has a transverse energy vector $$\vec{E}^{(i)}_T$$. These measurements are imperfect because detectors have a finite resolution; let's call the true value of each measured object's transverse energy $$\vec{e}^{(i)}_T$$. The residual between these quantities, $$\vec{\epsilon}_i=\vec{E}^{(i)}_T-\vec{e}^{(i)}_T$$, is usually taken to be a 2D Gaussian with mean 0 and covariance matrix $$V_i$$:
 
 $$\begin{aligned}
     p(\vec{\epsilon}_i \vert\vec{e}_T^{(i)}) \propto \exp\big(-\frac{1}{2}\vec{\epsilon}_i^TV_i^{-1}\vec{\epsilon}_i \big)
 \end{aligned}$$
 
-The Gaussian form of $$\vec{\epsilon}_i$$ only accounts for detector resolution effects and the covariance matrix $V_i$ is calculated from detailed studies of detector response vs. $$p_T$$ and $$\eta$$ against each particle type (see [^5]). We can generalize to an entire event by writing the total residual as a sum over all measured particles:
+The Gaussian form of $$\vec{\epsilon}_i$$ only accounts for detector resolution effects and the covariance matrix $$V_i$$ is calculated from detailed studies of detector response vs. $$p_T$$ and $$\eta$$ against each particle type (see [^5]). We can generalize to an entire event by writing the total residual as a sum over all measured particles:
 
 $$\begin{aligned}
 \vec{\epsilon}_\mathrm{event} &= \sum_{i=1}^{n_\mathrm{meas}} \vec{\epsilon}^{(i)}\\
@@ -113,7 +111,7 @@ $$\begin{aligned}
 &= \vec{E}_T^\mathrm{meas} - \vec{e}_T
 \end{aligned}$$
 
-With Gaussian probability models for each measured particle, the MET significance is defined as the log-likelihood ratio testing an event's consistency with the null hypothesis that $\vec{e}_T=\vec{0}$, i.e. that there is truly no MET in the event:
+With Gaussian probability models for each measured particle, the MET significance is defined as the log-likelihood ratio testing an event's consistency with the null hypothesis that $$\vec{e}_T=\vec{0}$$, i.e. that there is truly no MET in the event:
 
 $$\begin{aligned}
     S &= \frac{\mathcal{L}(\vec{\epsilon}=\vec{\epsilon}_\mathrm{event} \mid \vec{e}=\vec{0})}{\mathcal{L}(\vec{\epsilon}=\vec{0} \mid \vec{e}_T=\vec{0})}\\
@@ -122,20 +120,20 @@ $$\begin{aligned}
 
 Events with significant MET signal the presence of unmeasured particles like the neutrinos produced in tau decays. It should be possible to leverage MET information to constrain the invisible systems produced by tau decays; this observation forms the basis of several algorithms designed to correct the di-tau mass spectrum. 
 
-<br><br>
+<br /><br />
 ![](/images/physics_diagrams/svfit_inputs.png)
-<br><br>
+<br /><br />
 
 ## Correcting the Di-Tau Mass Spectrum
 
 ### Classic SVfit
-One such approach is the original SVfit algorithm ("Classic SVfit") [^3], named because its authors originally sought to include secondary vertex information corresponding to the di-tau decay position. In essence, SVfit is a dynamical likelihood minimization (performed on an event-by-event basis) that incorporates relevant tau decay physics. Given a set of event data $$\mathcal{D}$$, which includes measured tau decay variables $$\vec{y} = ( E_\mathrm{vis}^{(1)},\vec{p}_\mathrm{vis}^{(1)}, E_\mathrm{vis}^{(2)},\vec{p}_\mathrm{vis}^{(2)})$$ and MET quantities $$\vec{E}_T^\mathrm{miss}=(E_x^\mathrm{miss}, E_y^\mathrm{miss})$$ and $$V$$ (the event's MET covariance), and unmeasured tau decay parameters $$\vec{a}$$, the likelihood of the di-tau invariant mass being $$m_{test}$$ is 
+One such approach is the original SVfit algorithm ("Classic SVfit") [^3], named because its authors originally sought to include secondary vertex information corresponding to the di-tau decay position. In essence, SVfit is a dynamical likelihood minimization (jargon for "performed on an event-by-event basis") that incorporates relevant tau decay physics. Given a set of event data $$\mathcal{D}$$, which includes measured tau decay variables $$\vec{y} = ( E_\mathrm{vis}^{(1)},\vec{p}_\mathrm{vis}^{(1)}, E_\mathrm{vis}^{(2)},\vec{p}_\mathrm{vis}^{(2)})$$ and MET quantities $$\vec{E}_T^\mathrm{miss}=(E_x^\mathrm{miss}, E_y^\mathrm{miss})$$ and $$V$$ (the event's MET covariance), the likelihood of the di-tau invariant mass being $$m_{test}$$ is related to the unmeasured tau decay parameters $$\vec{a}$$:
 
 $$\begin{aligned}
 \mathcal{L}(m_\mathrm{test}\mid\vec{y}, \vec{E}_T^\mathrm{miss}, V) &= \int \mathcal{L}(m_\mathrm{test}\mid \vec{y},\vec{E}_T^\mathrm{miss},V,\vec{a}) \delta(m(\vec{y}, \vec{a})-m_\mathrm{test})d\vec{a}
 \end{aligned}$$
 
-Here, we're integrating over the unknown quantities $$\vec{a}$$; each value of $$\vec{a}$$ in the integrand produces an invariant mass $m(\vec{y}, \vec{a})$$ that must equal $$m_{test}$$, hence the delta function. The key here is that we're marginalizing over the variables parametrizing the invisible system, thereby finding the "most probable" di-tau decay configuration given a set of visible tau candidates and MET measurements. The integrand likelihood $$\mathcal{L}(m_\mathrm{test}\mid \vec{y}, \vec{E}_T^\mathrm{miss}, V, \vec{a})$$ is the product of several functions:
+Here, we're integrating over the unknown quantities $$\vec{a}$$; each value of $$\vec{a}$$ in the integrand produces an invariant mass $$m(\vec{y}, \vec{a})$$ that must equal $$m_{test}$$, hence the delta function. The key here is that we're marginalizing over the variables parametrizing the invisible system, thereby finding the "most probable" di-tau decay configuration given a set of visible tau candidates and MET measurements. The integrand likelihood $$\mathcal{L}(m_\mathrm{test}\mid \vec{y}, \vec{E}_T^\mathrm{miss}, V, \vec{a})$$ is the product of several functions:
 
 - The likelihoods of each tau's decay mode, which are taken to be proportional to the differential branching ratio, parametrized by the undetermined variables, for each tau decay,
 $$\begin{aligned}
