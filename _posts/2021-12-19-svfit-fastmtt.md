@@ -135,14 +135,16 @@ $$\begin{aligned}
 
 Here, we're integrating over the unknown quantities $$\vec{a}$$; each value of $$\vec{a}$$ in the integrand produces an invariant mass $$m(\vec{y}, \vec{a})$$ that must equal $$m_{test}$$, hence the delta function. The key here is that we're marginalizing over the variables parametrizing the invisible system, thereby finding the "most probable" di-tau decay configuration given a set of visible tau candidates and MET measurements. The integrand likelihood $$\mathcal{L}(m_\mathrm{test}\mid \vec{y}, \vec{E}_T^\mathrm{miss}, V, \vec{a})$$ is the product of several functions:
 
-* The likelihoods of each tau's decay mode, which are taken to be proportional to the differential branching ratio, parametrized by the undetermined variables, for each tau decay,
+* The likelihoods of each tau's decay mode, which are taken to be proportional to the differential branching ratio, parametrized by the undetermined variables, for each tau decay,  
+
 $$\begin{aligned}
     \mathcal{L}(\tau\rightarrow l\nu_l\nu_\tau) &\propto \frac{d\Gamma}{dx\ d\phi\ dm_{\nu\nu}} = \frac{m_{\nu\nu}}{4m_\tau^2}\big((m_{\tau}^2+2m_{\nu\nu}^2)(m_\tau^2-m_{\nu\nu}^2) \big)\\
     \mathcal{L}(\tau\rightarrow \tau_h\nu_\tau) &\propto\frac{d\Gamma}{dx\ d\phi}=\frac{1}{2\pi}\bigg(\frac{1}{1-(\frac{m_\mathrm{vis}}{m_\tau})^2}\bigg)
-\end{aligned}$$
+\end{aligned}$$  
+
 It's important to note that the kinematics of each tau decay are constrained. Recall that $$x=E_\mathrm{vis}/E_\tau$$. In leptonic tau decays, $$0<x<1$$, meaning the visible system may inherit any fraction of the original tau energy. However, in hadronic tau decays, $$(\frac{m_\mathrm{vis}}{m_\tau})^2<x<1$$ due to the denominator of $$\frac{d\Gamma}{dx\ d\phi}$$.  
 
-* The *MET Transfer Function* $$\mathcal{L}(\vec{E}_T^\mathrm{miss}\vert V, \vec{a})$$, describing the likelihood of an invisible system $$\vec{a}$$ producing a set of measured MET quantities $$\vec{E}_T^\mathrm{miss}$$. The key assumption here is that the tau decay neutrinos are the *only* source of MET in a given event. Given $$\vec{a}$$, we have a full description of the di-tau invisible system, including the exact MET it produces; let's call this value $$\vec{e}_T = (e_x,e_y)$$. In this case, the measured MET quantities $$\vec{E}_T^\mathrm{miss}=(E_x^\mathrm{miss}, E_y^\mathrm{miss})$$ should match $$e_x$$ and $$e_y$$ up to detector resolution. Assuming a Gaussian detector resolution, we take $$\mathcal{L}(\vec{E}_T^\mathrm{miss}\vert V, \vec{a})$$ to be the Gaussian likelihood of measuring residuals $$\vec{\epsilon}=\vec{E}_T^\mathrm{miss}-\vec{e}_T$$:
+* The *MET Transfer Function* $$\mathcal{L}(\vec{E}_T^\mathrm{miss}\vert V, \vec{a})$$, describing the likelihood of an invisible system $$\vec{a}$$ producing a set of measured MET quantities $$\vec{E}_T^\mathrm{miss}$$. The key assumption here is that the tau decay neutrinos are the *only* source of MET in a given event. Given $$\vec{a}$$, we have a full description of the di-tau invisible system, including the exact MET it produces; let's call this value $$\vec{e}_T = (e_x,e_y)$$. In this case, the measured MET quantities $$\vec{E}_T^\mathrm{miss}=(E_x^\mathrm{miss}, E_y^\mathrm{miss})$$ should match $$e_x$$ and $$e_y$$ up to detector resolution. Assuming a Gaussian detector resolution, we take $$\mathcal{L}(\vec{E}_T^\mathrm{miss}\vert V, \vec{a})$$ to be the Gaussian likelihood of measuring residuals $$\vec{\epsilon}=\vec{E}_T^\mathrm{miss}-\vec{e}_T$$:  
 
 $$\mathcal{L}(\vec{E}_T^\mathrm{miss}\vert V, \vec{a}) = \frac{1}{2\pi\sqrt{\vert V\vert}}\exp\bigg(-\frac{1}{2}(\vec{\epsilon})^T \big(V^{-1}\big) (\vec{\epsilon})\bigg)$$
 
