@@ -1,7 +1,7 @@
 basic_settings:
   site_title: Gage's Journal
   site_tagline: Physics, machine learning, music, etc. - random inspiration captured in beautiful markdown.  
-  favicon_image: /images/purple_cms_outline.pdf
+  favicon_image: /images/purple_cms_outline.png
 
 header_settings:
   logo_image: 
