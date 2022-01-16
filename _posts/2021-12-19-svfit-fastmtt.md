@@ -78,10 +78,10 @@ Unfortunately, we don't measure the components of $$\vec{a}$$ directly in LHC de
 
 $$m_{\tau_1\tau_2}^\mathrm{vis} = \sqrt{(p_\mathrm{vis}^{(1)} + p_\mathrm{vis}^{(2)})\cdot(p_\mathrm{vis}^{(1)} + p_\mathrm{vis}^{(2)})} < m_{\tau_1\tau_2}$$
 
-<br /><br/>
+<br /><br/><br /><br />
 ![](/images/physics_diagrams/ditau_decay_parametrization.png)
 *image caption*
-<br /><br />
+<br /><br /><br /><br />
 
 ## MET Constraints on Invisible Systems
 All is not lost - because momentum is conserved in the transverse plane in collider events, the total transverse momentum imbalance in an event 
@@ -120,9 +120,9 @@ $$\begin{aligned}
 
 Events with significant MET signal the presence of unmeasured particles like the neutrinos produced in tau decays. It should be possible to leverage MET information to constrain the invisible systems produced by tau decays; this observation forms the basis of several algorithms designed to correct the di-tau mass spectrum. 
 
-<br /><br />
+<br /><br /><br /><br />
 ![](/images/physics_diagrams/svfit_inputs.png)
-<br /><br />
+<br /><br /><br /><br />
 
 ## Correcting the Di-Tau Mass Spectrum
 
