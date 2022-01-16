@@ -164,7 +164,7 @@ $$\begin{aligned}
     p_{\tau_i} &= (E_{\tau_i}, \vec{p}_{\tau_i}) \\ &\approx (\frac{E_\mathrm{vis}^{(i)}}{x_i}, \frac{\vec{p}_\mathrm{vis}^{(i)}}{x_i}) = \frac{1}{x_i}p_\mathrm{vis}^{(i)}
 \end{aligned}$$
 
-Basically, these simplifications mean that if we scan over values of $$(x^{(1)}, x^{(2)})$$, then the predicted four-vectors for each tau are $$p_{\tau_1}=p_\mathrm{vis}^{(1)}/x^{(1)}$$ and $$p_{\tau_2}=p_\mathrm{vis}^{(2)}/x^{(2)}$$, so the invisible system we're predicting is $$p_{inv} = (p_{\tau_1} + p_{\tau_2}) - (p_\mathrm{vis}^{(1)}+p_\mathrm{vis}^{(2)})$$. Since each $$(x^{(1)}, x^{(2)})$$ point specifies a test mass $$m_\mathrm{test}$$ via the collinear approximation, all we need to do is calculate the MET transfer likelihood of measuring $$\vec{E}_T^\mathrm{miss}$$ given $$p_\mathrm{inv}$$ and $V$, 
+Basically, these simplifications mean that if we scan over values of $$(x^{(1)}, x^{(2)})$$, then the predicted four-vectors for each tau are $$p_{\tau_1}=p_\mathrm{vis}^{(1)}/x^{(1)}$$ and $$p_{\tau_2}=p_\mathrm{vis}^{(2)}/x^{(2)}$$, so the invisible system we're predicting is $$p_{inv} = (p_{\tau_1} + p_{\tau_2}) - (p_\mathrm{vis}^{(1)}+p_\mathrm{vis}^{(2)})$$. Since each $$(x^{(1)}, x^{(2)})$$ point specifies a test mass $$m_\mathrm{test}$$ via the collinear approximation, all we need to do is calculate the MET transfer likelihood of measuring $$\vec{E}_T^\mathrm{miss}$$ given $$p_\mathrm{inv}$$ and $$V$$, 
 
 $$\begin{aligned}
     &\mathcal{L}(\vec{E}_T^\mathrm{miss}\mid p_\mathrm{inv}, V) = \frac{1}{2\pi\sqrt{\vert V\vert}}(\vec{\epsilon})^T\big(V\big)^{-1}(\vec{\epsilon})\\
@@ -177,16 +177,14 @@ $$\begin{aligned}
     \mathcal{L}(m_\mathrm{test}\mid\mathcal{D}) &= \mathcal{L}(\vec{E}_T^\mathrm{miss}\mid p_\mathrm{inv}, V)\int\delta(\frac{m^\mathrm{vis}_{\tau_1\tau_2}}{\sqrt{x^{(1)}x^{(2)}}} -m_\mathrm{test})d\vec{a}
 \end{aligned}$$
 
-Fortunately, the integral above (call it $$\mathcal{V}$$ since it's a phase space volume) can be calculated analytically for each di-tau decay configuration [^4], yielding $$\mathcal{V}_{\tau_h\tau_h}$$ for fully-hadronic di-tau decays, $$\mathcal{V}_{\tau_l\tau_h}$$ for semi-leptonic di-tau decays, and $$\mathcal{V}_{\tau_l\tau_l}$$ for fully-leptonic di-tau decays. These volumes tell us how much phase space is available for a given test mass. FastMtt scans over $$(x^{(1)}, x^{(2)})$$ space in a grid of $100\times100$ points covering the range $$[0,1]\times[0,1]$$. The algorithm also includes artificial regularization of the form $$m_{\tau_1\tau_2}^{-\kappa}$$. Despite its simplifying assumptions, FastMtt's physics performance is comparable to SVfit's. Notably, though, FastMtt is $$~100\times$$ faster than SVfit. 
+Fortunately, the integral above (call it $$\mathcal{V}$$ since it's a phase space volume) can be calculated analytically for each di-tau decay configuration [^4], yielding $$\mathcal{V}_{\tau_h\tau_h}$$ for fully-hadronic di-tau decays, $$\mathcal{V}_{\tau_l\tau_h}$$ for semi-leptonic di-tau decays, and $$\mathcal{V}_{\tau_l\tau_l}$$ for fully-leptonic di-tau decays. These volumes tell us how much phase space is available for a given test mass. FastMtt scans over $$(x^{(1)}, x^{(2)})$$ space in a grid of $$100\times100$$ points covering the range $$[0,1]\times[0,1]$$. The algorithm also includes artificial regularization of the form $$m_{\tau_1\tau_2}^{-\kappa}$$. Despite its simplifying assumptions, FastMtt's physics performance is comparable to SVfit's. Notably, though, FastMtt is $$~100\times$$ faster than SVfit. 
 
 [^1]: [PDG Higgs Status Report](https://pdg.lbl.gov/2019/reviews/rpp2018-rev-higgs-boson.pdf)
 [^2]: [PDG Tau Properties Table](https://pdglive.lbl.gov/Particle.action?node=S035)
 [^3]: [Classic SVfit Algorithm](https://inspirehep.net/files/ff3326a782d43e44e94733a065eb9c31)
 [^4]: FastMTT Algorithm: CMS AN-19-032 (available to CERN users)
 [^5]: [Missing transverse energy performance of the CMS detector](https://arxiv.org/pdf/1106.5048.pdf)
-[^6]: In the collinear approximation, we assume that each tau is energetic enough to be considered massless (i.e. $$E_{\tau_i}\approx \vert\vec{p}_{\tau_i}\vert$$) and each tau's decay products are collinear with the original tau direction (i.e. $$\vec{p}_{\tau_i}\ \vert\vert\ \vec{p}_\mathrm{vis}^{(i)}$$). Then, $$m_{\tau_1\tau_2}$$ is related to $$m^\mathrm{vis}_{\tau_1\tau_2}$$ through the variables $$x^{(1)}=E_\mathrm{vis}^{(1)}/E_{\tau_1}$$ and $$x^{(2)}=E_\mathrm{vis}^{(2)}/E_{\tau_2}$$ as follows:
-
-$$\begin{aligned}
+[^6]: In the collinear approximation, we assume that each tau is energetic enough to be considered massless (i.e. $$E_{\tau_i}\approx \vert\vec{p}_{\tau_i}\vert$$) and each tau's decay products are collinear with the original tau direction (i.e. $$\vec{p}_{\tau_i}\ \vert\vert\ \vec{p}_\mathrm{vis}^{(i)}$$). Then, $$m_{\tau_1\tau_2}$$ is related to $$m^\mathrm{vis}_{\tau_1\tau_2}$$ through the variables $$x^{(1)}=E_\mathrm{vis}^{(1)}/E_{\tau_1}$$ and $$x^{(2)}=E_\mathrm{vis}^{(2)}/E_{\tau_2}$$ as follows: $$\begin{aligned}
     m_{\tau_1\tau_2}^2 &= (p_{\tau_1} + p_{\tau_2})^2 = (E_{\tau_1} + E_{\tau_2})^2 - (\vec{p}_{\tau_1} + \vec{p}_{\tau_2})^2\\
     &\approx 2E_{\tau_1}E_{\tau_2} - 2\vec{p}_{\tau_1}\cdot\vec{p}_{\tau_2}\\
     &= 2\frac{E_\mathrm{vis}^{(1)}E_\mathrm{vis}^{(2)}}{x^{(1)}x^{(2)}}\big(1-\cos\theta \big)\\
