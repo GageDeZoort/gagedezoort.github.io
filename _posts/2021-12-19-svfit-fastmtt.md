@@ -43,12 +43,12 @@ Detector measurements give us $$p_\mathrm{vis}$$ but do not provide enough infor
 - $$\theta_\mathrm{GJ}$$, the Gottfried-Jackson angle, describing the opening angle between $$\vec{p}_\mathrm{vis}$$ and $$\vec{p}_\tau$$
 - $$\phi$$, the angle of $$\vec{p}_\tau$$ around a cone centered on $$\vec{p}_\mathrm{vis}$$ and with opening angle $$\theta_\mathrm{GJ}$$
 
-A quick calculation shows that $$\theta_\mathrm{GJ}$$ is redundent, as it can be computed from visible quantities, $$x$$ and $$m_{\nu\nu}$$[^3]. That said, in addition to four measured quantities ($$E_\mathrm{vis}, \vec{p}_\mathrm{vis}$$), leptonic tau decays are specified by three additional parameters ($$x$$, $$m_{\nu\nu}$$, and $$\phi$$) and hadronic tau decays by two ($$x$$ and $$\phi$$). 
+A quick calculation shows that $$\theta_\mathrm{GJ}$$ is redundent, as it can be computed from visible quantities, $$x$$ and $$m_{\nu\nu}$$[^3]. That said, in addition to four measured quantities ($$E_\mathrm{vis}, \vec{p}_\mathrm{vis}$$), leptonic tau decays are specified by three additional parameters ($$x$$, $$m_{\nu\nu}$$, and $$\phi$$) and hadronic tau decays by two ($$x$$ and $$\phi$$).  
 
-<br /><br />
+<br><br>
 ![tau-decay-parametrization](/images/physics_diagrams/tau_decay_parametrization.png)
 <img src="/images/physics_diagrams/tau_decay_parametrization.png" alt="tau-decay-parametrization" width="50%"/>
-<br /><br />
+<br><br>
 
 ## Di-Tau Systems
 A system of two taus is usually called a *di-tau* ($$\tau_1\tau_2$$) system.  Di-tau kinematics are determined by the individual decays of each tau; the full set of possibilities is listed in Table 3. In many cases, analyses target di-tau final states to measure a parent particle producing the taus, for example the Higgs boson. The parent would appear as a peak in the distribution of di-tau invariant mass, given by
@@ -76,12 +76,12 @@ Since the visible quantities $$p_\mathrm{vis}^{(1)}=(E_\mathrm{vis}^{(1)},\vec{p
 
 Unfortunately, we don't measure the components of $$\vec{a}$$ directly in LHC detectors. Therefore, the visible di-tau mass typically undershoots its true value:
 
-$$m_{\tau_1\tau_2}^\mathrm{vis} = \sqrt{(p_\mathrm{vis}^{(1)} + p_\mathrm{vis}^{(2)})\cdot(p_\mathrm{vis}^{(1)} + p_\mathrm{vis}^{(2)})} < m_{\tau_1\tau_2}$$
+$$m_{\tau_1\tau_2}^\mathrm{vis} = \sqrt{(p_\mathrm{vis}^{(1)} + p_\mathrm{vis}^{(2)})\cdot(p_\mathrm{vis}^{(1)} + p_\mathrm{vis}^{(2)})} < m_{\tau_1\tau_2}$$  
 
-<br /><br/><br /><br />
+<br><br><br><br>
 ![](/images/physics_diagrams/ditau_decay_parametrization.png)
 *image caption*
-<br /><br /><br /><br />
+<br><br><br><br>
 
 ## MET Constraints on Invisible Systems
 All is not lost - because momentum is conserved in the transverse plane in collider events, the total transverse momentum imbalance in an event 
@@ -118,11 +118,11 @@ $$\begin{aligned}
     &= (\vec{E}_T^\mathrm{meas})^T\bigg(\sum_{i=1}^{n_\mathrm{meas}}V_i\bigg)^{-1}(\vec{E}_T^\mathrm{meas})
 \end{aligned}$$
 
-Events with significant MET signal the presence of unmeasured particles like the neutrinos produced in tau decays. It should be possible to leverage MET information to constrain the invisible systems produced by tau decays; this observation forms the basis of several algorithms designed to correct the di-tau mass spectrum. 
+Events with significant MET signal the presence of unmeasured particles like the neutrinos produced in tau decays. It should be possible to leverage MET information to constrain the invisible systems produced by tau decays; this observation forms the basis of several algorithms designed to correct the di-tau mass spectrum.  
 
-<br /><br /><br /><br />
+<br><br><br><br>
 ![](/images/physics_diagrams/svfit_inputs.png)
-<br /><br /><br /><br />
+<br><br><br><br>
 
 ## Correcting the Di-Tau Mass Spectrum
 
@@ -184,7 +184,7 @@ Fortunately, the integral above (call it $$\mathcal{V}$$ since it's a phase spac
 [^3]: [Classic SVfit Algorithm](https://inspirehep.net/files/ff3326a782d43e44e94733a065eb9c31)
 [^4]: FastMTT Algorithm: CMS AN-19-032 (available to CERN users)
 [^5]: [Missing transverse energy performance of the CMS detector](https://arxiv.org/pdf/1106.5048.pdf)
-[^6]: In the collinear approximation, we assume that each tau is energetic enough to be considered massless (i.e. $$E_{\tau_i}\approx \vert\vec{p}_{\tau_i}\vert$$) and each tau's decay products are collinear with the original tau direction (i.e. $$\vec{p}_{\tau_i}\ \vert\vert\ \vec{p}_\mathrm{vis}^{(i)}$$). Then, $$m_{\tau_1\tau_2}$$ is related to $$m^\mathrm{vis}_{\tau_1\tau_2}$$ through the variables $$x^{(1)}=E_\mathrm{vis}^{(1)}/E_{\tau_1}$$ and $$x^{(2)}=E_\mathrm{vis}^{(2)}/E_{\tau_2}$$ as follows: <br /> $$\begin{aligned}
+[^6]: In the collinear approximation, we assume that each tau is energetic enough to be considered massless (i.e. $$E_{\tau_i}\approx \vert\vec{p}_{\tau_i}\vert$$) and each tau's decay products are collinear with the original tau direction (i.e. $$\vec{p}_{\tau_i}\ \vert\vert\ \vec{p}_\mathrm{vis}^{(i)}$$). Then, $$m_{\tau_1\tau_2}$$ is related to $$m^\mathrm{vis}_{\tau_1\tau_2}$$ through the variables $$x^{(1)}=E_\mathrm{vis}^{(1)}/E_{\tau_1}$$ and $$x^{(2)}=E_\mathrm{vis}^{(2)}/E_{\tau_2}$$ as follows: <br><br> $$\begin{aligned}
     m_{\tau_1\tau_2}^2 &= (p_{\tau_1} + p_{\tau_2})^2 = (E_{\tau_1} + E_{\tau_2})^2 - (\vec{p}_{\tau_1} + \vec{p}_{\tau_2})^2\\
     &\approx 2E_{\tau_1}E_{\tau_2} - 2\vec{p}_{\tau_1}\cdot\vec{p}_{\tau_2}\\
     &= 2\frac{E_\mathrm{vis}^{(1)}E_\mathrm{vis}^{(2)}}{x^{(1)}x^{(2)}}\big(1-\cos\theta \big)\\
