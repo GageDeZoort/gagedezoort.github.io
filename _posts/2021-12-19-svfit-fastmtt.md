@@ -90,7 +90,7 @@ $$\begin{aligned}
 \vec{E}_T^\mathrm{miss} &= (E_x^\mathrm{miss}, E_y^\mathrm{miss}) = -\vec{E}_T^\mathrm{meas} = -\sum_{i=1}^{n_\mathrm{meas}} \vec{E}_T^{(i)} 
 \end{aligned}$$
 
-gives some indication of the invisible kinematics at play.  Here $$i$$ indexes every measured object in an event (for these purposes, particles reconstructed by the Particle Flow algorithm), and $$\vec{E}_T^\mathrm{miss}$$ is known as "missing $$E_T$$", or MET. I mentioned above the transverse *momentum*  imbalance - this is what we measure in the detector - but if we assume all invisible particles were massless, we can equate the missing transverse momentum with MET. Usually, we measure $$\vert\vec{E}_T^\mathrm{miss}\vert = -\vert\sum_{i=1}^{n_\mathrm{meas}} p_T^{(i)}\vert$$ and the polar angle of the MET, $$\phi_{MET}$$, to reconstruct the $$x$$ and $$y$$ MET components: 
+gives some indication of the invisible kinematics at play.  Here $$i$$ indexes every measured object in an event (for these purposes, particles reconstructed by the Particle Flow algorithm), and $$\vec{E}_T^\mathrm{miss}$$ is known as "missing $$E_T$$", or MET. I mentioned above the transverse *momentum*  imbalance - this is what we measure in the detector - but if we assume all invisible particles were massless, we can equate the missing transverse momentum with MET. Usually, we measure $$\vert\vec{E}_T^\mathrm{miss}\vert = -\vert\sum_{i=1}^{n_\mathrm{meas}} \vec{p}_T^{(i)}\vert$$ and the polar angle of the MET, $$\phi_{MET}$$, to reconstruct the $$x$$ and $$y$$ MET components: 
 
 $$\begin{aligned}
     E_x^\mathrm{miss} &= \vert\vec{E}_T^\mathrm{miss}\vert\cos{\phi_{E_T^\mathrm{miss}}}\\
