@@ -1,6 +1,6 @@
 ---
 title: 'Correcting the Di-Tau Mass Spectrum'
-date: 2021-12-19 20:56:00
+date: 
 featured_image: '/images/higgs_to_tautau.png'
 excerpt: Higgs boson decays to tau leptons are critical to understanding how the Higgs boson interacts with fermionic matter. However, taus are difficult to measure because they produce neutrinos, which are invisible to particle detectors at the Large Hadron Collider, when they decay. This post focuses on one key strategy used to infer the kinetmatics of tau decays given a set of incomplete measurements. 
 katex: yes
