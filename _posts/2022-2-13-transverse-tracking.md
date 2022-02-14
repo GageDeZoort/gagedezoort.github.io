@@ -1,7 +1,7 @@
 ---
 title: 'Transverse Track Fitting in Conformal Space'
 date: 2022-2-13 
-featured_image: '/images/higgs_to_tautau.png'
+featured_image: '/images/conformal_tracking/track_fit_uv_side-by-side.jpg'
 excerpt: 
 katex: yes
 ---
