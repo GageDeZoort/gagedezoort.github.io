@@ -1,7 +1,7 @@
 ---
 title: 'Transverse Track Fitting in Conformal Space'
 date: 2022-2-13 
-featured_image: '/images/conformal_tracking/xy_uv_title.jpg'
+featured_image: '/images/conformal_tracking/xy_uv_title.png'
 excerpt: The goal of this post is to discuss two strategies for measuring the transverse momentum $$p_T$$ and transverse impact parameter $$d_0$$ of a charged particle track. The first method is the traditional strategy of fitting circles to the track's hit coordinates in $$(x,y)$$ space. The second method is conformal track fitting, wherein prompt (displaced) tracks are mapped to lines (quadratics) in a conformal space. The post is supplemented by simple measurements and visuals of tracks belonging to the TrackML dataset. 
 katex: yes
 ---
