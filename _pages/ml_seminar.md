@@ -1,5 +1,5 @@
 ---
-permalink: /about
+permalink: /ml-seminar
 layout: page
 title: ML Seminar
 ---
