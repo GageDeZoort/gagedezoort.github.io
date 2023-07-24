@@ -2,7 +2,7 @@
 permalink: /
 layout: home
 title: 
-list_title: My blog posts
+list_title: 
 ---
 
 <img src="./assets/imgs/screenshot.png" width="400px">

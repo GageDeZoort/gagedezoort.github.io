@@ -1,7 +1,9 @@
 ---
 permalink: /cv
 layout: page
-title: Curriculum Vitae
+title: CV
 ---
 
-Please find the latest draft of the CV available [here](.assets/dezoort_cv.pdf).
+Please find the latest draft of the CV attached to this page.
+
+<a href=".assets/dezoort_cv.pdf" download>dezoort_cv.pdf</a>
