@@ -1,15 +1,17 @@
-title: My blog
-description: My very nice blog
-author: "Jorge Sanz"
+title: Gage DeZoort
+description: My personal website.  
+author: "GageDeZoort"
 
 theme: minima
 
-base_url: /gh-pages-minima-starter
+domain: gagedezoort.github.io
+url: https://gagedezoort.github.io
+base_url: /gagedezoort.github.io/
 
 # Minima social links
-twitter_username: xurxosanz
-github_username: jsanz
-linkedin_username: jsanz
+twitter_username: gdezoort
+github_username: gagedezoort
+linkedin_username: gagedezoort
 rss: rss
 
 # Minima: show excerpts in the frontpage

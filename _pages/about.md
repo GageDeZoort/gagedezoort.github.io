@@ -1,9 +1,8 @@
 ---
 permalink: /about
 layout: page
-title: About me
+title: About Me
 ---
 
-More details about me on this page with links to my social media profiles and so on.
-
+I'm an incoming postdoc in the Princeton Physics and ORFE departments. My research is focused on the overlap between ML and physics, in particular studying principles for ML initialization and architecture selection with applications to the physical sciences. 
 ![](https://www.jorgesanz.net/assets/imgs/me/jsanz_small4.png)
