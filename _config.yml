@@ -23,6 +23,7 @@ minima:
 header_pages:
   - _pages/frontpage.md
   - _pages/cv.md
+  - _pages/papers.md
   - _pages/ml_seminar.md
 
 include:
@@ -35,3 +36,4 @@ exclude:
     - Gemfile.lock
     - LICENSE
     - README.md
+    - _posts
