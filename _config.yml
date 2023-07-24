@@ -1,6 +1,6 @@
 title: Gage DeZoort
-description: My personal website.  
-author: "GageDeZoort"
+description: Please feel free to contact me at jdezoort@princeton.edu.
+author: "Gage DeZoort"
 
 theme: minima
 
@@ -12,7 +12,6 @@ base_url: /gagedezoort.github.io/
 twitter_username: gdezoort
 github_username: gagedezoort
 linkedin_username: gagedezoort
-rss: rss
 
 # Minima: show excerpts in the frontpage
 show_excerpts: true

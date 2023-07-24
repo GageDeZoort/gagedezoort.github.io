@@ -1,23 +1,14 @@
 ---
 permalink: /
 layout: home
-title: Welcome
+title: 
 list_title: My blog posts
 ---
 
-This is a template and some instructions for running Github Pages with the [`minima` theme][minima]. This repo has what I consider the minimum pieces for a personal blog using [Jekyll][jk] and [Github Pages][gh-site].
-
-Check out the excellent [`minima` theme][minima] documentation for further details and customization and the [official docs][gh] for more details on how Github Pages work.
-
-Do you have questions? feel free to [open an issue](https://github.com/jsanz/gh-pages-minima-starter/issues/new/choose) or reach me from my [contact form](https://www.jorgesanz.net/contact/).
-
 <img src="./assets/imgs/screenshot.png" width="400px">
 
-For more details about how this example site works checkout [the github project](https://github.com/jsanz/gh-pages-minima-starter). Do you have questions? feel free to [open an issue](https://github.com/jsanz/gh-pages-minima-starter/issues/new/choose) or reach me from this [contact form](https://www.jorgesanz.net/contact/).
+Welcome to my research page! My name is Gage DeZoort and I'm an incoming postdoc in the Princeton University Physics and ORFE departments. I'm interested in developing principles for machine learning initialization / architecture selection and applying them to physics tasks. My background is in high energy physics, specifically searches for new physics and applications of graph neural networks to charged particle tracking. As a postdoc, my goal is to study ML principles and collaborate with scientists seeking to apply them.
 
-Have a great day!!
+If any of this sounds interesting, I'd love to hear from you. Please feel free to contact me at jdezoort@princeton.edu. 
 
-[gh-site]: https://pages.github.com/
-[minima]: https://github.com/jekyll/minima/tree/2.5-stable
-[jk]: https://jekyllrb.com/
-[gh]: https://help.github.com/en/github/working-with-github-pages`
+[gh-site]: https://github.com/GageDeZoort
