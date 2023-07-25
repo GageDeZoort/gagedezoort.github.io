@@ -1,7 +1,7 @@
 ---
 permalink: /cv
 layout: page
-title: ' '
+title:
 ---
 
 Please find the latest draft of my CV attached to this page.
