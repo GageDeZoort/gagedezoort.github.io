@@ -5,7 +5,7 @@ title:
 list_title: ' '
 ---
 
-<img style="float: left;" src="./assets/gage_headshot.jpg" width="300px">
+<img style="float: left; margin-right: 30px;" src="./assets/gage_headshot.jpg" width="300px">
 
 Welcome to my research page! My name is Gage DeZoort and I'm an incoming postdoc in the Princeton University Physics and ORFE departments. I'm interested in developing principles for machine learning initialization / architecture selection and applying them to physics tasks.
 
