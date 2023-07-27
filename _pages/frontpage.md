@@ -9,7 +9,7 @@ list_title: ' '
 
 Welcome to my research page! My name is Gage and I'm an incoming postdoc in the Princeton University Physics and ORFE departments. I'm interested in developing principles for machine learning initialization / architecture selection and applying them to physics tasks.
 
-My background is in high energy physics, specifically searches for new physics and applications of graph neural networks to charged particle tracking. I've also worked GNN principles in collaboration with my soon-to-be postdoc advisor, [Boris Hanin](https://boris-hanin.github.io/). You can view a preprint of our recent article here: [arxiv:2306.11668](https://arxiv.org/abs/2306.11668). 
+My background is in high energy physics, specifically searches for new physics and applications of graph neural networks to charged particle tracking. I've also worked on GNN principles in collaboration with my soon-to-be postdoc advisor, [Boris Hanin](https://boris-hanin.github.io/). You can view a preprint of our recent article here: [arxiv:2306.11668](https://arxiv.org/abs/2306.11668). 
 
 The Princeton Physics and ORFE departments are hosting a *Machine Learning in Physics* seminar in the 2023-2024 academic year. The focus is on interdisciplinary work at the intersection of physics and ML, highlighting both ML with physics applications and physics aided by ML. We're preparing a fantastic lineup of speakers, so stay tuned! A link to the seminar details will be available shortly.
 
