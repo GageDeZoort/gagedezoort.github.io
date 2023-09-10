@@ -27,7 +27,6 @@ header_pages:
 
 include:
     - _pages
-    - _includes/head.html
     
 exclude: 
     - .gitignore
