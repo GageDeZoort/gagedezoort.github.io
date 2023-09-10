@@ -27,6 +27,7 @@ header_pages:
 
 include:
     - _pages
+    - _pages/google24f6fa54d5562e9c.html
 
 exclude: 
     - .gitignore
