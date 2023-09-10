@@ -24,6 +24,7 @@ header_pages:
   - _pages/frontpage.md
   - _pages/cv.md
   - _pages/papers.md
+  - _includes/google24f6fa54d5562e9c.html
 
 include:
     - _pages
