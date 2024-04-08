@@ -15,11 +15,11 @@ Outside of research, I've organized a *Machine Learning in Physics* seminar for 
 
 Here's what I've been up to this academic year:
 
-# <span style="color:blue">12-6-23</span> Posted [proceedings](https://arxiv.org/abs/2312.03823) describing our updated object condensation pipeline, including learned graph construction and no explicit edge classification. Joint work with Kilian Lieret. 
+<span style="color:blue">12-6-23</span> Posted [proceedings](https://arxiv.org/abs/2312.03823) describing our updated object condensation pipeline, including learned graph construction and no explicit edge classification. Joint work with Kilian Lieret. 
 
-#<span style="color:blue">9-28-23</span>: Posted [proceedings](https://inspirehep.net/literature/2704922) from CHEP 2023 describing our object condensation-based particle tracking pipeline, which extended traditional edge classification methods with a downstream learned clustering stage. Joint work with Kilian Lieret.  
+<span style="color:blue">9-28-23</span>: Posted [proceedings](https://inspirehep.net/literature/2704922) from CHEP 2023 describing our object condensation-based particle tracking pipeline, which extended traditional edge classification methods with a downstream learned clustering stage. Joint work with Kilian Lieret.  
 
-#<span style="color:blue">8-30-23</span>: Successfully defended my Ph.D. thesis, [Search for a Pseudoscalar Higgs Boson](https://www.proquest.com/docview/2869914994).
+<span style="color:blue">8-30-23</span>: Successfully defended my Ph.D. thesis, [Search for a Pseudoscalar Higgs Boson](https://www.proquest.com/docview/2869914994).
 
 If any of this sounds interesting, I'd love to hear from you! Please feel free to contact me at jdezoort@princeton.edu. 
 
