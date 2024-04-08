@@ -5,7 +5,7 @@ title:
 list_title: ' '
 ---
 
-<img style="float: left; margin-right: 30px;" src="./assets/gage_headshot.jpg" width="300px">
+<img style="float: left; margin-right: 20px;" src="./assets/gage_headshot.jpg" width="200px">
 
 Welcome to my research page! My name is Gage and I'm a postdoc in the Princeton University Physics and ORFE departments, working with Boris Hanin and Dan Marlow. I'm interested in developing principles for machine learning initialization / architecture selection and applying them to physics tasks. Specifically, I am interested in generating principles for building robust and easily-trainable equivariant models and applying them to downstream scientific applications.  
 
