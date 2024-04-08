@@ -17,6 +17,8 @@ Here's what I've been up to recently:
 
 <span style="color:blue">[12-6-23]</span> Posted [proceedings](https://arxiv.org/abs/2312.03823) from CTD 2023 describing our updated object condensation pipeline, including learned graph construction and no explicit edge classification. Joint work with Kilian Lieret. 
 
+<span style="color:blue">[10-30-23]</span> Taught a Princeton Research Computing workshop called *Graph Neural Networks for Your Research*. The Jupyter notebook and slides are available in my [prc_gnn_tutorial repo](https://github.com/GageDeZoort/prc_gnn_tutorial). 
+
 <span style="color:blue">[10-28-23]</span> Co-taught an eSTEAM event at Princeton Middle School focused on introducing artificial intellegence. This event was organized by the lovely folks at Princeton Research Computing. 
 
 <span style="color:blue">[9-28-23]</span>: Posted [proceedings](https://inspirehep.net/literature/2704922) from CHEP 2023 describing our object condensation-based particle tracking pipeline, which extended traditional edge classification methods with a downstream learned clustering stage. Joint work with Kilian Lieret.  
