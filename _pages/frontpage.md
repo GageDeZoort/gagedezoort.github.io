@@ -27,7 +27,7 @@ Here's what I've been up to recently:
 
 <span style="color:blue">[6-20-23]</span>: Posted a preprint of [Principles for Initialization and Architecture Selection in Graph Neural Networks with ReLU Activations](https://arxiv.org/abs/2306.11668) to arXiv. Provides concrete principles (with both rigorous proofs and experimental validation) for initializing GNNs and mitigating oversmoothing. Paper has been submitted and is currently under review. Joint work with Boris Hanin. 
 
-<span style="color:blue">[4-17-23]</sparse>: Our Nature Reviews Physics article on [Graph Neural Networks at the LHC](https://www.nature.com/articles/s42254-023-00569-0) was posted published. A lot of detailed work (and meticulous use of InkScape) went into this paper, which is designed to be accessible to non-LHC researchers. Fun fact: the [cover art](https://twitter.com/NatRevPhys/status/1655922280692580353) of the May 2023 Nature Reviews Physics journal was based on our article! Joint work with Catherine Biscarat, Jean-Roch Vlimant, and Peter Battaglia. 
+<span style="color:blue">[4-17-23]</span>: Our Nature Reviews Physics article on [Graph Neural Networks at the LHC](https://www.nature.com/articles/s42254-023-00569-0) was posted published. A lot of detailed work (and meticulous use of InkScape) went into this paper, which is designed to be accessible to non-LHC researchers. Fun fact: the [cover art](https://twitter.com/NatRevPhys/status/1655922280692580353) of the May 2023 Nature Reviews Physics journal was based on our article! Joint work with Catherine Biscarat, Jean-Roch Vlimant, and Peter Battaglia. 
 
 If any of this sounds interesting, I'd love to hear from you! Please feel free to contact me at jdezoort@princeton.edu. 
 
