@@ -5,12 +5,13 @@ title:
 list_title: ' '
 ---
 
-<img style="float: left; margin-right: 20px;" src="./assets/gage_headshot.jpg" width="200px">
+<img style="float: left; margin-right: 20px;" src="./assets/gage_headshot.jpg" width="220px">
 
 <span style="font-size:0.8em;">Welcome to my research page! My name is Gage and I'm a postdoc in the Princeton University Physics and ORFE departments, working with Boris Hanin and Dan Marlow. I'm interested in developing principles for machine learning initialization / architecture selection and applying them to physics tasks - for example, charged particle tracking and jet classification at the Large Hadron Collider and stellar stream identification in astronomical datasets. Outside of research, I love to teach, and serve as a lecturer in the Physics Department during some semesters. I also organize the *Machine Learning in Physics* seminar (running jointly in Physics and ORFE) along with Boris, Dan, Mariangela Lisanti, and Peter Elmer. The focus is on interdisciplinary work, both physics for ML and ML for physics. We've been lucky to host excellent speakers from a broad array of subfields; check out our [seminar webpage](https://ml.physics.princeton.edu) for more details.</span>
 
 <span style="font-size:0.8em;">Here's what I've been up to recently:</span>
 
+<span style="font-size:0.6em;">
 <span style="color:blue;font-size:0.6em;">[3-25-24]</span> Taught a Princeton Research Computing workshop called *Welcome to the Neural Network Zoo: A Survey of Architectures for Your Research*. The Jupyter notebooks and slides are available at my [neural-network-zoo repo](https://github.com/GageDeZoort/neural-network-zoo/tree/main).
 
 <span style="color:blue;font-size:0.6em;">[1-24]</span> Co-taught the *Introduction to Machine Learning* course, which took place over 5 days during the Princeton Wintersession. The full course is available at our [intro_machine_learning](https://github.com/PrincetonUniversity/intro_machine_learning/tree/main) Git repo; I taught during Days 4 and 5, which were respectively focused on a survey of deep learning architectures and a computer vision hackathon. 
@@ -29,7 +30,8 @@ list_title: ' '
 
 <span style="color:blue;font-size:0.6em;">[6-20-23]</span>: Posted a preprint of [*Principles for Initialization and Architecture Selection in Graph Neural Networks with ReLU Activations*](https://arxiv.org/abs/2306.11668) to arXiv. Provides concrete principles (with both rigorous proofs and experimental validation) for initializing GNNs and mitigating oversmoothing. Paper has been submitted and is currently under review. Joint work with Boris Hanin. 
 
-<span style="color:blue;font-size:0.6em;">[4-17-23]</span>: Published a Nature Reviews Physics article called [*Graph Neural Networks at the LHC*](https://www.nature.com/articles/s42254-023-00569-0). A lot of detailed work (and meticulous use of InkScape) went into this paper, which is designed to be accessible to non-LHC researchers. Fun fact: the [cover art](https://twitter.com/NatRevPhys/status/1655922280692580353) of the May 2023 Nature Reviews Physics journal was based on our article! Joint work with Catherine Biscarat, Jean-Roch Vlimant, and Peter Battaglia. 
+<span style="color:blue;font-size:0.6em;">[4-17-23]</span>: Published a Nature Reviews Physics article called [*Graph Neural Networks at the LHC*](https://www.nature.com/articles/s42254-023-00569-0). A lot of detailed work (and meticulous use of InkScape) went into this paper, which is designed to be accessible to non-LHC researchers. Fun fact: the [cover art](https://twitter.com/NatRevPhys/status/1655922280692580353) of the May 2023 Nature Reviews Physics journal was based on our article! Joint work with Catherine Biscarat, Jean-Roch Vlimant, and Peter Battaglia.
+</span>
 
 If any of this sounds interesting, I'd love to hear from you! Please feel free to contact me at jdezoort@princeton.edu. 
 
