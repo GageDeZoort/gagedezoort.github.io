@@ -18,7 +18,7 @@ show_excerpts: false
 
 minima:
   date_format: "%Y-%m-%d"
-  skim: solarized-light
+  skin: solarized-light
 
 # Minima: custom header links
 header_pages:
