@@ -5,8 +5,6 @@ title:
 list_title: ' '
 ---
 
-<img style="float: left; margin-right: 20px;" src="./assets/gage_headshot.jpg" width="200px">
-
 Welcome to my research page! My name is Gage and I'm a postdoc in the Princeton University Physics and ORFE departments, working with Boris Hanin and Dan Marlow. I'm interested in developing principles for machine learning initialization / architecture selection and applying them to physics tasks - for example, charged particle tracking and jet classification at the Large Hadron Collider and stellar stream identification in astronomical datasets. Outside of research, I love to teach, and serve as a lecturer in the Physics Department during some semesters. I also organize the *Machine Learning in Physics* seminar (running jointly in Physics and ORFE) along with Boris, Dan, Mariangela Lisanti, and Peter Elmer. The focus is on interdisciplinary work, both physics for ML and ML for physics. We've been lucky to host excellent speakers from a broad array of subfields; check out our [seminar webpage](https://ml.physics.princeton.edu) for more details.
 
 Here's what I've been up to recently:
