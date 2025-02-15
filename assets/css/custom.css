@@ -9,39 +9,23 @@ a:hover {
   color: #555555; /* Slightly lighter black for hover */
 }
 
-/* Override link color specifically within blog post content */
-.post-content a {
+/* Target homepage blog post titles */
+.archive__item-title a,
+.archive__item-title a:visited {
   color: #000000 !important; /* Force black links */
-  text-decoration: none;
-}
-
-.post-content a:hover {
-  color: #555555 !important; /* Slightly lighter black for hover */
-}
-
-/* Links in blog post previews (homepage, archives) */
-.archive__item-title a {
-  color: #000000 !important; /* Black links */
-  text-decoration: none;
+  text-decoration: none; /* Optional: Remove underlines */
 }
 
 .archive__item-title a:hover {
-  color: #555555 !important; /* Slightly lighter black on hover */
+  color: #555555 !important; /* Slightly lighter black for hover */
 }
 
-/* Links in excerpts or summaries */
-.archive__item-excerpt a {
+/* Target any other homepage links */
+.page__content a,
+.page__content a:visited {
   color: #000000 !important;
 }
 
-.archive__item-excerpt a:hover {
-  color: #555555 !important;
-}
-
-.archive__item-tags a {
-  color: #000000 !important;
-}
-
-.archive__item-tags a:hover {
+.page__content a:hover {
   color: #555555 !important;
 }
