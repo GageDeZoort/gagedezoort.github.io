@@ -9,3 +9,11 @@ a:hover {
   color: #555555; /* Slightly lighter black for hover */
 }
 
+/* Change blog links */
+.post-content a {
+  color: #000000;
+}
+
+.post-content a:hover {
+  color: #555555;
+}
