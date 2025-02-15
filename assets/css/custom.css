@@ -1,17 +1,9 @@
-/* Base Theme Colors */
+/* Colors */
 :root {
-  --primary-color: #4A90E2; /* Blue accent */
-  --secondary-color: #7A42F4; /* Purple accent */
+  --primary-color: #4A90E2; /* Blue */
+  --secondary-color: #7A42F4; /* Purple */
   --background-color: #ffffff; /* White */
   --text-color: #000000; /* Black */
-}
-
-/* Body Styling */
-body {
-  font-family: "Source Sans Pro", sans-serif; /* Add a clean sans-serif font */
-  background-color: var(--background-color);
-  color: var(--text-color);
-  line-height: 1.6;
 }
 
 /* Links */
@@ -24,11 +16,11 @@ a:hover {
   color: var(--secondary-color);
 }
 
-/* Headers */
-h1, h2, h3, h4, h5, h6 {
+/* Headers (only apply to Minimal Mistakes headers) */
+.page-title, .archive__item-title, h1, h2, h3 {
   color: var(--primary-color);
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
-  margin-top: 1.2rem;
 }
 
 /* Buttons */
