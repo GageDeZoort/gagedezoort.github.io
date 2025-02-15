@@ -37,3 +37,11 @@ a:hover {
 .archive__item-excerpt a:hover {
   color: #555555 !important;
 }
+
+.archive__item-tags a {
+  color: #000000 !important;
+}
+
+.archive__item-tags a:hover {
+  color: #555555 !important;
+}
