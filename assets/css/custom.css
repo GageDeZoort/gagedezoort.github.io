@@ -18,3 +18,22 @@ a:hover {
 .post-content a:hover {
   color: #555555 !important; /* Slightly lighter black for hover */
 }
+
+/* Links in blog post previews (homepage, archives) */
+.archive__item-title a {
+  color: #000000 !important; /* Black links */
+  text-decoration: none;
+}
+
+.archive__item-title a:hover {
+  color: #555555 !important; /* Slightly lighter black on hover */
+}
+
+/* Links in excerpts or summaries */
+.archive__item-excerpt a {
+  color: #000000 !important;
+}
+
+.archive__item-excerpt a:hover {
+  color: #555555 !important;
+}
