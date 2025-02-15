@@ -5,8 +5,8 @@ description: >- # this means to ignore newlines until "baseurl:"
 twitter_username: gdezoort
 github_username: gagedezoort
 minimal_mistakes_skin: "contrast"
-theme_color: "#4A90E2"
-theme_color_alt: "#7A42F4"
+# theme_color: "#4A90E2"
+# theme_color_alt: "#7A42F4"
 search: true
 
 # Build settings
