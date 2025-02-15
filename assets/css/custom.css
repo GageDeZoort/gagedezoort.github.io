@@ -1,0 +1,11 @@
+/* Change default link color to black */
+a {
+  color: #000000; /* Black */
+  text-decoration: none; /* Optional: Remove underlines */
+}
+
+/* Change link hover color */
+a:hover {
+  color: #555555; /* Slightly lighter black for hover */
+}
+
