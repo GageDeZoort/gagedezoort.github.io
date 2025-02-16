@@ -45,8 +45,19 @@ plugins:
 author:
   name   : "Gage DeZoort"
   avatar : "/assets/images/headshot.jpg"
-  bio    : "My name is Gage. I have a Ph.D. in particle physics and am now working at the intersection of ML and physics." 
+  bio    : >-
+    My name is Gage.
+    I have a Ph.D. in particle physics and am now working at the intersection of ML and physics.
+    In addition to my research, I am passionate about health/fitness, music (prog preferred),
+    reading (fantasy/sci-fi), and teaching.
+  location: "Princeton, NJ"
   links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:jdezoort@princeton.edu"
+    - label: "CV"
+      icon": "far fa-fw fa-file-pdf"
+      url: "/assets/dezoort_CV_winter2025.pdf"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/GageDeZoort"
@@ -56,9 +67,6 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/gagedezoort/"
-    - label: "Substack"
-      icon: "fa-solid fa-book"
-      url: "https://substack.com/@gagedezoort"
 
 footer:
   links:
