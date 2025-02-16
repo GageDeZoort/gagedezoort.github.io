@@ -113,3 +113,9 @@ tag_archive:
 assets:
   css:
     - /assets/css/custom.css
+
+analytics:
+  provider: "google"
+  google:
+    tracking_id: "G-QRVNXDMWV9"
+    anonymize_ip: true
