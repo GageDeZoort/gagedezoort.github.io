@@ -57,7 +57,7 @@ author:
       url: "mailto:jdezoort@princeton.edu"
     - label: "CV"
       icon": "far fa-fw fa-file-pdf"
-      url: "/assets/dezoort_CV_winter2025.pdf"
+      url: "/assets/dezoort-cv-winter2025.pdf"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/GageDeZoort"
