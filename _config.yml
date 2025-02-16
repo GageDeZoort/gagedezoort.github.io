@@ -57,7 +57,7 @@ author:
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/gagedezoort/"
     - label: "Substack"
-      icon: "bi bi-substack"
+      icon: "fa-solid fa-book"
       url: "https://substack.com/@gagedezoort"
 
 footer:
