@@ -1,27 +1,32 @@
-# Minimal Mistakes remote theme starter
+# Personal site (Astro)
 
-Click [**Use this template**](https://github.com/mmistakes/mm-github-pages-starter/generate) button above for the quickest method of getting started with the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
+Modern rebuild of `gagedezoort.github.io` powered by [Astro](https://astro.build). The repository currently serves a design-forward academic landing page while keeping the legacy Jekyll content archived under `archive/` for reference.
 
-Contains basic configuration to get you a site with:
+## Local development
 
-- Sample posts.
-- Sample top navigation.
-- Sample author sidebar with social links.
-- Sample footer links.
-- Paginated home page.
-- Archive pages for posts grouped by year, category, and tag.
-- Sample about page.
-- Sample 404 page.
-- Site wide search.
+```bash
+npm install
+npm run dev
+```
 
-Replace sample content with your own and [configure as necessary](https://mmistakes.github.io/minimal-mistakes/docs/configuration/).
+Visit `http://localhost:4321` to preview changes. Edit files in `src/` – the dev server hot-reloads automatically.
 
----
+## Structure
 
-## Troubleshooting
+- `src/layouts/Layout.astro` – global chrome, typography, and metadata helpers.
+- `src/pages/index.astro` – homepage content blocks (hero, focus areas, highlights, contact).
+- `public/` – static assets served as-is (`/images`, `/docs` for the CV download, etc.).
+- `archive/` – frozen copy of the previous Jekyll site.
 
-If you have a question about using Jekyll, start a discussion on the [Jekyll Forum](https://talk.jekyllrb.com/) or [StackOverflow](https://stackoverflow.com/questions/tagged/jekyll). Other resources:
+## Deployment
 
-- [Ruby 101](https://jekyllrb.com/docs/ruby-101/)
-- [Setting up a Jekyll site with GitHub Pages](https://jekyllrb.com/docs/github-pages/)
-- [Configuring GitHub Metadata](https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md#configuration) to work properly when developing locally and avoid `No GitHub API authentication could be found. Some fields may be missing or have incorrect data.` warnings.
+GitHub Actions build and publish the site to GitHub Pages on every push to `main` (`.github/workflows/deploy.yml`). The workflow uses Node 20 as recommended by Astro. If you push from a feature branch, trigger a manual deploy via the workflow dispatch UI after merging.
+
+For local production builds:
+
+```bash
+npm run build
+npm run preview
+```
+
+This exports the static site to `dist/` and serves it for inspection.
