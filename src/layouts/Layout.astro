@@ -26,11 +26,18 @@ const {
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;600&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap"
 			rel="stylesheet"
 		/>
 	</head>
 	<body>
+		<div class="particle-field" aria-hidden="true">
+			<span class="track track--one"></span>
+			<span class="track track--two"></span>
+			<span class="track track--three"></span>
+			<span class="track track--four"></span>
+			<span class="track track--five"></span>
+		</div>
 		<div class="page-shell">
 			<slot />
 		</div>
@@ -97,6 +104,126 @@ const {
 		z-index: -2;
 	}
 
+	.particle-field {
+		position: fixed;
+		inset: -15vh -15vw;
+		z-index: -1;
+		pointer-events: none;
+		opacity: 0.7;
+	}
+
+	.track {
+		position: absolute;
+		display: block;
+		border-radius: 50%;
+		border: 1px solid rgba(56, 189, 248, 0.18);
+		box-shadow: 0 0 65px rgba(56, 189, 248, 0.08);
+		animation: track-spin 28s linear infinite;
+	}
+
+	.track::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 12px;
+		height: 12px;
+		margin: -6px;
+		border-radius: 50%;
+		background: radial-gradient(circle, rgba(244, 244, 255, 0.95), rgba(56, 189, 248, 0.35));
+		box-shadow: 0 0 22px rgba(56, 189, 248, 0.45);
+	}
+
+	.track--one {
+		width: 540px;
+		height: 320px;
+		top: 12%;
+		left: 5%;
+		transform-origin: 60% 48%;
+		animation-duration: 36s;
+	}
+
+	.track--two {
+		width: 420px;
+		height: 420px;
+		top: 42%;
+		left: 68%;
+		border-color: rgba(168, 85, 247, 0.22);
+		box-shadow: 0 0 70px rgba(168, 85, 247, 0.12);
+		transform-origin: 35% 52%;
+		animation-duration: 44s;
+		animation-direction: reverse;
+	}
+
+	.track--three {
+		width: 620px;
+		height: 380px;
+		top: 58%;
+		left: -12%;
+		border-color: rgba(94, 234, 212, 0.18);
+		box-shadow: 0 0 54px rgba(94, 234, 212, 0.14);
+		transform-origin: 62% 35%;
+		animation-duration: 50s;
+	}
+
+	.track--four {
+		width: 280px;
+		height: 280px;
+		top: 8%;
+		left: 72%;
+		border-color: rgba(248, 250, 252, 0.15);
+		box-shadow: 0 0 40px rgba(148, 163, 184, 0.15);
+		transform-origin: 45% 60%;
+		animation-duration: 32s;
+	}
+
+	.track--five {
+		width: 360px;
+		height: 560px;
+		top: 65%;
+		left: 48%;
+		border-color: rgba(59, 130, 246, 0.18);
+		box-shadow: 0 0 65px rgba(37, 99, 235, 0.18);
+		transform-origin: 52% 40%;
+		animation-duration: 41s;
+		animation-direction: reverse;
+	}
+
+	.track--one::after {
+		transform: translate3d(220px, -128px, 0);
+	}
+
+	.track--two::after {
+		transform: translate3d(148px, -198px, 0);
+	}
+
+	.track--three::after {
+		transform: translate3d(270px, -90px, 0);
+	}
+
+	.track--four::after {
+		transform: translate3d(110px, -140px, 0);
+	}
+
+	.track--five::after {
+		transform: translate3d(150px, -240px, 0);
+	}
+
+	@keyframes track-spin {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.particle-field {
+			display: none;
+		}
+	}
+
 	.page-shell {
 		display: flex;
 		flex-direction: column;
@@ -140,7 +267,7 @@ const {
 
 	.section-title {
 		margin: 0 0 1rem;
-		font-family: 'Fraunces', 'Times New Roman', serif;
+		font-family: 'Space Grotesk', 'Inter', sans-serif;
 		font-size: clamp(1.5rem, 2vw, 2.1rem);
 		font-weight: 600;
 		letter-spacing: -0.01em;
