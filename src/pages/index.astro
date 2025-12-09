@@ -36,16 +36,24 @@ const connections = [
 	{ label: 'CV', href: '/docs/Gage-DeZoort-CV.pdf' },
 ];
 
-const creativeLinks = [
-	{ label: 'Instagram · @gagedezoort.music', href: 'https://www.instagram.com/gagedezoort.music/' },
-	{ label: 'Substack · essays & notes', href: 'https://gagedezoort.substack.com/' },
+const tutorialLinks = [
+	{
+		label: 'Crash Course in Practical ML · UC Irvine (2025)',
+		href: 'https://github.com/GageDeZoort/intro_ml_uci',
+	},
+	{
+		label: 'Graph Neural Networks for Your Research · Princeton Research Computing (2023)',
+		href: 'https://github.com/GageDeZoort/prc_gnn_tutorial',
+	},
 ];
+
+const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 ---
 
 <Layout title={pageTitle} description={description}>
 	<header class="hero">
 		<div class="hero__text">
-			<p class="hero__eyebrow">Gage DeZoort · Princeton University</p>
+			<p class="hero__eyebrow">Gage DeZoort · Princeton Physics</p>
 			<div class="hero__badge">
 				<span>Physics</span>
 				<span class="hero__badge-cross" aria-hidden="true"></span>
@@ -99,19 +107,29 @@ const creativeLinks = [
 					I'm now working on several scientific applications for these models, including stellar stream identification in
 					large astronomical surveys and jet tagging in collider datasets.
 				</p>
+				<div class="about__tutorials">
+					<h3>Selected tutorials</h3>
+					<ul>
+						{tutorialLinks.map((item) => (
+							<li>
+								<a href={item.href} target="_blank" rel="noreferrer">
+									{item.label}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
 				<div class="about__creative">
 					<h3>Creative side quests</h3>
 					<p>
-						Outside the lab I compose prog-leaning instrumental music, build ML workshops, and document the overlap of
-						research, teaching, and performance.
+						Outside of academia, I'm an avid progressive metal guitarist, writing and recording music with several bands.
+						You can check out my public profile here:
 					</p>
-					<div class="about__creative-links">
-						{creativeLinks.map((link) => (
-							<a href={link.href} target="_blank" rel="noreferrer">
-								{link.label}
-							</a>
-						))}
-					</div>
+					<p class="about__creative-link">
+						<a href={instagramLink} target="_blank" rel="noreferrer">
+							@gagedezoort.music
+						</a>
+					</p>
 				</div>
 			</div>
 			<div class="about__media">
@@ -212,11 +230,11 @@ const creativeLinks = [
 	.hero__eyebrow {
 		position: relative;
 		z-index: 1;
-		font-size: 0.9rem;
-		font-weight: 500;
+		font-size: 1.1rem;
+		font-weight: 700;
 		text-transform: uppercase;
-		letter-spacing: 0.18em;
-		color: rgba(148, 163, 184, 0.9);
+		letter-spacing: 0.2em;
+		color: #f8fafc;
 		margin: 0 0 1.1rem;
 	}
 
@@ -409,6 +427,42 @@ const creativeLinks = [
 		z-index: 1;
 	}
 
+	.about__tutorials {
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+
+	.about__tutorials h3 {
+		margin: 0;
+		font-family: 'Sora', 'Inter', sans-serif;
+		font-size: 0.95rem;
+		text-transform: uppercase;
+		letter-spacing: 0.18em;
+		color: rgba(148, 163, 184, 0.9);
+	}
+
+	.about__tutorials ul {
+		margin: 0;
+		padding-left: 1.1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.45rem;
+		color: var(--text);
+	}
+
+	.about__tutorials a {
+		color: #7dd3fc;
+		font-weight: 500;
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.about__tutorials a:hover,
+	.about__tutorials a:focus-visible {
+		color: #bae6fd;
+	}
+
 	.about .section-lede,
 	.about__paragraph {
 		color: var(--text);
@@ -439,6 +493,29 @@ const creativeLinks = [
 		margin: 0;
 		color: var(--text);
 		line-height: 1.6;
+	}
+
+	.about__creative-link a {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3rem;
+		padding: 0.6rem 0.95rem;
+		border-radius: 12px;
+		border: 1px solid rgba(94, 234, 212, 0.24);
+		background: rgba(15, 118, 110, 0.22);
+		color: #5eead4;
+		font-size: 0.9rem;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		text-decoration: none;
+	}
+
+	.about__creative-link a:hover,
+	.about__creative-link a:focus-visible {
+		transform: translateY(-1px);
+		box-shadow: 0 18px 32px rgba(13, 148, 136, 0.28);
 	}
 
 	.about__creative-links a {
