@@ -36,15 +36,9 @@ const connections = [
 	{ label: 'CV', href: '/docs/Gage-DeZoort-CV.pdf' },
 ];
 
-const quickFacts = [
-	'Postdoctoral Research Associate and Lecturer, Princeton Physics',
-	'Breakthrough Prize in Fundamental Physics (CMS Collaboration, 2025)',
-	'Leads hyperparameter transfer and graph ML efforts for CMS tracking & searches',
-];
-
 const creativeLinks = [
-	{ label: 'SoundCloud · latest mixes', href: 'https://soundcloud.com/gagedezoort' },
-	{ label: 'Instagram · performance moments', href: 'https://www.instagram.com/gagedezoort/' },
+	{ label: 'Instagram · @gagedezoort.music', href: 'https://www.instagram.com/gagedezoort.music/' },
+	{ label: 'Substack · essays & notes', href: 'https://gagedezoort.substack.com/' },
 ];
 ---
 
@@ -57,9 +51,6 @@ const creativeLinks = [
 				<span class="hero__badge-cross" aria-hidden="true"></span>
 				<span>ML</span>
 			</div>
-			<h1>
-				Advancing science with cutting-edge ML.
-			</h1>
 			<p class="hero__lede">
 				Welcome! I'm a postdoctoral researcher building efficient, scalable machine learning algorithms for scientific
 				measurements. Right now I'm focused on numerically stable graph neural networks tuned for hyperparameter
@@ -87,27 +78,27 @@ const creativeLinks = [
 			<div class="about__body">
 				<h2 class="section-title">About</h2>
 				<p class="section-lede">
-					I grew up in Tuscaloosa, Alabama, where senior-year physics classes and pop-sci deep dives—Neil deGrasse Tyson's
-					<em>Cosmos</em>, Brian Greene's <em>The Elegant Universe</em>—hooked me on the cosmos.
+					I grew up in Tuscaloosa, Alabama, where in my senior year of high school I developed a deep interest in
+					physics and astronomy through pop-sci offerings like Neil deGrasse Tyson's <em>Cosmos</em> and Brian Greene's
+					<em>The Elegant Universe</em>. I completed my undergraduate studies at the University of Virginia, double
+					majoring in Physics and Engineering Science. While there, I worked with Prof. Craig Group building cosmic ray
+					veto panels for the Mu2e experiment, and with Prof. Chris Neu on projects tied to the CERN Compact Muon Solenoid
+					(CMS) detector.
 				</p>
-				<p>
-					I headed to the University of Virginia and doubled in Physics and Engineering Science. There I built cosmic ray
-					veto panels for Mu2e with Craig Group and jumped into CMS detector work with Chris Neu. That momentum carried me to
-					Princeton for a PhD with Dan Marlow, culminating in a dissertation searching for a pseudoscalar Higgs boson decaying
-					to Zh with ℓℓττ final states.
+				<p class="about__paragraph">
+					I continued my CMS work as a PhD student under Prof. Dan Marlow at Princeton University, culminating in a
+					dissertation focused on a search for a pseudoscalar Higgs boson decaying to Zh with ℓℓ + ττ final states. During
+					my PhD years I developed a strong interest in machine learning, particularly charged particle track
+					reconstruction via graph neural networks. That led to collaborations with Boris Hanin, where we characterized and
+					alleviated numerical issues like poor initialization, oversmoothing, and correlation collapse in graph neural
+					networks (GNNs).
 				</p>
-				<p>
-					During grad school I fell hard for machine learning, especially graph neural networks for charged particle tracking.
-					Collaborating with Boris Hanin, I dug into numerical pathologies like poor initialization, oversmoothing, and
-					correlation collapse. As a postdoc I'm extending that thread—crafting graph transformers that stay numerically stable
-					by embracing <em>hyperparameter transfer</em>, where models share the same learning rate—then pushing them into
-					scientific applications like stellar stream recovery and jet identification.
+				<p class="about__paragraph">
+					My postdoc is focused on furthering the study of numerically stable GNNs—especially graph transformers—by tuning
+					them for <em>hyperparameter transfer</em>: models are parametrized so they all agree on the same learning rate.
+					I'm now working on several scientific applications for these models, including stellar stream identification in
+					large astronomical surveys and jet tagging in collider datasets.
 				</p>
-				<ul class="about__facts">
-					{quickFacts.map((fact) => (
-						<li>{fact}</li>
-					))}
-				</ul>
 				<div class="about__creative">
 					<h3>Creative side quests</h3>
 					<p>
@@ -418,38 +409,9 @@ const creativeLinks = [
 		z-index: 1;
 	}
 
-	.about__facts {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-		gap: 0.75rem;
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
-
-	.about__facts li {
-		position: relative;
-		padding: 0.75rem 0.85rem 0.75rem 1.8rem;
-		border-radius: 14px;
-		border: 1px solid rgba(148, 163, 184, 0.16);
-		background: rgba(15, 23, 42, 0.8);
-		color: var(--text-soft);
-		font-size: 0.95rem;
-		line-height: 1.6;
-		box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.05);
-	}
-
-	.about__facts li::before {
-		content: '';
-		position: absolute;
-		left: 0.75rem;
-		top: 50%;
-		width: 0.45rem;
-		height: 0.45rem;
-		margin-top: -0.225rem;
-		border-radius: 50%;
-		background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(94, 234, 212, 0.75));
-		box-shadow: 0 0 10px rgba(56, 189, 248, 0.45);
+	.about .section-lede,
+	.about__paragraph {
+		color: var(--text);
 	}
 
 	.about__creative {
@@ -471,6 +433,12 @@ const creativeLinks = [
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.6rem;
+	}
+
+	.about__creative p {
+		margin: 0;
+		color: var(--text);
+		line-height: 1.6;
 	}
 
 	.about__creative-links a {
