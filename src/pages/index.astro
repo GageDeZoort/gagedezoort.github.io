@@ -29,21 +29,6 @@ const highlights = [
 	},
 ];
 
-const focusAreas = [
-	{
-		title: 'Hyperparameter Transfer',
-		body: 'Developing cross-detector priors that let graph neural networks and graph transformers inherit optimal hyperparameters without exhaustive scans.',
-	},
-	{
-		title: 'Stellar Stream Reconstruction',
-		body: 'Reassembling disrupted stellar streams by pairing astrophysical simulations with geometric learning pipelines tuned for sparse observations.',
-	},
-	{
-		title: 'Jet Tagging',
-		body: 'Designing fast, uncertainty-aware jet taggers that survive high pile-up conditions and align with downstream physics analyses.',
-	},
-];
-
 const connections = [
 	{ label: 'Email', href: 'mailto:jdezoort@princeton.edu' },
 	{ label: 'GitHub', href: 'https://github.com/GageDeZoort' },
@@ -73,11 +58,13 @@ const creativeLinks = [
 				<span>ML</span>
 			</div>
 			<h1>
-				Particle physics meets machine learning for precision discovery.
+				Advancing science with cutting-edge ML.
 			</h1>
 			<p class="hero__lede">
-				Postdoctoral Research Associate and Lecturer in the Department of Physics at Princeton.
-				I develop graph neural network methods that help the CMS experiment push toward new physics.
+				Welcome! I'm a postdoctoral researcher building efficient, scalable machine learning algorithms for scientific
+				measurements. Right now I'm focused on numerically stable graph neural networks tuned for hyperparameter
+				transfer—models that agree on a single learning rate—so they can power tasks like stellar stream identification in
+				large sky surveys and jet tagging in collider datasets.
 			</p>
 			<div class="hero__actions">
 				<a class="button button--primary" href="/docs/Gage-DeZoort-CV.pdf" target="_blank" rel="noreferrer">
@@ -100,9 +87,21 @@ const creativeLinks = [
 			<div class="about__body">
 				<h2 class="section-title">About</h2>
 				<p class="section-lede">
-					I'm a postdoctoral researcher and lecturer at Princeton, designing graph-based machine learning systems that
-					let the CMS experiment surface rare physics under extreme pile-up. My work spans heavy Higgs searches, real-time
-					tracking, and principled methods for transferring inductive bias across detectors.
+					I grew up in Tuscaloosa, Alabama, where senior-year physics classes and pop-sci deep dives—Neil deGrasse Tyson's
+					<em>Cosmos</em>, Brian Greene's <em>The Elegant Universe</em>—hooked me on the cosmos.
+				</p>
+				<p>
+					I headed to the University of Virginia and doubled in Physics and Engineering Science. There I built cosmic ray
+					veto panels for Mu2e with Craig Group and jumped into CMS detector work with Chris Neu. That momentum carried me to
+					Princeton for a PhD with Dan Marlow, culminating in a dissertation searching for a pseudoscalar Higgs boson decaying
+					to Zh with ℓℓττ final states.
+				</p>
+				<p>
+					During grad school I fell hard for machine learning, especially graph neural networks for charged particle tracking.
+					Collaborating with Boris Hanin, I dug into numerical pathologies like poor initialization, oversmoothing, and
+					correlation collapse. As a postdoc I'm extending that thread—crafting graph transformers that stay numerically stable
+					by embracing <em>hyperparameter transfer</em>, where models share the same learning rate—then pushing them into
+					scientific applications like stellar stream recovery and jet identification.
 				</p>
 				<ul class="about__facts">
 					{quickFacts.map((fact) => (
@@ -132,24 +131,6 @@ const creativeLinks = [
 					<img src="/images/crash-course-lecture-2.jpg" alt="Lecture hall view with students following along" loading="lazy" decoding="async" />
 				</div>
 			</div>
-		</section>
-
-		<section class="section-card research">
-			<div class="research__intro">
-				<h2 class="section-title">Current focus</h2>
-				<p class="section-lede">
-					Building statistical and machine-learning tools that can thrive in the high pile-up regime of the HL-LHC,
-					bridging principled theory with deployable systems for the CMS collaboration.
-				</p>
-			</div>
-			<ul class="focus-grid">
-				{focusAreas.map((item) => (
-					<li>
-						<h3>{item.title}</h3>
-						<p>{item.body}</p>
-					</li>
-				))}
-			</ul>
 		</section>
 
 		<section class="section-card highlights">
@@ -559,45 +540,6 @@ const creativeLinks = [
 		transform: rotate(8deg);
 		border-color: rgba(168, 85, 247, 0.24);
 		box-shadow: 0 28px 60px rgba(76, 29, 149, 0.35);
-	}
-
-	.focus-grid {
-		display: grid;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		gap: 1.5rem;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	}
-
-	.focus-grid h3 {
-		margin: 0 0 0.6rem;
-		font-size: 1.12rem;
-		font-weight: 600;
-		color: #e2e8f0;
-	}
-
-	.focus-grid li {
-		position: relative;
-		overflow: hidden;
-		padding: 1.45rem 1.35rem;
-		border-radius: 20px;
-		border: 1px solid rgba(148, 163, 184, 0.14);
-		background: var(--surface-strong);
-		box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.05);
-		backdrop-filter: blur(10px);
-		color: var(--text-soft);
-		line-height: 1.65;
-		font-size: 0.98rem;
-	}
-
-	.focus-grid li::before {
-		content: '';
-		position: absolute;
-		inset: -35% 55% 58% -35%;
-		background: radial-gradient(circle, rgba(56, 189, 248, 0.32), transparent 62%);
-		opacity: 0.55;
-		z-index: 0;
 	}
 
 	.highlight-grid {
