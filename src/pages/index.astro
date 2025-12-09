@@ -7,6 +7,13 @@ const description =
 
 const highlights = [
 	{
+		kicker: 'CMS Collaboration · 2025',
+		title: 'Heavy pseudoscalar Higgs search (A → Zh → ℓℓττ)',
+		url: 'https://doi.org/10.1007/JHEP10%282025%29074',
+		description:
+			'Co-led the machine learning strategy for the first full Run-2 search targeting a heavy pseudoscalar Higgs via Zh final states.',
+	},
+	{
 		kicker: 'Review',
 		title: 'Graph Neural Networks at the Large Hadron Collider',
 		url: 'https://doi.org/10.1038/s42254-023-00569-0',
@@ -15,10 +22,10 @@ const highlights = [
 	},
 	{
 		kicker: 'Journal',
-		title: 'Principles for Initialization and Architecture Selection in GNNs',
+		title: 'Principles for Initialization in Physics-scale GNNs',
 		url: 'https://doi.org/10.1137/23M1600621',
 		description:
-			'Foundational work with Boris Hanin on stable graph network design for physics-scale inference workloads.',
+			'With Boris Hanin, established guidelines for architecture selection and initialization that keep graph networks stable at detector scale.',
 	},
 ];
 
@@ -42,6 +49,17 @@ const connections = [
 	{ label: 'GitHub', href: 'https://github.com/GageDeZoort' },
 	{ label: 'Twitter/X', href: 'https://x.com/GDezoort' },
 	{ label: 'CV', href: '/docs/Gage-DeZoort-CV.pdf' },
+];
+
+const quickFacts = [
+	'Postdoctoral Research Associate and Lecturer, Princeton Physics',
+	'Breakthrough Prize in Fundamental Physics (CMS Collaboration, 2025)',
+	'Leads hyperparameter transfer and graph ML efforts for CMS tracking & searches',
+];
+
+const creativeLinks = [
+	{ label: 'SoundCloud · latest mixes', href: 'https://soundcloud.com/gagedezoort' },
+	{ label: 'Instagram · performance moments', href: 'https://www.instagram.com/gagedezoort/' },
 ];
 ---
 
@@ -78,6 +96,44 @@ const connections = [
 	</header>
 
 	<main class="content">
+		<section class="section-card about" id="about">
+			<div class="about__body">
+				<h2 class="section-title">About</h2>
+				<p class="section-lede">
+					I'm a postdoctoral researcher and lecturer at Princeton, designing graph-based machine learning systems that
+					let the CMS experiment surface rare physics under extreme pile-up. My work spans heavy Higgs searches, real-time
+					tracking, and principled methods for transferring inductive bias across detectors.
+				</p>
+				<ul class="about__facts">
+					{quickFacts.map((fact) => (
+						<li>{fact}</li>
+					))}
+				</ul>
+				<div class="about__creative">
+					<h3>Creative side quests</h3>
+					<p>
+						Outside the lab I compose prog-leaning instrumental music, build ML workshops, and document the overlap of
+						research, teaching, and performance.
+					</p>
+					<div class="about__creative-links">
+						{creativeLinks.map((link) => (
+							<a href={link.href} target="_blank" rel="noreferrer">
+								{link.label}
+							</a>
+						))}
+					</div>
+				</div>
+			</div>
+			<div class="about__media">
+				<div class="about__image about__image--primary">
+					<img src="/images/crash-course-lecture-1.jpg" alt="Gage DeZoort teaching a machine learning crash course" loading="lazy" decoding="async" />
+				</div>
+				<div class="about__image about__image--secondary">
+					<img src="/images/crash-course-lecture-2.jpg" alt="Lecture hall view with students following along" loading="lazy" decoding="async" />
+				</div>
+			</div>
+		</section>
+
 		<section class="section-card research">
 			<div class="research__intro">
 				<h2 class="section-title">Current focus</h2>
@@ -243,7 +299,7 @@ const connections = [
 		position: relative;
 		z-index: 1;
 		margin: 0 0 1.2rem;
-		font-family: 'Space Grotesk', 'Inter', sans-serif;
+		font-family: 'Sora', 'Inter', sans-serif;
 		font-size: clamp(2.3rem, 4vw, 3.5rem);
 		line-height: 1.08;
 		letter-spacing: -0.015em;
@@ -362,6 +418,147 @@ const connections = [
 		gap: clamp(1.6rem, 3vw, 2.8rem);
 		max-width: var(--max-width);
 		margin: 0 auto clamp(3.5rem, 7vw, 5rem);
+	}
+
+	.about {
+		position: relative;
+		display: grid;
+		grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+		gap: clamp(1.5rem, 3vw, 3.5rem);
+		align-items: center;
+		overflow: visible;
+	}
+
+	.about__body {
+		display: flex;
+		flex-direction: column;
+		gap: 1.4rem;
+		position: relative;
+		z-index: 1;
+	}
+
+	.about__facts {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 0.75rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.about__facts li {
+		position: relative;
+		padding: 0.75rem 0.85rem 0.75rem 1.8rem;
+		border-radius: 14px;
+		border: 1px solid rgba(148, 163, 184, 0.16);
+		background: rgba(15, 23, 42, 0.8);
+		color: var(--text-soft);
+		font-size: 0.95rem;
+		line-height: 1.6;
+		box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.05);
+	}
+
+	.about__facts li::before {
+		content: '';
+		position: absolute;
+		left: 0.75rem;
+		top: 50%;
+		width: 0.45rem;
+		height: 0.45rem;
+		margin-top: -0.225rem;
+		border-radius: 50%;
+		background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(94, 234, 212, 0.75));
+		box-shadow: 0 0 10px rgba(56, 189, 248, 0.45);
+	}
+
+	.about__creative {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.about__creative h3 {
+		margin: 0;
+		font-family: 'Sora', 'Inter', sans-serif;
+		font-size: 1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.18em;
+		color: rgba(148, 163, 184, 0.9);
+	}
+
+	.about__creative-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+	}
+
+	.about__creative-links a {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.6rem 0.9rem;
+		border-radius: 12px;
+		border: 1px solid rgba(94, 234, 212, 0.22);
+		background: rgba(15, 118, 110, 0.18);
+		color: #5eead4;
+		font-size: 0.88rem;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.about__creative-links a:hover,
+	.about__creative-links a:focus-visible {
+		transform: translateY(-1px);
+		box-shadow: 0 18px 32px rgba(13, 148, 136, 0.25);
+	}
+
+	.about__media {
+		position: relative;
+		display: grid;
+		place-items: center;
+	}
+
+	.about__image {
+		position: relative;
+		border-radius: 24px;
+		overflow: hidden;
+		border: 1px solid rgba(56, 189, 248, 0.16);
+		box-shadow: 0 32px 80px rgba(2, 6, 23, 0.5);
+		opacity: 0.95;
+	}
+
+	.about__image::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(180deg, rgba(2, 6, 23, 0.05), rgba(2, 6, 23, 0.55));
+	}
+
+	.about__image img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		filter: saturate(1.05);
+	}
+
+	.about__image--primary {
+		width: clamp(220px, 28vw, 320px);
+		height: clamp(260px, 34vw, 360px);
+		transform: rotate(-3deg);
+	}
+
+	.about__image--secondary {
+		position: absolute;
+		right: clamp(-0.5rem, -2vw, -1.8rem);
+		bottom: clamp(-1.5rem, -3vw, -2.5rem);
+		width: clamp(160px, 20vw, 220px);
+		height: clamp(190px, 26vw, 250px);
+		transform: rotate(8deg);
+		border-color: rgba(168, 85, 247, 0.24);
+		box-shadow: 0 28px 60px rgba(76, 29, 149, 0.35);
 	}
 
 	.focus-grid {
@@ -537,6 +734,34 @@ const connections = [
 
 		.hero__frame img {
 			width: clamp(200px, 70vw, 260px);
+		}
+
+		.about {
+			grid-template-columns: 1fr;
+		}
+
+		.about__media {
+			order: -1;
+			margin-bottom: 1.25rem;
+		}
+
+		.about__image--primary,
+		.about__image--secondary {
+			position: relative;
+			transform: none;
+			right: auto;
+			bottom: auto;
+			width: 100%;
+			max-width: 320px;
+			margin: 0 auto;
+		}
+
+		.about__image--secondary {
+			margin-top: 1rem;
+		}
+
+		.about__creative-links {
+			gap: 0.5rem;
 		}
 	}
 </style>
