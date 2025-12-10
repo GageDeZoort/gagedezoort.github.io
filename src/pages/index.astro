@@ -51,12 +51,17 @@ const tutorialLinks = [
 		title: 'Graph Neural Networks for Your Research',
 		url: 'https://github.com/GageDeZoort/prc_gnn_tutorial',
 		description: 'Workshop demystifying graph learning techniques for interdisciplinary research teams.',
-		image: '/images/crash-course-lecture-2.jpg',
-		imageAlt: 'Lecture hall view as attendees follow along with graph neural networks workshop',
+		image: '/images/princeton-intro-ml.jpg',
+		imageAlt: 'Students following along during the Princeton graph neural networks workshop',
 	},
 ];
 
 const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
+const creativePhotos = [
+	{ src: '/images/gig-1.jpg', alt: 'Gage DeZoort performing live on guitar', className: 'creative-card__photo creative-card__photo--one' },
+	{ src: '/images/gig-2.jpg', alt: 'Gage DeZoort playing progressive metal set', className: 'creative-card__photo creative-card__photo--two' },
+	{ src: '/images/gig-3.png', alt: 'Guitar gear and pedalboard prepared for performance', className: 'creative-card__photo creative-card__photo--three' },
+];
 ---
 
 <Layout title={pageTitle} description={description}>
@@ -167,16 +172,12 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 					</a>
 				</p>
 			</div>
-			<div class="creative-card__media" aria-hidden="true">
-				<div class="creative-card__photo creative-card__photo--one">
-					<img src="/images/gig-1.jpg" alt="" loading="lazy" decoding="async" />
-				</div>
-				<div class="creative-card__photo creative-card__photo--two">
-					<img src="/images/gig-2.jpg" alt="" loading="lazy" decoding="async" />
-				</div>
-				<div class="creative-card__photo creative-card__photo--three">
-					<img src="/images/gig-3.jpg" alt="" loading="lazy" decoding="async" />
-				</div>
+			<div class="creative-card__media">
+				{creativePhotos.map((photo) => (
+					<div class={photo.className}>
+						<img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
+					</div>
+				))}
 			</div>
 		</section>
 
@@ -332,18 +333,12 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 	}
 
 	.about-card__content {
-		display: grid;
-		grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-		gap: clamp(1.5rem, 3vw, 2.75rem);
-		align-items: stretch;
-		position: relative;
+		display: block;
+		color: var(--text);
 	}
 
-	.about-card__text {
-		display: flex;
-		flex-direction: column;
-		gap: 1.1rem;
-		color: var(--text);
+	.about-card__content::after {
+		display: none;
 	}
 
 	.about-card__lede {
@@ -353,57 +348,10 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 	}
 
 	.about-card__paragraph {
-		margin: 0;
-		color: var(--text);
-		line-height: 1.7;
+		margin: 1.1rem 0 0;
 		font-size: clamp(0.98rem, 1vw, 1.05rem);
-	}
-
-	.about-card__paragraph + .about-card__paragraph {
-		margin-top: 0.3rem;
-	}
-
-	.about-card__paragraph--spacer {
-		margin-top: 0.6rem;
-	}
-
-	.about-card__media {
-		display: grid;
-		gap: clamp(0.9rem, 1.6vw, 1.2rem);
-		align-content: start;
-	}
-
-	.about-card__image {
-		position: relative;
-		border-radius: 20px;
-		overflow: hidden;
-		border: 1px solid rgba(255, 255, 255, 0.12);
-		box-shadow: 0 20px 48px rgba(8, 12, 20, 0.32);
-	}
-
-	.about-card__image img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		filter: saturate(1.03);
-	}
-
-	.about-card__image--primary {
-		min-height: clamp(220px, 34vw, 320px);
-	}
-
-	.about-card__image--secondary {
-		min-height: clamp(170px, 28vw, 240px);
-	}
-
-	.about-card__content::after {
-		content: '';
-		position: absolute;
-		inset: -20% 45% 62% -40%;
-		background: radial-gradient(circle, rgba(242, 178, 108, 0.12), transparent 72%);
-		filter: blur(90px);
-		z-index: -1;
+		line-height: 1.7;
+		color: var(--text);
 	}
 
 	.tutorials-card__list {
