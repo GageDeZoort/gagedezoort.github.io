@@ -139,29 +139,52 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 
 		<section class="section-card tutorials-card">
 			<h2 class="section-title">Selected tutorials</h2>
-			<div class="highlight-grid">
-				{tutorialLinks.map((item) => (
-					<a href={item.url} class="highlight-card" target="_blank" rel="noreferrer">
-						<span class="highlight-card__kicker">{item.kicker}</span>
-						<h3>{item.title}</h3>
-						<p>{item.description}</p>
-						<span class="highlight-card__link">View materials ↗</span>
-					</a>
-				))}
+			<div class="tutorials-card__layout">
+				<div class="highlight-grid tutorials-card__list">
+					{tutorialLinks.map((item) => (
+						<a href={item.url} class="highlight-card" target="_blank" rel="noreferrer">
+							<span class="highlight-card__kicker">{item.kicker}</span>
+							<h3>{item.title}</h3>
+							<p>{item.description}</p>
+							<span class="highlight-card__link">View materials ↗</span>
+						</a>
+					))}
+				</div>
+				<div class="tutorials-card__media">
+					<div class="tutorials-card__photo">
+						<img src="/images/crash-course-lecture-1.jpg" alt="Crash course in practical ML lecture at UC Irvine" loading="lazy" decoding="async" />
+					</div>
+					<div class="tutorials-card__photo tutorials-card__photo--secondary">
+						<img src="/images/crash-course-lecture-2.jpg" alt="Students following along during machine learning workshop" loading="lazy" decoding="async" />
+					</div>
+				</div>
 			</div>
 		</section>
 
 		<section class="section-card creative-card">
-			<h2 class="section-title">Creative side quests</h2>
-			<p class="section-lede">
-				Outside of academia, I'm an avid progressive metal guitarist, writing and recording music with several bands.
-				You can explore recent riffs, performances, and works-in-progress on my music profile.
-			</p>
-			<p class="about__creative-link">
-				<a href={instagramLink} target="_blank" rel="noreferrer">
-					@gagedezoort.music
-				</a>
-			</p>
+			<div class="creative-card__text">
+				<h2 class="section-title">Creative side quests</h2>
+				<p class="section-lede">
+					Outside of academia, I'm an avid progressive metal guitarist, writing and recording music with several bands.
+					You can explore recent riffs, performances, and works-in-progress on my music profile.
+				</p>
+				<p class="about__creative-link">
+					<a href={instagramLink} target="_blank" rel="noreferrer">
+						@gagedezoort.music
+					</a>
+				</p>
+			</div>
+			<div class="creative-card__media" aria-hidden="true">
+				<div class="creative-card__photo creative-card__photo--one">
+					<img src="/images/gig-1.jpg" alt="" loading="lazy" decoding="async" />
+				</div>
+				<div class="creative-card__photo creative-card__photo--two">
+					<img src="/images/gig-2.jpg" alt="" loading="lazy" decoding="async" />
+				</div>
+				<div class="creative-card__photo creative-card__photo--three">
+					<img src="/images/gig-3.jpg" alt="" loading="lazy" decoding="async" />
+				</div>
+			</div>
 		</section>
 
 		<section class="section-card connect">
@@ -390,6 +413,39 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 		z-index: -1;
 	}
 
+	.tutorials-card__layout {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+		gap: clamp(1.25rem, 2.4vw, 2rem);
+		align-items: stretch;
+	}
+
+	.tutorials-card__list .highlight-card {
+		height: 100%;
+	}
+
+	.tutorials-card__media {
+		display: grid;
+		gap: clamp(0.75rem, 1.6vw, 1.1rem);
+		align-content: start;
+	}
+
+	.tutorials-card__photo {
+		position: relative;
+		border-radius: 18px;
+		overflow: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		box-shadow: 0 18px 36px rgba(8, 12, 20, 0.28);
+	}
+
+	.tutorials-card__photo img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		filter: saturate(1.02);
+	}
+
 	.tutorials-card .highlight-card__link {
 		color: rgba(242, 178, 108, 0.9);
 	}
@@ -419,6 +475,13 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 	}
 
 	.creative-card {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+		gap: clamp(1.5rem, 3vw, 2.5rem);
+		align-items: center;
+	}
+
+	.creative-card__text {
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
@@ -429,6 +492,51 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 		margin: 0;
 		color: var(--text);
 		max-width: 36rem;
+	}
+
+	.creative-card__media {
+		position: relative;
+		min-height: clamp(220px, 32vw, 280px);
+	}
+
+	.creative-card__photo {
+		position: absolute;
+		border-radius: 18px;
+		overflow: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		box-shadow: 0 22px 46px rgba(8, 12, 20, 0.32);
+	}
+
+	.creative-card__photo img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		filter: saturate(1.05);
+	}
+
+	.creative-card__photo--one {
+		top: 0;
+		left: 0;
+		width: 56%;
+		height: 64%;
+		transform: rotate(-4deg);
+	}
+
+	.creative-card__photo--two {
+		top: 18%;
+		right: 4%;
+		width: 52%;
+		height: 58%;
+		transform: rotate(5deg);
+	}
+
+	.creative-card__photo--three {
+		bottom: -8%;
+		left: 28%;
+		width: 48%;
+		height: 56%;
+		transform: rotate(2deg);
 	}
 
 	.highlight-grid {
@@ -535,6 +643,24 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 		font-size: 0.9rem;
 	}
 
+	@media (max-width: 840px) {
+		.tutorials-card__layout {
+			grid-template-columns: 1fr;
+		}
+
+		.tutorials-card__media {
+			grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+		}
+
+		.creative-card {
+			grid-template-columns: 1fr;
+		}
+
+		.creative-card__media {
+			min-height: clamp(200px, 60vw, 260px);
+		}
+	}
+
 	@media (max-width: 640px) {
 		.hero__frame img {
 			width: clamp(200px, 70vw, 260px);
@@ -552,6 +678,16 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 
 		.about-card__image--secondary {
 			margin-top: 0.75rem;
+		}
+
+		.creative-card__media {
+			min-height: clamp(180px, 65vw, 240px);
+		}
+
+		.creative-card__photo--one,
+		.creative-card__photo--two,
+		.creative-card__photo--three {
+			transform: none;
 		}
 	}
 </style>
