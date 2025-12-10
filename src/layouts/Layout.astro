@@ -35,8 +35,6 @@ const {
 			<span class="track track--one"></span>
 			<span class="track track--two"></span>
 			<span class="track track--three"></span>
-			<span class="track track--four"></span>
-			<span class="track track--five"></span>
 		</div>
 		<div class="page-shell">
 			<slot />
@@ -53,14 +51,14 @@ const {
 
 	:root {
 		color-scheme: dark;
-		--bg: #020617;
-		--surface: rgba(2, 6, 23, 0.78);
-		--surface-strong: rgba(15, 23, 42, 0.92);
-		--text: #e2e8f0;
-		--text-soft: #94a3b8;
-		--accent: #38bdf8;
-		--accent-soft: rgba(56, 189, 248, 0.22);
-		--border: rgba(148, 163, 184, 0.18);
+		--bg: #11131b;
+		--surface: rgba(22, 26, 36, 0.9);
+		--surface-strong: rgba(27, 31, 44, 0.94);
+		--text: #f3f4f9;
+		--text-soft: #c4c9d7;
+		--accent: #f2b26c;
+		--accent-soft: rgba(242, 178, 108, 0.24);
+		--border: rgba(255, 255, 255, 0.08);
 		--max-width: 1080px;
 	}
 
@@ -74,10 +72,7 @@ const {
 		position: relative;
 		font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 		color: var(--text);
-		background:
-			radial-gradient(120% 90% at 85% 0%, rgba(56, 189, 248, 0.16), transparent 60%),
-			radial-gradient(120% 90% at 0% 100%, rgba(168, 85, 247, 0.15), transparent 60%),
-			var(--bg);
+		background: linear-gradient(160deg, #11131b 0%, #141922 40%, #1a202a 100%);
 	}
 
 	body::before {
@@ -86,10 +81,8 @@ const {
 		inset: 0;
 		pointer-events: none;
 		background-image:
-			radial-gradient(1px 1px at 10% 20%, rgba(226, 232, 240, 0.12), transparent 55%),
-			radial-gradient(1px 1px at 20% 80%, rgba(56, 189, 248, 0.12), transparent 55%),
-			radial-gradient(1px 1px at 75% 30%, rgba(168, 85, 247, 0.14), transparent 55%),
-			radial-gradient(1px 1px at 60% 65%, rgba(94, 234, 212, 0.12), transparent 55%);
+			radial-gradient(180px 240px at 12% 18%, rgba(242, 178, 108, 0.12), transparent 70%),
+			radial-gradient(240px 200px at 88% 82%, rgba(116, 153, 214, 0.15), transparent 72%);
 		opacity: 0.55;
 		z-index: -1;
 	}
@@ -99,26 +92,26 @@ const {
 		position: fixed;
 		inset: 0;
 		pointer-events: none;
-		background: radial-gradient(120% 85% at 50% 10%, rgba(15, 118, 110, 0.18), transparent 75%);
+		background-image: radial-gradient(320px 280px at 50% 10%, rgba(94, 109, 166, 0.18), transparent 70%);
 		opacity: 0.25;
 		z-index: -2;
 	}
 
 	.particle-field {
 		position: fixed;
-		inset: -15vh -15vw;
+		inset: -10vh -10vw;
 		z-index: -1;
 		pointer-events: none;
-		opacity: 0.7;
+		opacity: 0.35;
 	}
 
 	.track {
 		position: absolute;
 		display: block;
 		border-radius: 50%;
-		border: 1px solid rgba(56, 189, 248, 0.18);
-		box-shadow: 0 0 65px rgba(56, 189, 248, 0.08);
-		animation: track-spin 28s linear infinite;
+		border: 1px solid rgba(242, 178, 108, 0.18);
+		box-shadow: 0 0 45px rgba(242, 178, 108, 0.08);
+		animation: track-spin 36s linear infinite;
 	}
 
 	.track::after {
@@ -126,87 +119,56 @@ const {
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		width: 12px;
-		height: 12px;
-		margin: -6px;
+		width: 8px;
+		height: 8px;
+		margin: -4px;
 		border-radius: 50%;
-		background: radial-gradient(circle, rgba(244, 244, 255, 0.95), rgba(56, 189, 248, 0.35));
-		box-shadow: 0 0 22px rgba(56, 189, 248, 0.45);
+		background: radial-gradient(circle, rgba(255, 255, 255, 0.92), rgba(242, 178, 108, 0.4));
+		box-shadow: 0 0 16px rgba(242, 178, 108, 0.35);
 	}
 
 	.track--one {
-		width: 540px;
+		width: 520px;
 		height: 320px;
-		top: 12%;
-		left: 5%;
-		transform-origin: 60% 48%;
-		animation-duration: 36s;
+		top: 14%;
+		left: 8%;
+		transform-origin: 58% 46%;
+		animation-duration: 48s;
 	}
 
 	.track--two {
 		width: 420px;
 		height: 420px;
-		top: 42%;
-		left: 68%;
-		border-color: rgba(168, 85, 247, 0.22);
-		box-shadow: 0 0 70px rgba(168, 85, 247, 0.12);
-		transform-origin: 35% 52%;
-		animation-duration: 44s;
+		top: 48%;
+		left: 64%;
+		border-color: rgba(116, 153, 214, 0.22);
+		box-shadow: 0 0 42px rgba(116, 153, 214, 0.14);
+		transform-origin: 32% 52%;
+		animation-duration: 56s;
 		animation-direction: reverse;
 	}
 
 	.track--three {
-		width: 620px;
-		height: 380px;
-		top: 58%;
-		left: -12%;
-		border-color: rgba(94, 234, 212, 0.18);
-		box-shadow: 0 0 54px rgba(94, 234, 212, 0.14);
-		transform-origin: 62% 35%;
-		animation-duration: 50s;
-	}
-
-	.track--four {
-		width: 280px;
-		height: 280px;
-		top: 8%;
-		left: 72%;
-		border-color: rgba(248, 250, 252, 0.15);
-		box-shadow: 0 0 40px rgba(148, 163, 184, 0.15);
-		transform-origin: 45% 60%;
-		animation-duration: 32s;
-	}
-
-	.track--five {
 		width: 360px;
-		height: 560px;
-		top: 65%;
-		left: 48%;
-		border-color: rgba(59, 130, 246, 0.18);
-		box-shadow: 0 0 65px rgba(37, 99, 235, 0.18);
-		transform-origin: 52% 40%;
-		animation-duration: 41s;
-		animation-direction: reverse;
+		height: 520px;
+		top: 62%;
+		left: 38%;
+		border-color: rgba(199, 162, 199, 0.2);
+		box-shadow: 0 0 36px rgba(199, 162, 199, 0.14);
+		transform-origin: 48% 42%;
+		animation-duration: 64s;
 	}
 
 	.track--one::after {
-		transform: translate3d(220px, -128px, 0);
+		transform: translate3d(210px, -120px, 0);
 	}
 
 	.track--two::after {
-		transform: translate3d(148px, -198px, 0);
+		transform: translate3d(150px, -190px, 0);
 	}
 
 	.track--three::after {
-		transform: translate3d(270px, -90px, 0);
-	}
-
-	.track--four::after {
-		transform: translate3d(110px, -140px, 0);
-	}
-
-	.track--five::after {
-		transform: translate3d(150px, -240px, 0);
+		transform: translate3d(140px, -230px, 0);
 	}
 
 	@keyframes track-spin {
@@ -237,7 +199,7 @@ const {
 
 	a:hover,
 	a:focus-visible {
-		color: #7dd3fc;
+		color: #fde2ba;
 	}
 
 	p {
@@ -249,20 +211,9 @@ const {
 		background: var(--surface);
 		border-radius: 26px;
 		border: 1px solid var(--border);
-		box-shadow: 0 28px 80px rgba(2, 6, 23, 0.45);
-		backdrop-filter: blur(18px);
-		padding: clamp(1.85rem, 3vw, 2.75rem);
+		box-shadow: 0 24px 50px rgba(8, 12, 20, 0.28);
+		padding: clamp(1.85rem, 3vw, 2.6rem);
 		position: relative;
-		overflow: hidden;
-	}
-
-	.section-card::after {
-		content: '';
-		position: absolute;
-		inset: 1px;
-		border-radius: 24px;
-		pointer-events: none;
-		border: 1px solid rgba(148, 163, 184, 0.08);
 	}
 
 	.section-title {
