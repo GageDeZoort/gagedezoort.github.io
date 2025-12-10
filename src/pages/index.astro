@@ -39,12 +39,16 @@ const connections = [
 
 const tutorialLinks = [
 	{
-		label: 'Crash Course in Practical ML · UC Irvine (2025)',
-		href: 'https://github.com/GageDeZoort/intro_ml_uci',
+		kicker: 'UC Irvine · 2025',
+		title: 'Crash Course in Practical ML',
+		url: 'https://github.com/GageDeZoort/intro_ml_uci',
+		description: 'Two-day intensive introducing practical ML workflows for scientists and engineers.',
 	},
 	{
-		label: 'Graph Neural Networks for Your Research · Princeton Research Computing (2023)',
-		href: 'https://github.com/GageDeZoort/prc_gnn_tutorial',
+		kicker: 'Princeton Research Computing · 2023',
+		title: 'Graph Neural Networks for Your Research',
+		url: 'https://github.com/GageDeZoort/prc_gnn_tutorial',
+		description: 'Workshop demystifying graph learning techniques for interdisciplinary research teams.',
 	},
 ];
 
@@ -81,11 +85,11 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 	</header>
 
 	<main class="content">
-		<section class="about" id="about">
-			<div class="about__body">
-				<div class="section-card">
+		<section class="section-card about-card" id="about">
+			<div class="about-card__content">
+				<div class="about-card__text">
 					<h2 class="section-title">About</h2>
-					<p class="section-lede">
+					<p class="about-card__lede">
 						I grew up in Tuscaloosa, Alabama, where in my senior year of high school I developed a deep interest in
 						physics and astronomy through pop-sci offerings like Neil deGrasse Tyson's <em>Cosmos</em> and Brian Greene's
 						<em>The Elegant Universe</em>. I completed my undergraduate studies at the University of Virginia, double
@@ -93,7 +97,7 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 						veto panels for the Mu2e experiment, and with Prof. Chris Neu on projects tied to the CERN Compact Muon Solenoid
 						(CMS) detector.
 					</p>
-					<p class="about__paragraph">
+					<p class="about-card__paragraph">
 						I continued my CMS work as a PhD student under Prof. Dan Marlow at Princeton University, culminating in a
 						dissertation focused on a search for a pseudoscalar Higgs boson decaying to Zh with ℓℓ + ττ final states. During
 						my PhD years I developed a strong interest in machine learning, particularly charged particle track
@@ -101,46 +105,20 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 						alleviated numerical issues like poor initialization, oversmoothing, and correlation collapse in graph neural
 						networks (GNNs).
 					</p>
-					<p class="about__paragraph">
+					<p class="about-card__paragraph about-card__paragraph--spacer">
 						My postdoc is focused on furthering the study of numerically stable GNNs—especially graph transformers—by tuning
 						them for <em>hyperparameter transfer</em>: models are parametrized so they all agree on the same learning rate.
 						I'm now working on several scientific applications for these models, including stellar stream identification in
 						large astronomical surveys and jet tagging in collider datasets.
 					</p>
 				</div>
-				<div class="about__stacks">
-					<div class="section-card section-card--compact">
-						<h3>Selected tutorials</h3>
-						<ul>
-							{tutorialLinks.map((item) => (
-								<li>
-									<a href={item.href} target="_blank" rel="noreferrer">
-										{item.label}
-									</a>
-								</li>
-							))}
-						</ul>
+				<div class="about-card__media">
+					<div class="about-card__image about-card__image--primary">
+						<img src="/images/crash-course-lecture-1.jpg" alt="Gage DeZoort teaching a machine learning crash course" loading="lazy" decoding="async" />
 					</div>
-					<div class="section-card section-card--compact about__creative-card">
-						<h3>Creative side quests</h3>
-						<p>
-							Outside of academia, I'm an avid progressive metal guitarist, writing and recording music with several bands.
-							You can check out my public profile here:
-						</p>
-						<p class="about__creative-link">
-							<a href={instagramLink} target="_blank" rel="noreferrer">
-								@gagedezoort.music
-							</a>
-						</p>
+					<div class="about-card__image about-card__image--secondary">
+						<img src="/images/crash-course-lecture-2.jpg" alt="Lecture hall view with students following along" loading="lazy" decoding="async" />
 					</div>
-				</div>
-			</div>
-			<div class="about__media">
-				<div class="about__image about__image--primary">
-					<img src="/images/crash-course-lecture-1.jpg" alt="Gage DeZoort teaching a machine learning crash course" loading="lazy" decoding="async" />
-				</div>
-				<div class="about__image about__image--secondary">
-					<img src="/images/crash-course-lecture-2.jpg" alt="Lecture hall view with students following along" loading="lazy" decoding="async" />
 				</div>
 			</div>
 		</section>
@@ -157,6 +135,33 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 					</a>
 				))}
 			</div>
+		</section>
+
+		<section class="section-card tutorials-card">
+			<h2 class="section-title">Selected tutorials</h2>
+			<div class="highlight-grid">
+				{tutorialLinks.map((item) => (
+					<a href={item.url} class="highlight-card" target="_blank" rel="noreferrer">
+						<span class="highlight-card__kicker">{item.kicker}</span>
+						<h3>{item.title}</h3>
+						<p>{item.description}</p>
+						<span class="highlight-card__link">View materials ↗</span>
+					</a>
+				))}
+			</div>
+		</section>
+
+		<section class="section-card creative-card">
+			<h2 class="section-title">Creative side quests</h2>
+			<p class="section-lede">
+				Outside of academia, I'm an avid progressive metal guitarist, writing and recording music with several bands.
+				You can explore recent riffs, performances, and works-in-progress on my music profile.
+			</p>
+			<p class="about__creative-link">
+				<a href={instagramLink} target="_blank" rel="noreferrer">
+					@gagedezoort.music
+				</a>
+			</p>
 		</section>
 
 		<section class="section-card connect">
@@ -310,61 +315,83 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 		overflow: visible;
 	}
 
-	.about__body {
+	.about-card__content {
 		display: grid;
-		gap: clamp(1.5rem, 3vw, 2rem);
+		grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+		gap: clamp(1.5rem, 3vw, 2.75rem);
+		align-items: stretch;
 		position: relative;
-		z-index: 1;
 	}
 
-	.about__stacks {
-		display: grid;
-		gap: 1.25rem;
-	}
-
-	.section-card--compact {
-		padding: clamp(1.4rem, 2.4vw, 1.8rem);
-	}
-
-	.section-card--compact h3 {
-		margin: 0 0 0.9rem;
-		font-family: 'Sora', 'Inter', sans-serif;
-		font-size: 0.95rem;
-		text-transform: uppercase;
-		letter-spacing: 0.18em;
-		color: rgba(243, 244, 249, 0.72);
-	}
-
-	.section-card--compact ul {
-		margin: 0;
-		padding-left: 1.1rem;
+	.about-card__text {
 		display: flex;
 		flex-direction: column;
-		gap: 0.45rem;
+		gap: 1.1rem;
 		color: var(--text);
 	}
 
-	.section-card--compact a {
-		color: var(--accent);
-		font-weight: 500;
-		text-decoration: none;
-		transition: color 0.2s ease;
+	.about-card__lede {
+		margin: 0;
+		font-size: clamp(1.02rem, 1.2vw, 1.18rem);
+		line-height: 1.75;
 	}
 
-	.section-card--compact a:hover,
-	.section-card--compact a:focus-visible {
-		color: #fde2ba;
-	}
-
-	.about .section-lede,
-	.about__paragraph {
+	.about-card__paragraph {
+		margin: 0;
 		color: var(--text);
+		line-height: 1.7;
+		font-size: clamp(0.98rem, 1vw, 1.05rem);
 	}
 
-	.about__creative-card p {
-		margin: 0 0 0.75rem;
-		color: var(--text);
-		line-height: 1.6;
+	.about-card__paragraph + .about-card__paragraph {
+		margin-top: 0.3rem;
+	}
+
+	.about-card__paragraph--spacer {
+		margin-top: 0.6rem;
+	}
+
+	.about-card__media {
+		display: grid;
+		gap: clamp(0.9rem, 1.6vw, 1.2rem);
+		align-content: start;
+	}
+
+	.about-card__image {
+		position: relative;
+		border-radius: 20px;
+		overflow: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		box-shadow: 0 20px 48px rgba(8, 12, 20, 0.32);
+	}
+
+	.about-card__image img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		filter: saturate(1.03);
+	}
+
+	.about-card__image--primary {
+		min-height: clamp(220px, 34vw, 320px);
+	}
+
+	.about-card__image--secondary {
+		min-height: clamp(170px, 28vw, 240px);
+	}
+
+	.about-card__content::after {
+		content: '';
+		position: absolute;
+		inset: -20% 45% 62% -40%;
+		background: radial-gradient(circle, rgba(242, 178, 108, 0.12), transparent 72%);
+		filter: blur(90px);
+		z-index: -1;
+	}
+
+	.tutorials-card .highlight-card__link {
+		color: rgba(242, 178, 108, 0.9);
 	}
 
 	.about__creative-link a {
@@ -373,90 +400,35 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 		gap: 0.3rem;
 		padding: 0.6rem 0.95rem;
 		border-radius: 12px;
-		border: 1px solid rgba(94, 234, 212, 0.24);
-		background: rgba(15, 118, 110, 0.22);
-		color: #5eead4;
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		background: rgba(26, 32, 42, 0.35);
+		color: var(--accent);
 		font-size: 0.9rem;
 		font-weight: 600;
 		letter-spacing: 0.04em;
 		text-transform: uppercase;
-		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 		text-decoration: none;
 	}
 
 	.about__creative-link a:hover,
 	.about__creative-link a:focus-visible {
 		transform: translateY(-1px);
-		box-shadow: 0 18px 32px rgba(13, 148, 136, 0.28);
+		color: #fce0b1;
+		box-shadow: 0 20px 40px rgba(8, 12, 20, 0.3);
 	}
 
-	.about__creative-links a {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.4rem;
-		padding: 0.6rem 0.9rem;
-		border-radius: 12px;
-		border: 1px solid rgba(94, 234, 212, 0.22);
-		background: rgba(15, 118, 110, 0.18);
-		color: #5eead4;
-		font-size: 0.88rem;
-		font-weight: 600;
-		letter-spacing: 0.04em;
-		text-transform: uppercase;
-		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	.creative-card {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		align-items: flex-start;
 	}
 
-	.about__creative-links a:hover,
-	.about__creative-links a:focus-visible {
-		transform: translateY(-1px);
-		box-shadow: 0 18px 32px rgba(13, 148, 136, 0.25);
-	}
-
-	.about__media {
-		position: relative;
-		display: grid;
-		place-items: center;
-	}
-
-	.about__image {
-		position: relative;
-		border-radius: 24px;
-		overflow: hidden;
-		border: 1px solid rgba(56, 189, 248, 0.16);
-		box-shadow: 0 32px 80px rgba(2, 6, 23, 0.5);
-		opacity: 0.95;
-	}
-
-	.about__image::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(180deg, rgba(2, 6, 23, 0.05), rgba(2, 6, 23, 0.55));
-	}
-
-	.about__image img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		filter: saturate(1.05);
-	}
-
-	.about__image--primary {
-		width: clamp(220px, 28vw, 320px);
-		height: clamp(260px, 34vw, 360px);
-		transform: rotate(-3deg);
-	}
-
-	.about__image--secondary {
-		position: absolute;
-		right: clamp(-0.5rem, -2vw, -1.8rem);
-		bottom: clamp(-1.5rem, -3vw, -2.5rem);
-		width: clamp(160px, 20vw, 220px);
-		height: clamp(190px, 26vw, 250px);
-		transform: rotate(8deg);
-		border-color: rgba(168, 85, 247, 0.24);
-		box-shadow: 0 28px 60px rgba(76, 29, 149, 0.35);
+	.creative-card .section-lede {
+		margin: 0;
+		color: var(--text);
+		max-width: 36rem;
 	}
 
 	.highlight-grid {
@@ -568,32 +540,18 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 			width: clamp(200px, 70vw, 260px);
 		}
 
-		.about {
+		.about-card__content {
 			grid-template-columns: 1fr;
+			gap: 1.6rem;
 		}
 
-		.about__media {
-			order: -1;
-			margin-bottom: 1.25rem;
+		.about-card__media {
+			grid-template-columns: 1fr;
+			gap: 0.9rem;
 		}
 
-		.about__image--primary,
-		.about__image--secondary {
-			position: relative;
-			transform: none;
-			right: auto;
-			bottom: auto;
-			width: 100%;
-			max-width: 320px;
-			margin: 0 auto;
-		}
-
-		.about__image--secondary {
-			margin-top: 1rem;
-		}
-
-		.about__creative-links {
-			gap: 0.5rem;
+		.about-card__image--secondary {
+			margin-top: 0.75rem;
 		}
 	}
 </style>
