@@ -56,7 +56,6 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 		<div class="hero__text">
 			<h1 class="hero__heading">
 				<span class="hero__name">Gage DeZoort</span>
-				<span aria-hidden="true" class="hero__dot">·</span>
 				<span class="hero__dept">Princeton ORFE / Physics</span>
 			</h1>
 			<p class="hero__lede">
@@ -82,54 +81,58 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 	</header>
 
 	<main class="content">
-		<section class="section-card about" id="about">
+		<section class="about" id="about">
 			<div class="about__body">
-				<h2 class="section-title">About</h2>
-				<p class="section-lede">
-					I grew up in Tuscaloosa, Alabama, where in my senior year of high school I developed a deep interest in
-					physics and astronomy through pop-sci offerings like Neil deGrasse Tyson's <em>Cosmos</em> and Brian Greene's
-					<em>The Elegant Universe</em>. I completed my undergraduate studies at the University of Virginia, double
-					majoring in Physics and Engineering Science. While there, I worked with Prof. Craig Group building cosmic ray
-					veto panels for the Mu2e experiment, and with Prof. Chris Neu on projects tied to the CERN Compact Muon Solenoid
-					(CMS) detector.
-				</p>
-				<p class="about__paragraph">
-					I continued my CMS work as a PhD student under Prof. Dan Marlow at Princeton University, culminating in a
-					dissertation focused on a search for a pseudoscalar Higgs boson decaying to Zh with ℓℓ + ττ final states. During
-					my PhD years I developed a strong interest in machine learning, particularly charged particle track
-					reconstruction via graph neural networks. That led to collaborations with Boris Hanin, where we characterized and
-					alleviated numerical issues like poor initialization, oversmoothing, and correlation collapse in graph neural
-					networks (GNNs).
-				</p>
-				<p class="about__paragraph">
-					My postdoc is focused on furthering the study of numerically stable GNNs—especially graph transformers—by tuning
-					them for <em>hyperparameter transfer</em>: models are parametrized so they all agree on the same learning rate.
-					I'm now working on several scientific applications for these models, including stellar stream identification in
-					large astronomical surveys and jet tagging in collider datasets.
-				</p>
-				<div class="about__tutorials">
-					<h3>Selected tutorials</h3>
-					<ul>
-						{tutorialLinks.map((item) => (
-							<li>
-								<a href={item.href} target="_blank" rel="noreferrer">
-									{item.label}
-								</a>
-							</li>
-						))}
-					</ul>
+				<div class="section-card">
+					<h2 class="section-title">About</h2>
+					<p class="section-lede">
+						I grew up in Tuscaloosa, Alabama, where in my senior year of high school I developed a deep interest in
+						physics and astronomy through pop-sci offerings like Neil deGrasse Tyson's <em>Cosmos</em> and Brian Greene's
+						<em>The Elegant Universe</em>. I completed my undergraduate studies at the University of Virginia, double
+						majoring in Physics and Engineering Science. While there, I worked with Prof. Craig Group building cosmic ray
+						veto panels for the Mu2e experiment, and with Prof. Chris Neu on projects tied to the CERN Compact Muon Solenoid
+						(CMS) detector.
+					</p>
+					<p class="about__paragraph">
+						I continued my CMS work as a PhD student under Prof. Dan Marlow at Princeton University, culminating in a
+						dissertation focused on a search for a pseudoscalar Higgs boson decaying to Zh with ℓℓ + ττ final states. During
+						my PhD years I developed a strong interest in machine learning, particularly charged particle track
+						reconstruction via graph neural networks. That led to collaborations with Boris Hanin, where we characterized and
+						alleviated numerical issues like poor initialization, oversmoothing, and correlation collapse in graph neural
+						networks (GNNs).
+					</p>
+					<p class="about__paragraph">
+						My postdoc is focused on furthering the study of numerically stable GNNs—especially graph transformers—by tuning
+						them for <em>hyperparameter transfer</em>: models are parametrized so they all agree on the same learning rate.
+						I'm now working on several scientific applications for these models, including stellar stream identification in
+						large astronomical surveys and jet tagging in collider datasets.
+					</p>
 				</div>
-				<div class="about__creative">
-					<h3>Creative side quests</h3>
-					<p>
-						Outside of academia, I'm an avid progressive metal guitarist, writing and recording music with several bands.
-						You can check out my public profile here:
-					</p>
-					<p class="about__creative-link">
-						<a href={instagramLink} target="_blank" rel="noreferrer">
-							@gagedezoort.music
-						</a>
-					</p>
+				<div class="about__stacks">
+					<div class="section-card section-card--compact">
+						<h3>Selected tutorials</h3>
+						<ul>
+							{tutorialLinks.map((item) => (
+								<li>
+									<a href={item.href} target="_blank" rel="noreferrer">
+										{item.label}
+									</a>
+								</li>
+							))}
+						</ul>
+					</div>
+					<div class="section-card section-card--compact about__creative-card">
+						<h3>Creative side quests</h3>
+						<p>
+							Outside of academia, I'm an avid progressive metal guitarist, writing and recording music with several bands.
+							You can check out my public profile here:
+						</p>
+						<p class="about__creative-link">
+							<a href={instagramLink} target="_blank" rel="noreferrer">
+								@gagedezoort.music
+							</a>
+						</p>
+					</div>
 				</div>
 			</div>
 			<div class="about__media">
@@ -143,7 +146,7 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 		</section>
 
 		<section class="section-card highlights">
-			<h2 class="section-title">Selected highlights</h2>
+			<h2 class="section-title">Selected papers</h2>
 			<div class="highlight-grid">
 				{highlights.map((item) => (
 					<a href={item.url} class="highlight-card" target="_blank" rel="noreferrer">
@@ -196,25 +199,20 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 		letter-spacing: -0.02em;
 		color: var(--text);
 		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: clamp(0.6rem, 1vw, 0.9rem);
+		flex-direction: column;
+		gap: 0.45rem;
 	}
 
 	.hero__name {
 		font-weight: 700;
 	}
 
-	.hero__dot {
-		font-size: clamp(1.2rem, 2vw, 1.5rem);
-		color: var(--accent);
-		transform: translateY(-0.05em);
-	}
-
 	.hero__dept {
 		font-weight: 500;
-		letter-spacing: 0.08em;
-		color: rgba(243, 244, 249, 0.72);
+		font-size: clamp(0.85rem, 1vw, 0.95rem);
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: rgba(243, 244, 249, 0.6);
 	}
 
 	.hero__lede {
@@ -262,17 +260,17 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 	}
 
 	.button--ghost {
-		color: var(--text);
-		border-color: var(--border);
-		background: transparent;
+		color: var(--accent);
+		border-color: rgba(255, 255, 255, 0.08);
+		background: rgba(26, 32, 42, 0.4);
 		box-shadow: 0 10px 24px rgba(8, 12, 20, 0.18);
 	}
 
 	.button--ghost:hover,
 	.button--ghost:focus-visible {
 		transform: translateY(-1px);
-		border-color: rgba(255, 255, 255, 0.14);
-		box-shadow: 0 16px 32px rgba(8, 12, 20, 0.24);
+		border-color: rgba(255, 255, 255, 0.18);
+		box-shadow: 0 16px 32px rgba(8, 12, 20, 0.28);
 	}
 
 	.hero__portrait {
@@ -313,29 +311,31 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 	}
 
 	.about__body {
-		display: flex;
-		flex-direction: column;
-		gap: 1.4rem;
+		display: grid;
+		gap: clamp(1.5rem, 3vw, 2rem);
 		position: relative;
 		z-index: 1;
 	}
 
-	.about__tutorials {
-		display: flex;
-		flex-direction: column;
-		gap: 0.6rem;
+	.about__stacks {
+		display: grid;
+		gap: 1.25rem;
 	}
 
-	.about__tutorials h3 {
-		margin: 0;
+	.section-card--compact {
+		padding: clamp(1.4rem, 2.4vw, 1.8rem);
+	}
+
+	.section-card--compact h3 {
+		margin: 0 0 0.9rem;
 		font-family: 'Sora', 'Inter', sans-serif;
 		font-size: 0.95rem;
 		text-transform: uppercase;
 		letter-spacing: 0.18em;
-		color: rgba(148, 163, 184, 0.9);
+		color: rgba(243, 244, 249, 0.72);
 	}
 
-	.about__tutorials ul {
+	.section-card--compact ul {
 		margin: 0;
 		padding-left: 1.1rem;
 		display: flex;
@@ -344,16 +344,16 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 		color: var(--text);
 	}
 
-	.about__tutorials a {
-		color: #7dd3fc;
+	.section-card--compact a {
+		color: var(--accent);
 		font-weight: 500;
 		text-decoration: none;
 		transition: color 0.2s ease;
 	}
 
-	.about__tutorials a:hover,
-	.about__tutorials a:focus-visible {
-		color: #bae6fd;
+	.section-card--compact a:hover,
+	.section-card--compact a:focus-visible {
+		color: #fde2ba;
 	}
 
 	.about .section-lede,
@@ -361,29 +361,8 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 		color: var(--text);
 	}
 
-	.about__creative {
-		display: flex;
-		flex-direction: column;
-		gap: 0.75rem;
-	}
-
-	.about__creative h3 {
-		margin: 0;
-		font-family: 'Sora', 'Inter', sans-serif;
-		font-size: 1rem;
-		text-transform: uppercase;
-		letter-spacing: 0.18em;
-		color: rgba(148, 163, 184, 0.9);
-	}
-
-	.about__creative-links {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.6rem;
-	}
-
-	.about__creative p {
-		margin: 0;
+	.about__creative-card p {
+		margin: 0 0 0.75rem;
 		color: var(--text);
 		line-height: 1.6;
 	}
