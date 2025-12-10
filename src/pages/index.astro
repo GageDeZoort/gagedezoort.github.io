@@ -43,12 +43,16 @@ const tutorialLinks = [
 		title: 'Crash Course in Practical ML',
 		url: 'https://github.com/GageDeZoort/intro_ml_uci',
 		description: 'Two-day intensive introducing practical ML workflows for scientists and engineers.',
+		image: '/images/crash-course-lecture-1.jpg',
+		imageAlt: 'Gage DeZoort teaching a practical machine learning crash course at UC Irvine',
 	},
 	{
 		kicker: 'Princeton Research Computing · 2023',
 		title: 'Graph Neural Networks for Your Research',
 		url: 'https://github.com/GageDeZoort/prc_gnn_tutorial',
 		description: 'Workshop demystifying graph learning techniques for interdisciplinary research teams.',
+		image: '/images/crash-course-lecture-2.jpg',
+		imageAlt: 'Lecture hall view as attendees follow along with graph neural networks workshop',
 	},
 ];
 
@@ -112,14 +116,6 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 						large astronomical surveys and jet tagging in collider datasets.
 					</p>
 				</div>
-				<div class="about-card__media">
-					<div class="about-card__image about-card__image--primary">
-						<img src="/images/crash-course-lecture-1.jpg" alt="Gage DeZoort teaching a machine learning crash course" loading="lazy" decoding="async" />
-					</div>
-					<div class="about-card__image about-card__image--secondary">
-						<img src="/images/crash-course-lecture-2.jpg" alt="Lecture hall view with students following along" loading="lazy" decoding="async" />
-					</div>
-				</div>
 			</div>
 		</section>
 
@@ -139,25 +135,22 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 
 		<section class="section-card tutorials-card">
 			<h2 class="section-title">Selected tutorials</h2>
-			<div class="tutorials-card__layout">
-				<div class="highlight-grid tutorials-card__list">
-					{tutorialLinks.map((item) => (
+			<div class="tutorials-card__list">
+				{tutorialLinks.map((item) => (
+					<div class="tutorials-card__entry">
 						<a href={item.url} class="highlight-card" target="_blank" rel="noreferrer">
 							<span class="highlight-card__kicker">{item.kicker}</span>
 							<h3>{item.title}</h3>
 							<p>{item.description}</p>
 							<span class="highlight-card__link">View materials ↗</span>
 						</a>
-					))}
-				</div>
-				<div class="tutorials-card__media">
-					<div class="tutorials-card__photo">
-						<img src="/images/crash-course-lecture-1.jpg" alt="Crash course in practical ML lecture at UC Irvine" loading="lazy" decoding="async" />
+						{item.image && (
+							<div class="tutorials-card__photo">
+								<img src={item.image} alt={item.imageAlt ?? ''} loading="lazy" decoding="async" />
+							</div>
+						)}
 					</div>
-					<div class="tutorials-card__photo tutorials-card__photo--secondary">
-						<img src="/images/crash-course-lecture-2.jpg" alt="Students following along during machine learning workshop" loading="lazy" decoding="async" />
-					</div>
-				</div>
+				))}
 			</div>
 		</section>
 
@@ -413,21 +406,20 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 		z-index: -1;
 	}
 
-	.tutorials-card__layout {
+	.tutorials-card__list {
 		display: grid;
-		grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
-		gap: clamp(1.25rem, 2.4vw, 2rem);
+		gap: 1.15rem;
+	}
+
+	.tutorials-card__entry {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 0.55fr);
+		gap: clamp(0.9rem, 2vw, 1.4rem);
 		align-items: stretch;
 	}
 
-	.tutorials-card__list .highlight-card {
+	.tutorials-card__entry .highlight-card {
 		height: 100%;
-	}
-
-	.tutorials-card__media {
-		display: grid;
-		gap: clamp(0.75rem, 1.6vw, 1.1rem);
-		align-content: start;
 	}
 
 	.tutorials-card__photo {
@@ -643,13 +635,9 @@ const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 		font-size: 0.9rem;
 	}
 
-	@media (max-width: 840px) {
-		.tutorials-card__layout {
+	@media (max-width: 960px) {
+		.tutorials-card__entry {
 			grid-template-columns: 1fr;
-		}
-
-		.tutorials-card__media {
-			grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 		}
 
 		.creative-card {
