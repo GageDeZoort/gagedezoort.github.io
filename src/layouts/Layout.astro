@@ -1,8 +1,8 @@
 ---
 const {
 	title = 'Gage DeZoort · Particle Physics & Machine Learning',
-	description = 'Postdoctoral researcher exploring the interface of high-energy physics and machine learning.',
-	ogImage = '/images/headshot.jpg',
+	description = 'Machine learning researcher and physicist specializing in graph neural networks, graph transformers, and scalable deep learning for scientific data.',
+	ogImage = '/images/headshot-walkway.jpg',
 } = Astro.props;
 ---
 
@@ -26,18 +26,36 @@ const {
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
 			rel="stylesheet"
 		/>
 	</head>
 	<body>
 		<div class="particle-field" aria-hidden="true">
-			<span class="track track--one"></span>
-			<span class="track track--two"></span>
-			<span class="track track--three"></span>
+			<span class="orbit orbit--one">
+				<span class="orbit__particle"></span>
+				<span class="orbit__particle"></span>
+				<span class="orbit__particle"></span>
+			</span>
+			<span class="orbit orbit--two">
+				<span class="orbit__particle"></span>
+				<span class="orbit__particle"></span>
+				<span class="orbit__particle"></span>
+			</span>
 		</div>
 		<div class="page-shell">
+			<nav class="site-nav" aria-label="Primary">
+				<a class="site-nav__mark" href="/">Gage DeZoort</a>
+				<ul>
+					<li><a href="#work">Work</a></li>
+					<li><a href="#teaching">Teaching</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
 			<slot />
+			<footer class="site-footer">
+				<p>Gage DeZoort</p>
+			</footer>
 		</div>
 	</body>
 </html>
@@ -59,18 +77,23 @@ const {
 		--accent: #f2b26c;
 		--accent-soft: rgba(242, 178, 108, 0.24);
 		--border: rgba(255, 255, 255, 0.08);
-		--max-width: 1080px;
+		--max-width: 1120px;
 	}
 
 	html {
 		background: var(--bg);
+		scroll-behavior: smooth;
+	}
+
+	[id] {
+		scroll-margin-top: 1.25rem;
 	}
 
 	body {
 		margin: 0;
 		min-height: 100vh;
 		position: relative;
-		font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+		font-family: 'Plus Jakarta Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		color: var(--text);
 		background: linear-gradient(160deg, #11131b 0%, #141922 40%, #1a202a 100%);
 	}
@@ -81,10 +104,10 @@ const {
 		inset: 0;
 		pointer-events: none;
 		background-image:
-			radial-gradient(180px 240px at 12% 18%, rgba(242, 178, 108, 0.12), transparent 70%),
-			radial-gradient(240px 200px at 88% 82%, rgba(116, 153, 214, 0.15), transparent 72%);
-		opacity: 0.55;
-		z-index: -1;
+			radial-gradient(220px 280px at 12% 14%, rgba(242, 178, 108, 0.1), transparent 70%),
+			radial-gradient(280px 220px at 88% 78%, rgba(116, 153, 214, 0.1), transparent 72%);
+		opacity: 0.45;
+		z-index: 0;
 	}
 
 	body::after {
@@ -92,104 +115,150 @@ const {
 		position: fixed;
 		inset: 0;
 		pointer-events: none;
-		background-image: radial-gradient(320px 280px at 50% 10%, rgba(94, 109, 166, 0.18), transparent 70%);
-		opacity: 0.25;
-		z-index: -2;
+		background-image: radial-gradient(360px 300px at 50% 8%, rgba(94, 109, 166, 0.2), transparent 70%);
+		opacity: 0.18;
+		z-index: 0;
 	}
 
 	.particle-field {
 		position: fixed;
-		inset: -10vh -10vw;
-		z-index: -1;
+		inset: -20vh -20vw;
+		z-index: 0;
 		pointer-events: none;
-		opacity: 0.35;
 	}
 
-	.track {
+	.orbit {
+		--size: min(120vw, 1180px);
 		position: absolute;
 		display: block;
+		width: var(--size);
+		height: var(--size);
 		border-radius: 50%;
-		border: 1px solid rgba(242, 178, 108, 0.18);
-		box-shadow: 0 0 45px rgba(242, 178, 108, 0.08);
-		animation: track-spin 36s linear infinite;
+		border: 1px solid rgba(242, 178, 108, 0.32);
+		box-shadow: 0 0 80px rgba(242, 178, 108, 0.1);
 	}
 
-	.track::after {
-		content: '';
+	.orbit--one {
+		top: -22%;
+		left: -18%;
+	}
+
+	.orbit--two {
+		--size: min(95vw, 900px);
+		top: 36%;
+		left: 46%;
+		border-color: rgba(116, 153, 214, 0.32);
+		box-shadow: 0 0 80px rgba(116, 153, 214, 0.1);
+	}
+
+	.orbit__particle {
+		--start: 18deg;
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		width: 8px;
-		height: 8px;
-		margin: -4px;
+		width: 9px;
+		height: 9px;
+		margin: -4.5px;
 		border-radius: 50%;
-		background: radial-gradient(circle, rgba(255, 255, 255, 0.92), rgba(242, 178, 108, 0.4));
-		box-shadow: 0 0 16px rgba(242, 178, 108, 0.35);
+		background: radial-gradient(circle, rgba(255, 255, 255, 0.95), rgba(242, 178, 108, 0.45));
+		box-shadow: 0 0 18px rgba(242, 178, 108, 0.7);
+		animation: particle-orbit 52s linear infinite;
 	}
 
-	.track--one {
-		width: 520px;
-		height: 320px;
-		top: 14%;
-		left: 8%;
-		transform-origin: 58% 46%;
-		animation-duration: 48s;
+	.orbit__particle:nth-child(2) {
+		--start: 138deg;
 	}
 
-	.track--two {
-		width: 420px;
-		height: 420px;
-		top: 48%;
-		left: 64%;
-		border-color: rgba(116, 153, 214, 0.22);
-		box-shadow: 0 0 42px rgba(116, 153, 214, 0.14);
-		transform-origin: 32% 52%;
-		animation-duration: 56s;
+	.orbit__particle:nth-child(3) {
+		--start: 258deg;
+	}
+
+	.orbit--two .orbit__particle {
+		background: radial-gradient(circle, rgba(255, 255, 255, 0.95), rgba(116, 153, 214, 0.5));
+		box-shadow: 0 0 18px rgba(116, 153, 214, 0.65);
+		animation-duration: 68s;
 		animation-direction: reverse;
 	}
 
-	.track--three {
-		width: 360px;
-		height: 520px;
-		top: 62%;
-		left: 38%;
-		border-color: rgba(199, 162, 199, 0.2);
-		box-shadow: 0 0 36px rgba(199, 162, 199, 0.14);
-		transform-origin: 48% 42%;
-		animation-duration: 64s;
-	}
-
-	.track--one::after {
-		transform: translate3d(210px, -120px, 0);
-	}
-
-	.track--two::after {
-		transform: translate3d(150px, -190px, 0);
-	}
-
-	.track--three::after {
-		transform: translate3d(140px, -230px, 0);
-	}
-
-	@keyframes track-spin {
+	@keyframes particle-orbit {
 		from {
-			transform: rotate(0deg);
+			transform: rotate(var(--start)) translateX(calc(var(--size) / 2));
 		}
 		to {
-			transform: rotate(360deg);
+			transform: rotate(calc(var(--start) + 360deg)) translateX(calc(var(--size) / 2));
 		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.particle-field {
-			display: none;
+		.orbit__particle {
+			animation: none;
+			transform: rotate(var(--start)) translateX(calc(var(--size) / 2));
+		}
+
+		html {
+			scroll-behavior: auto;
 		}
 	}
 
 	.page-shell {
+		position: relative;
+		z-index: 1;
 		display: flex;
 		flex-direction: column;
-		padding: clamp(1.75rem, 3vw, 3rem) clamp(1.25rem, 6vw, 3.5rem);
+		padding: clamp(1.1rem, 2.4vw, 2.2rem) clamp(1.25rem, 6vw, 3.5rem) clamp(1.75rem, 3vw, 3rem);
+	}
+
+	.site-nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		max-width: var(--max-width);
+		width: 100%;
+		margin: 0 auto 0.4rem;
+		padding: 0.2rem 0.35rem 0.85rem;
+	}
+
+	.site-nav__mark {
+		font-family: inherit;
+		font-weight: 600;
+		font-size: 0.98rem;
+		letter-spacing: -0.02em;
+		color: var(--text);
+	}
+
+	.site-nav ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		gap: 0.35rem 1.25rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.site-nav a {
+		color: var(--text-soft);
+		font-size: 0.88rem;
+		font-weight: 500;
+	}
+
+	.site-nav a:hover,
+	.site-nav a:focus-visible {
+		color: var(--accent);
+	}
+
+	.site-footer {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 0.5rem 1.5rem;
+		max-width: var(--max-width);
+		width: 100%;
+		margin: 0 auto;
+		padding: 0.4rem 0.35rem 0;
+		color: rgba(196, 201, 215, 0.7);
+		font-size: 0.82rem;
 	}
 
 	a {
@@ -211,24 +280,36 @@ const {
 		background: var(--surface);
 		border-radius: 26px;
 		border: 1px solid var(--border);
-		box-shadow: 0 24px 50px rgba(8, 12, 20, 0.28);
+		box-shadow: 0 12px 28px rgba(8, 12, 20, 0.18);
 		padding: clamp(1.85rem, 3vw, 2.6rem);
 		position: relative;
 	}
 
 	.section-title {
 		margin: 0 0 1rem;
-		font-family: 'Sora', 'Inter', sans-serif;
-		font-size: clamp(1.5rem, 2vw, 2.1rem);
+		font-family: inherit;
+		font-size: clamp(1.7rem, 2.5vw, 2.15rem);
 		font-weight: 600;
-		letter-spacing: -0.01em;
+		letter-spacing: -0.02em;
 		color: var(--text);
 	}
 
 	.section-lede {
 		margin: 0 0 1.35rem;
 		color: var(--text-soft);
-		font-size: clamp(0.98rem, 1vw, 1.12rem);
-		line-height: 1.75;
+		font-size: 1rem;
+		line-height: 1.7;
+	}
+
+	@media (max-width: 640px) {
+		.site-nav {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.55rem;
+		}
+
+		.site-nav ul {
+			justify-content: flex-start;
+		}
 	}
 </style>

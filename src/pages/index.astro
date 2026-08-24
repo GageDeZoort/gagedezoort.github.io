@@ -3,54 +3,80 @@ import Layout from '../layouts/Layout.astro';
 
 const pageTitle = 'Gage DeZoort · Particle Physics & Machine Learning';
 const description =
-	'Postdoctoral researcher at Princeton designing graph neural network methods for high-energy physics and precision discovery.';
+	'Machine learning researcher and physicist specializing in graph neural networks, graph transformers, and scalable deep learning for scientific data.';
+
+const featured = {
+	year: '2026',
+	title: 'Hyperparameter Transfer in Graph Neural Networks',
+	authors: 'Gage DeZoort and Boris Hanin',
+	url: 'https://arxiv.org/abs/2607.05017',
+	description: 'A recipe for scaling up GNNs using a hyperparameter transfer parameterization.',
+	image: '/images/hp-transfer-qm9.jpg',
+	imageAlt:
+		'QM9 results showing learning-rate transfer across GNN sizes and improving train loss and validation MAE as models scale',
+};
+
+const selectedPapers = [
+	{
+		year: '2025',
+		title: 'Principles for Initialization and Architecture Selection in Graph Neural Networks',
+		authors: 'Gage DeZoort and Boris Hanin',
+		url: 'https://doi.org/10.1137/23M1600621',
+		description:
+			'Training deep GNNs through careful initialization, mitigating oversmoothing, and overcoming correlation collapse.',
+		image: '/images/gnn-init-ablation.jpg',
+		imageAlt:
+			'Test accuracy versus depth on Cora and stochastic block models, comparing vanilla GNNs with residual aggregation and residual connections',
+		figureClass: 'review-card__figure--plot',
+	},
+	{
+		year: '2023',
+		title: 'Graph Neural Networks at the Large Hadron Collider',
+		url: 'https://doi.org/10.1038/s42254-023-00569-0',
+		description: 'Surveying state of the art GNNs applied to a broad range of particle physics tasks.',
+		image: '/images/gnn-lhc-figure.jpg',
+		imageAlt: 'Detector cross-section showing particle tracks, tracker hits, and calorimeter layers',
+	},
+];
 
 const highlights = [
 	{
-		kicker: 'JHEP · 2025',
+		year: '2025',
 		title: 'Heavy pseudoscalar Higgs search (A → Zh → ℓℓττ)',
 		url: 'https://doi.org/10.1007/JHEP10%282025%29074',
-		description:
-			'Search for a pseudoscalar Higgs boson A decaying to Zh with ℓℓττ final states in the full CMS Run 2 dataset.',
+		description: 'Search for a heavy pseudoscalar Higgs boson in the full CMS Run 2 dataset.',
 	},
 	{
-		kicker: 'Nature Reviews · 2023',
-		title: 'Graph Neural Networks at the Large Hadron Collider',
-		url: 'https://doi.org/10.1038/s42254-023-00569-0',
-		description:
-			'A survey of graph neural networks and the LHC physics tasks they enable, written for both physicists and data scientists.',
-	},
-	{
-		kicker: 'SIMODS · 2025',
-		title: 'Principles for Initialization and Architecture Selection in GNNs',
-		url: 'https://doi.org/10.1137/23M1600621',
-		description:
-			'Principles for developing numerically stable GNNs that train to arbitrary depth and width, with full characterization of initialization and smoothing control.',
+		year: '2021',
+		title: 'Charged particle tracking via interaction networks',
+		url: 'https://doi.org/10.1007/s41781-021-00073-z',
+		description: 'Charged particle tracking via edge-classifying GNNs.',
 	},
 ];
 
 const connections = [
 	{ label: 'Email', href: 'mailto:jdezoort@princeton.edu' },
+	{ label: 'Scholar', href: 'https://scholar.google.com/citations?user=CFIJTBAAAAAJ' },
 	{ label: 'GitHub', href: 'https://github.com/GageDeZoort' },
-	{ label: 'Twitter/X', href: 'https://x.com/GDezoort' },
-	{ label: 'Substack', href: 'https://gagedezoort.substack.com/' },
-	{ label: 'CV', href: '/docs/Gage-DeZoort-CV.pdf' },
+	{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/gagedezoort' },
 ];
 
 const tutorialLinks = [
 	{
-		kicker: 'UC Irvine · 2025',
+		year: '2025',
 		title: 'Crash Course in Practical ML',
 		url: 'https://github.com/GageDeZoort/intro_ml_uci',
-		description: 'Two-day intensive introducing practical ML workflows for scientists and engineers.',
+		description:
+			'A three-day crash course at UC Irvine on practical ML, from classical methods to CNNs, GNNs, and transformers.',
 		image: '/images/crash-course-lecture-1.jpg',
 		imageAlt: 'Gage DeZoort teaching a practical machine learning crash course at UC Irvine',
 	},
 	{
-		kicker: 'Princeton Research Computing · 2023',
+		year: '2023',
 		title: 'Graph Neural Networks for Your Research',
 		url: 'https://github.com/GageDeZoort/prc_gnn_tutorial',
-		description: 'Workshop demystifying graph learning techniques for interdisciplinary research teams.',
+		description:
+			'A hands-on Princeton Research Computing workshop on applying graph neural networks to scientific research.',
 		image: '/images/princeton-intro-ml.jpg',
 		imageAlt: 'Students following along during the Princeton graph neural networks workshop',
 	},
@@ -59,117 +85,102 @@ const tutorialLinks = [
 const instagramLink = 'https://www.instagram.com/gagedezoort.music/';
 const creativePhotos = [
 	{ src: '/images/gig-1.jpg', alt: 'Gage DeZoort performing live on guitar', className: 'creative-card__photo creative-card__photo--one' },
-	{ src: '/images/gig-2.jpg', alt: 'Gage DeZoort playing progressive metal set', className: 'creative-card__photo creative-card__photo--two' },
-	{ src: '/images/gig-3.png', alt: 'Guitar gear and pedalboard prepared for performance', className: 'creative-card__photo creative-card__photo--three' },
+	{ src: '/images/gig-2.jpg', alt: 'Gage DeZoort playing a progressive metal set', className: 'creative-card__photo creative-card__photo--two' },
+	{ src: '/images/gig-3.jpg', alt: 'Gage DeZoort playing bass under stage lights', className: 'creative-card__photo creative-card__photo--three' },
 ];
 ---
 
 <Layout title={pageTitle} description={description}>
 	<header class="hero">
 		<div class="hero__text">
-			<h1 class="hero__heading">
-				<span class="hero__name">Gage DeZoort</span>
-				<span class="hero__dept">Princeton ORFE / Physics</span>
-			</h1>
-			<p class="hero__lede">
-				Welcome! I'm a postdoctoral researcher building efficient, scalable machine learning algorithms for scientific
-				measurements. Right now I'm focused on numerically stable graph neural networks tuned for hyperparameter
-				transfer—models that agree on a single learning rate—so they can power tasks like stellar stream identification in
-				large sky surveys and jet tagging in collider datasets.
+			<h1 class="hero__name">Gage DeZoort</h1>
+			<p class="hero__role">Physics × AI Researcher</p>
+			<p class="hero__bio">
+				Machine learning researcher and physicist specializing in graph neural networks, graph transformers, and
+				scalable deep learning for scientific data. I build principled architectures with an emphasis on
+				optimization stability, hyperparameter transfer, and robust inference.
 			</p>
 			<div class="hero__actions">
-				<a class="button button--primary" href="/docs/Gage-DeZoort-CV.pdf" target="_blank" rel="noreferrer">
-					Curriculum Vitae
+				<a class="button button--primary" href="/docs/Gage-DeZoort-Resume.pdf" target="_blank" rel="noreferrer">
+					Resume
 				</a>
-				<a class="button button--ghost" href="mailto:jdezoort@princeton.edu">
-					Contact
+				<a class="button button--ghost" href="/docs/Gage-DeZoort-CV.pdf" target="_blank" rel="noreferrer">
+					CV
 				</a>
 			</div>
 		</div>
 		<div class="hero__portrait">
 			<div class="hero__frame">
-				<img src="/images/headshot.jpg" alt="Portrait of Gage DeZoort" loading="lazy" decoding="async" />
+				<img
+					src="/images/headshot-walkway.jpg"
+					alt="Portrait of Gage DeZoort"
+					width="430"
+					height="574"
+					fetchpriority="high"
+					decoding="async"
+				/>
 			</div>
 		</div>
 	</header>
 
 	<main class="content">
-		<section class="section-card about-card" id="about">
-			<div class="about-card__content">
-				<div class="about-card__text">
-					<h2 class="section-title">About</h2>
-					<p class="about-card__lede">
-						I grew up in Tuscaloosa, Alabama, where in my senior year of high school I developed a deep interest in
-						physics and astronomy through pop-sci offerings like Neil deGrasse Tyson's <em>Cosmos</em> and Brian Greene's
-						<em>The Elegant Universe</em>. I completed my undergraduate studies at the University of Virginia, double
-						majoring in Physics and Engineering Science. While there, I worked with Prof. Craig Group building cosmic ray
-						veto panels for the Mu2e experiment, and with Prof. Chris Neu on projects tied to the CERN Compact Muon Solenoid
-						(CMS) detector.
-					</p>
-					<p class="about-card__paragraph">
-						I continued my CMS work as a PhD student under Prof. Dan Marlow at Princeton University, culminating in a
-						dissertation focused on a search for a pseudoscalar Higgs boson decaying to Zh with ℓℓ + ττ final states. During
-						my PhD years I developed a strong interest in machine learning, particularly charged particle track
-						reconstruction via graph neural networks. That led to collaborations with Boris Hanin, where we characterized and
-						alleviated numerical issues like poor initialization, oversmoothing, and correlation collapse in graph neural
-						networks (GNNs).
-					</p>
-					<p class="about-card__paragraph about-card__paragraph--spacer">
-						My postdoc is focused on furthering the study of numerically stable GNNs—especially graph transformers—by tuning
-						them for <em>hyperparameter transfer</em>: models are parametrized so they all agree on the same learning rate.
-						I'm now working on several scientific applications for these models, including stellar stream identification in
-						large astronomical surveys and jet tagging in collider datasets.
-					</p>
+		<section class="section-card work-card" id="work">
+			<h2 class="section-title">Selected work</h2>
+			<a href={featured.url} class="featured-paper" target="_blank" rel="noreferrer">
+				<div class="featured-paper__figure">
+					<img src={featured.image} alt={featured.imageAlt} loading="lazy" decoding="async" />
 				</div>
-			</div>
-		</section>
-
-		<section class="section-card highlights">
-			<h2 class="section-title">Selected papers</h2>
+				<div class="featured-paper__text">
+					<h3>{featured.title} <span class="item-year">{featured.year}</span></h3>
+					<p class="featured-paper__authors">{featured.authors}</p>
+					<p>{featured.description}</p>
+				</div>
+			</a>
+			{selectedPapers.map((paper) => (
+				<a href={paper.url} class="review-card" target="_blank" rel="noreferrer">
+					<div class:list={['review-card__figure', paper.figureClass]}>
+						<img src={paper.image} alt={paper.imageAlt} loading="lazy" decoding="async" />
+					</div>
+					<div class="review-card__text">
+						<h3>{paper.title} <span class="item-year">{paper.year}</span></h3>
+						{paper.authors && <p class="featured-paper__authors">{paper.authors}</p>}
+						<p>{paper.description}</p>
+					</div>
+				</a>
+			))}
 			<div class="highlight-grid">
 				{highlights.map((item) => (
 					<a href={item.url} class="highlight-card" target="_blank" rel="noreferrer">
-						<span class="highlight-card__kicker">{item.kicker}</span>
-						<h3>{item.title}</h3>
+						<h3>{item.title} <span class="item-year">{item.year}</span></h3>
 						<p>{item.description}</p>
-						<span class="highlight-card__link">Read more →</span>
 					</a>
 				))}
 			</div>
 		</section>
 
-		<section class="section-card tutorials-card">
+		<section class="section-card tutorials-card" id="teaching">
 			<h2 class="section-title">Selected tutorials</h2>
 			<div class="tutorials-card__list">
 				{tutorialLinks.map((item) => (
-					<div class="tutorials-card__entry">
-						<a href={item.url} class="highlight-card" target="_blank" rel="noreferrer">
-							<span class="highlight-card__kicker">{item.kicker}</span>
-							<h3>{item.title}</h3>
+					<a href={item.url} class="tutorials-card__entry" target="_blank" rel="noreferrer">
+						<div class="tutorials-card__photo">
+							<img src={item.image} alt={item.imageAlt} loading="lazy" decoding="async" />
+						</div>
+						<div class="tutorials-card__text">
+							<h3>{item.title} <span class="item-year">{item.year}</span></h3>
 							<p>{item.description}</p>
-							<span class="highlight-card__link">View materials ↗</span>
-						</a>
-						{item.image && (
-							<div class="tutorials-card__photo">
-								<img src={item.image} alt={item.imageAlt ?? ''} loading="lazy" decoding="async" />
-							</div>
-						)}
-					</div>
+						</div>
+					</a>
 				))}
 			</div>
 		</section>
 
-		<section class="section-card creative-card">
+		<section class="section-card creative-card" id="music">
 			<div class="creative-card__text">
-				<h2 class="section-title">Creative side quests</h2>
+				<h2 class="section-title">Creative Side Quests</h2>
 				<p class="section-lede">
-					Outside of academia, I'm an avid progressive metal guitarist, writing and recording music with several bands.
-					You can explore recent riffs, performances, and works-in-progress on my music profile.
-				</p>
-				<p class="about__creative-link">
-					<a href={instagramLink} target="_blank" rel="noreferrer">
-						@gagedezoort.music
-					</a>
+					Guitar has been a lifelong hobby. I keep a public profile of my playing at
+					<a href={instagramLink} target="_blank" rel="noreferrer">@gagedezoort.music</a>.
 				</p>
 			</div>
 			<div class="creative-card__media">
@@ -181,13 +192,8 @@ const creativePhotos = [
 			</div>
 		</section>
 
-		<section class="section-card connect">
-			<div>
-				<h2 class="section-title">Let's collaborate</h2>
-				<p class="section-lede">
-					Available for conversations on graph based ML, detector reconstruction, and inclusive physics education.
-				</p>
-			</div>
+		<section class="section-card connect" id="contact">
+			<h2 class="section-title">Contact</h2>
 			<ul class="connect-list">
 				{connections.map((link) => (
 					<li>
@@ -206,113 +212,106 @@ const creativePhotos = [
 		position: relative;
 		display: grid;
 		gap: clamp(1.8rem, 3.2vw, 3.6rem);
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		align-items: start;
+		grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr);
+		align-items: center;
 		max-width: var(--max-width);
-		margin: 0 auto clamp(3rem, 6vw, 5rem);
-		padding: clamp(1.5rem, 3vw, 2.5rem) clamp(0.5rem, 2vw, 1.75rem);
-	}
-
-	.hero__heading {
-		margin: 0 0 1.2rem;
-		font-family: 'Sora', 'Inter', sans-serif;
-		font-size: clamp(2.5rem, 5vw, 3.5rem);
-		font-weight: 600;
-		letter-spacing: -0.02em;
-		color: var(--text);
-		display: flex;
-		flex-direction: column;
-		gap: 0.45rem;
+		margin: 0 auto clamp(2.2rem, 4.5vw, 3.6rem);
+		padding: clamp(0.8rem, 2vw, 1.6rem) 0;
 	}
 
 	.hero__name {
-		font-weight: 700;
+		margin: 0;
+		font-family: inherit;
+		font-size: clamp(2.5rem, 5vw, 3.5rem);
+		font-weight: 600;
+		letter-spacing: -0.03em;
+		color: var(--text);
+		line-height: 1.05;
 	}
 
-	.hero__dept {
+	.hero__role {
+		margin: 0.55rem 0 0;
 		font-weight: 500;
-		font-size: clamp(0.85rem, 1vw, 0.95rem);
-		letter-spacing: 0.18em;
+		font-size: clamp(0.92rem, 1.1vw, 1.02rem);
+		letter-spacing: 0.08em;
 		text-transform: uppercase;
-		color: rgba(243, 244, 249, 0.6);
+		color: rgba(243, 244, 249, 0.62);
 	}
 
-	.hero__lede {
-		margin: 0 0 1.65rem;
-		font-size: clamp(1.05rem, 1.2vw, 1.24rem);
-		line-height: 1.7;
+	.hero__bio {
+		margin: 1rem 0 1.4rem;
+		max-width: 34rem;
+		font-size: clamp(1.02rem, 1.2vw, 1.12rem);
+		line-height: 1.65;
 		color: var(--text-soft);
-		max-width: 38rem;
 	}
 
 	.hero__actions {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.85rem;
+		gap: 0.7rem;
 	}
 
 	.button {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		padding: 0.72rem 1.55rem;
+		padding: 0.62rem 1.25rem;
 		border-radius: 999px;
-		font-weight: 600;
-		font-size: 0.9rem;
+		font-weight: 560;
+		font-size: 0.92rem;
 		border: 1px solid transparent;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		transition:
-			transform 0.2s ease,
-			box-shadow 0.2s ease,
-			border-color 0.2s ease;
+		transition: border-color 0.2s ease, background 0.2s ease;
 	}
 
 	.button--primary {
 		background: var(--accent);
 		color: #1a202a;
-		border-color: rgba(255, 255, 255, 0.08);
-		box-shadow: 0 12px 28px rgba(15, 12, 9, 0.28);
 	}
 
 	.button--primary:hover,
 	.button--primary:focus-visible {
-		transform: translateY(-1px);
-		box-shadow: 0 16px 36px rgba(15, 12, 9, 0.32);
+		color: #1a202a;
+		background: #f7c48a;
 	}
 
 	.button--ghost {
-		color: var(--accent);
-		border-color: rgba(255, 255, 255, 0.08);
-		background: rgba(26, 32, 42, 0.4);
-		box-shadow: 0 10px 24px rgba(8, 12, 20, 0.18);
+		color: var(--text-soft);
+		border-color: rgba(255, 255, 255, 0.12);
+		background: transparent;
 	}
 
 	.button--ghost:hover,
 	.button--ghost:focus-visible {
-		transform: translateY(-1px);
-		border-color: rgba(255, 255, 255, 0.18);
-		box-shadow: 0 16px 32px rgba(8, 12, 20, 0.28);
+		border-color: rgba(255, 255, 255, 0.22);
+		color: var(--text);
 	}
 
 	.hero__portrait {
+		position: relative;
 		display: flex;
 		justify-content: center;
+		align-items: center;
 	}
 
 	.hero__frame {
-		padding: clamp(0.75rem, 1.8vw, 1.4rem);
+		position: relative;
+		padding: clamp(0.65rem, 1.5vw, 1.15rem);
 		border-radius: 26px;
 		background: var(--surface-strong);
 		border: 1px solid rgba(255, 255, 255, 0.06);
 		box-shadow: 0 24px 60px rgba(8, 12, 20, 0.32);
+		z-index: 1;
 	}
 
 	.hero__frame img {
 		display: block;
-		width: clamp(220px, 32vw, 320px);
+		width: clamp(210px, 26vw, 300px);
+		height: auto;
+		aspect-ratio: 3 / 4;
+		object-fit: cover;
+		object-position: 58% 20%;
 		border-radius: 18px;
-		filter: saturate(1.02);
 	}
 
 	.content {
@@ -320,131 +319,236 @@ const creativePhotos = [
 		flex-direction: column;
 		gap: clamp(1.6rem, 3vw, 2.8rem);
 		max-width: var(--max-width);
-		margin: 0 auto clamp(3.5rem, 7vw, 5rem);
+		margin: 0 auto clamp(2.5rem, 6vw, 4rem);
 	}
 
-	.about {
-		position: relative;
+	.work-card {
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
+	}
+
+	.work-card .section-title,
+	.tutorials-card .section-title,
+	.creative-card .section-title,
+	.connect .section-title {
+		margin-bottom: 0;
+	}
+
+	.featured-paper,
+	.review-card,
+	.highlight-card,
+	.tutorials-card__entry {
+		display: flex;
+		flex-direction: column;
+		gap: 0.7rem;
+		padding: 1.35rem;
+		border-radius: 20px;
+		border: 1px solid var(--border);
+		background: var(--surface-strong);
+		box-shadow: 0 12px 28px rgba(8, 12, 20, 0.22);
+		color: inherit;
+		text-decoration: none;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.featured-paper {
 		display: grid;
-		grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
-		gap: clamp(1.5rem, 3vw, 3.5rem);
+		grid-template-columns: auto minmax(0, 1fr);
+		gap: clamp(1.1rem, 2.2vw, 1.8rem);
 		align-items: center;
-		overflow: visible;
+		padding: 1.05rem 1.45rem 1.05rem 1.05rem;
 	}
 
-	.about-card__content {
+	.featured-paper__text,
+	.review-card__text,
+	.tutorials-card__text {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		padding: 0.35rem 0.2rem;
+	}
+
+	.featured-paper__figure,
+	.review-card__figure {
+		border-radius: 14px;
+		overflow: hidden;
+		background: #f7f5f1;
+		width: min(200px, 32vw);
+		max-height: 168px;
+		flex-shrink: 0;
+	}
+
+	.featured-paper__figure img,
+	.review-card__figure img {
 		display: block;
-		color: var(--text);
+		width: 100%;
+		height: 100%;
+		max-height: 168px;
+		object-fit: contain;
 	}
 
-	.about-card__content::after {
-		display: none;
-	}
-
-	.about-card__lede {
+	.featured-paper h3,
+	.review-card h3,
+	.highlight-card h3,
+	.tutorials-card__text h3 {
 		margin: 0;
-		font-size: clamp(1.02rem, 1.2vw, 1.18rem);
-		line-height: 1.75;
+		font-size: 1.12rem;
+		font-weight: 600;
+		line-height: 1.4;
+		letter-spacing: -0.01em;
+		color: var(--text);
 	}
 
-	.about-card__paragraph {
-		margin: 1.1rem 0 0;
-		font-size: clamp(0.98rem, 1vw, 1.05rem);
-		line-height: 1.7;
-		color: var(--text);
+	.featured-paper p,
+	.review-card p,
+	.highlight-card p,
+	.tutorials-card__text p {
+		margin: 0;
+		color: var(--text-soft);
+		line-height: 1.6;
+		font-size: 1rem;
+	}
+
+	.item-year {
+		font-weight: 500;
+		font-size: 0.78em;
+		color: rgba(196, 201, 215, 0.62);
+		letter-spacing: 0.02em;
+	}
+
+	.item-year::before {
+		content: '· ';
+	}
+
+	.featured-paper__authors {
+		font-size: 1rem !important;
+		color: rgba(243, 244, 249, 0.72) !important;
+	}
+
+	.featured-paper:hover,
+	.featured-paper:focus-visible,
+	.review-card:hover,
+	.review-card:focus-visible,
+	.highlight-card:hover,
+	.highlight-card:focus-visible,
+	.tutorials-card__entry:hover,
+	.tutorials-card__entry:focus-visible {
+		transform: translateY(-3px);
+		box-shadow: 0 24px 48px rgba(8, 12, 20, 0.36);
+		color: inherit;
+	}
+
+	.featured-paper:hover h3,
+	.featured-paper:focus-visible h3,
+	.review-card:hover h3,
+	.review-card:focus-visible h3,
+	.highlight-card:hover h3,
+	.highlight-card:focus-visible h3,
+	.tutorials-card__entry:hover h3,
+	.tutorials-card__entry:focus-visible h3 {
+		color: var(--accent);
+	}
+
+	.review-card {
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr);
+		gap: clamp(1rem, 2vw, 1.6rem);
+		align-items: center;
+		padding: 1rem;
+	}
+
+	.review-card__figure {
+		background: #efe6d4;
+		width: min(180px, 30vw);
+	}
+
+	.review-card__figure img {
+		object-fit: contain;
+		background: #efe6d4;
+	}
+
+	.review-card__figure--plot {
+		background: #f7f5f1;
+	}
+
+	.review-card__figure--plot img {
+		background: #f7f5f1;
+	}
+
+	.highlight-grid {
+		display: grid;
+		gap: 1.15rem;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 
 	.tutorials-card__list {
 		display: grid;
 		gap: 1.15rem;
+		margin-top: 0.85rem;
 	}
 
 	.tutorials-card__entry {
 		display: grid;
-		grid-template-columns: minmax(0, 1fr) minmax(0, 0.55fr);
+		grid-template-columns: minmax(0, 0.55fr) minmax(0, 1fr);
 		gap: clamp(0.9rem, 2vw, 1.4rem);
-		align-items: stretch;
-	}
-
-	.tutorials-card__entry .highlight-card {
-		height: 100%;
+		align-items: center;
+		padding: 0.9rem;
 	}
 
 	.tutorials-card__photo {
-		position: relative;
-		border-radius: 18px;
+		border-radius: 14px;
 		overflow: hidden;
-		border: 1px solid rgba(255, 255, 255, 0.12);
-		box-shadow: 0 18px 36px rgba(8, 12, 20, 0.28);
+		border: 1px solid rgba(255, 255, 255, 0.08);
 	}
 
 	.tutorials-card__photo img {
 		display: block;
 		width: 100%;
 		height: 100%;
+		max-height: 180px;
 		object-fit: cover;
-		filter: saturate(1.02);
-	}
-
-	.tutorials-card .highlight-card__link {
-		color: rgba(242, 178, 108, 0.9);
-	}
-
-	.about__creative-link a {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.3rem;
-		padding: 0.6rem 0.95rem;
-		border-radius: 12px;
-		border: 1px solid rgba(255, 255, 255, 0.12);
-		background: rgba(26, 32, 42, 0.35);
-		color: var(--accent);
-		font-size: 0.9rem;
-		font-weight: 600;
-		letter-spacing: 0.04em;
-		text-transform: uppercase;
-		transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
-		text-decoration: none;
-	}
-
-	.about__creative-link a:hover,
-	.about__creative-link a:focus-visible {
-		transform: translateY(-1px);
-		color: #fce0b1;
-		box-shadow: 0 20px 40px rgba(8, 12, 20, 0.3);
 	}
 
 	.creative-card {
 		display: grid;
-		grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
-		gap: clamp(1.5rem, 3vw, 2.5rem);
+		grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+		gap: clamp(1.2rem, 2.4vw, 2rem);
 		align-items: center;
 	}
 
 	.creative-card__text {
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
-		align-items: flex-start;
+		gap: 0.35rem;
 	}
 
 	.creative-card .section-lede {
 		margin: 0;
-		color: var(--text);
-		max-width: 36rem;
+		color: var(--text-soft);
+		max-width: 28rem;
+	}
+
+	.creative-card .section-lede a {
+		color: var(--text-soft);
+	}
+
+	.creative-card .section-lede a:hover,
+	.creative-card .section-lede a:focus-visible {
+		color: var(--accent);
 	}
 
 	.creative-card__media {
 		position: relative;
-		min-height: clamp(220px, 32vw, 280px);
+		min-height: clamp(160px, 22vw, 210px);
 	}
 
 	.creative-card__photo {
 		position: absolute;
-		border-radius: 18px;
+		border-radius: 14px;
 		overflow: hidden;
 		border: 1px solid rgba(255, 255, 255, 0.12);
-		box-shadow: 0 22px 46px rgba(8, 12, 20, 0.32);
+		box-shadow: 0 18px 36px rgba(8, 12, 20, 0.32);
 	}
 
 	.creative-card__photo img {
@@ -453,172 +557,89 @@ const creativePhotos = [
 		height: 100%;
 		object-fit: cover;
 		object-position: center top;
-		filter: saturate(1.05);
 	}
 
 	.creative-card__photo--one {
-		top: 0;
+		top: 8%;
 		left: 0;
-		width: 56%;
-		height: 64%;
-		transform: rotate(-4deg);
+		width: 48%;
+		height: 72%;
+		transform: rotate(-2deg);
 	}
 
 	.creative-card__photo--two {
-		top: 18%;
-		right: 4%;
-		width: 52%;
-		height: 58%;
-		transform: rotate(5deg);
+		top: 0;
+		right: 6%;
+		width: 46%;
+		height: 68%;
+		transform: rotate(3deg);
+		z-index: 1;
 	}
 
 	.creative-card__photo--three {
-		bottom: -8%;
+		bottom: 0;
 		left: 28%;
-		width: 48%;
-		height: 56%;
-		transform: rotate(2deg);
-	}
-
-	.highlight-grid {
-		display: grid;
-		gap: 1.25rem;
-		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-	}
-
-	.highlight-card {
-		display: flex;
-		flex-direction: column;
-		gap: 0.75rem;
-		padding: 1.6rem;
-		border-radius: 20px;
-		border: 1px solid var(--border);
-		background: var(--surface-strong);
-		box-shadow: 0 24px 48px rgba(8, 12, 20, 0.3);
-		transition: transform 0.2s ease, box-shadow 0.2s ease;
-		color: inherit;
-		text-decoration: none;
-	}
-
-	.highlight-card:hover,
-	.highlight-card:focus-visible {
-		transform: translateY(-4px);
-		box-shadow: 0 30px 60px rgba(8, 12, 20, 0.4);
-	}
-
-	.highlight-card__kicker {
-		font-size: 0.78rem;
-		font-weight: 600;
-		text-transform: uppercase;
-		letter-spacing: 0.16em;
-		color: var(--accent);
-	}
-
-	.highlight-card h3 {
-		margin: 0;
-		font-size: 1.22rem;
-		font-weight: 600;
-		line-height: 1.3;
-		color: var(--text);
-	}
-
-	.highlight-card p {
-		margin: 0;
-		color: var(--text-soft);
-		line-height: 1.65;
-		font-size: 0.98rem;
-	}
-
-	.highlight-card__link {
-		font-size: 0.9rem;
-		font-weight: 600;
-		color: rgba(242, 178, 108, 0.85);
+		width: 42%;
+		height: 58%;
 	}
 
 	.connect {
-		display: grid;
-		gap: 2rem;
-		align-items: center;
-		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.8rem 2rem;
 	}
 
 	.connect-list {
-		display: grid;
-		gap: 0.85rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.35rem 1.4rem;
 		list-style: none;
 		padding: 0;
 		margin: 0;
+		align-items: center;
 	}
 
 	.connect-list a {
-		position: relative;
-		display: inline-flex;
-		align-items: center;
-		gap: 0.6rem;
-		padding: 0.85rem 2.6rem 0.85rem 1.2rem;
-		border-radius: 16px;
-		border: 1px solid var(--border);
-		background: transparent;
-		box-shadow: 0 18px 42px rgba(8, 12, 20, 0.3);
-		transition: transform 0.2s ease, box-shadow 0.2s ease;
-		font-weight: 620;
-		color: var(--text);
+		color: var(--text-soft);
+		font-weight: 500;
 	}
 
 	.connect-list a:hover,
 	.connect-list a:focus-visible {
-		transform: translateX(5px);
-		box-shadow: 0 26px 56px rgba(8, 12, 20, 0.38);
-	}
-
-	.connect-list a::after {
-		content: '→';
-		position: absolute;
-		right: 1.1rem;
-		font-size: 0.95rem;
-		opacity: 0.65;
-	}
-
-	.connect-list a[target='_blank']::after {
-		content: '↗';
-		font-size: 0.9rem;
+		color: var(--accent);
 	}
 
 	@media (max-width: 960px) {
-		.tutorials-card__entry {
+		.hero {
 			grid-template-columns: 1fr;
 		}
 
-		.creative-card {
+		.hero__portrait {
+			order: -1;
+		}
+
+		.featured-paper,
+		.review-card,
+		.tutorials-card__entry,
+		.creative-card,
+		.highlight-grid {
 			grid-template-columns: 1fr;
+		}
+
+		.featured-paper {
+			padding: 1rem;
 		}
 
 		.creative-card__media {
-			min-height: clamp(200px, 60vw, 260px);
+			min-height: clamp(180px, 48vw, 230px);
 		}
 	}
 
 	@media (max-width: 640px) {
 		.hero__frame img {
-			width: clamp(200px, 70vw, 260px);
-		}
-
-		.about-card__content {
-			grid-template-columns: 1fr;
-			gap: 1.6rem;
-		}
-
-		.about-card__media {
-			grid-template-columns: 1fr;
-			gap: 0.9rem;
-		}
-
-		.about-card__image--secondary {
-			margin-top: 0.75rem;
-		}
-
-		.creative-card__media {
-			min-height: clamp(180px, 65vw, 240px);
+			width: clamp(200px, 70vw, 280px);
 		}
 
 		.creative-card__photo--one,
