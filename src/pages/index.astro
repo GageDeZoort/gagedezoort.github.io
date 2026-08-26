@@ -5,11 +5,29 @@ const pageTitle = 'Gage DeZoort · Particle Physics & Machine Learning';
 const description =
 	'Machine learning researcher and physicist specializing in graph neural networks, graph transformers, and scalable deep learning for scientific data.';
 
+const currentWork = {
+	title: 'Coupled Particle-Edge Networks',
+	url: 'https://indico.nbi.ku.dk/event/2253/contributions/17099/',
+	citation: 'Plenary talk, HAMLET-PHYSICS 2026',
+	lede:
+		'I am extending hyperparameter transfer parameterizations from standard GNNs to models with attention and edge features — Coupled Particle-Edge Networks (CPENs). The aim is the same as the published transfer work: tune a small proxy, then scale.',
+	applications: [
+		{
+			title: 'Jet classification',
+			description: 'Tagging collider jets with CPEN architectures that inherit learning rates from smaller, cheaper-to-tune models.',
+		},
+		{
+			title: 'Stellar streams',
+			description: 'Identifying stellar streams in astronomical surveys with the same transfer rules.',
+		},
+	],
+};
+
 const featured = {
 	year: '2026',
 	title: 'Hyperparameter Transfer in Graph Neural Networks',
-	authors: 'Gage DeZoort and Boris Hanin',
 	url: 'https://arxiv.org/abs/2607.05017',
+	citation: 'G. DeZoort and B. Hanin, arXiv:2607.05017 (2026)',
 	description: 'A recipe for scaling up GNNs using a hyperparameter transfer parameterization.',
 	image: '/images/hp-transfer-qm9.jpg',
 	imageAlt:
@@ -20,8 +38,8 @@ const selectedPapers = [
 	{
 		year: '2025',
 		title: 'Principles for Initialization and Architecture Selection in Graph Neural Networks',
-		authors: 'Gage DeZoort and Boris Hanin',
 		url: 'https://doi.org/10.1137/23M1600621',
+		citation: 'G. DeZoort and B. Hanin, SIAM Journal on Mathematics of Data Science 7, 1 (2025)',
 		description:
 			'Training deep GNNs through careful initialization, mitigating oversmoothing, and overcoming correlation collapse.',
 		image: '/images/gnn-init-ablation.jpg',
@@ -33,6 +51,7 @@ const selectedPapers = [
 		year: '2023',
 		title: 'Graph Neural Networks at the Large Hadron Collider',
 		url: 'https://doi.org/10.1038/s42254-023-00569-0',
+		citation: 'G. DeZoort et al., Nature Reviews Physics 5, 281 (2023)',
 		description: 'Surveying state of the art GNNs applied to a broad range of particle physics tasks.',
 		image: '/images/gnn-lhc-figure.jpg',
 		imageAlt: 'Detector cross-section showing particle tracks, tracker hits, and calorimeter layers',
@@ -44,12 +63,14 @@ const highlights = [
 		year: '2025',
 		title: 'Heavy pseudoscalar Higgs search (A → Zh → ℓℓττ)',
 		url: 'https://doi.org/10.1007/JHEP10%282025%29074',
+		citation: 'CMS Collaboration, Journal of High Energy Physics 10, 074 (2025)',
 		description: 'Search for a heavy pseudoscalar Higgs boson in the full CMS Run 2 dataset.',
 	},
 	{
 		year: '2021',
 		title: 'Charged particle tracking via interaction networks',
 		url: 'https://doi.org/10.1007/s41781-021-00073-z',
+		citation: 'G. DeZoort et al., Computing and Software for Big Science 5, 26 (2021)',
 		description: 'Charged particle tracking via edge-classifying GNNs.',
 	},
 ];
@@ -67,16 +88,16 @@ const tutorialLinks = [
 		title: 'Crash Course in Practical ML',
 		url: 'https://github.com/GageDeZoort/intro_ml_uci',
 		description:
-			'A three-day crash course at UC Irvine on practical ML, from classical methods to CNNs, GNNs, and transformers.',
+			'A three-day UCI crash course (100+ attendees) on practical ML, taught as a School of Physical Sciences Visiting Fellow.',
 		image: '/images/crash-course-lecture-1.jpg',
 		imageAlt: 'Gage DeZoort teaching a practical machine learning crash course at UC Irvine',
 	},
 	{
-		year: '2023',
+		year: '2022–2025',
 		title: 'Graph Neural Networks for Your Research',
 		url: 'https://github.com/GageDeZoort/prc_gnn_tutorial',
 		description:
-			'A hands-on Princeton Research Computing workshop on applying graph neural networks to scientific research.',
+			'A recurring Princeton Research Computing workshop on applying graph neural networks to scientific research.',
 		image: '/images/princeton-intro-ml.jpg',
 		imageAlt: 'Students following along during the Princeton graph neural networks workshop',
 	},
@@ -94,11 +115,12 @@ const creativePhotos = [
 	<header class="hero">
 		<div class="hero__text">
 			<h1 class="hero__name">Gage DeZoort</h1>
-			<p class="hero__role">Physics × AI Researcher</p>
+			<p class="hero__role">AI × Physics Postdoc @ Princeton</p>
 			<p class="hero__bio">
 				Machine learning researcher and physicist specializing in graph neural networks, graph transformers, and
 				scalable deep learning for scientific data. I build principled architectures with an emphasis on
-				optimization stability, hyperparameter transfer, and robust inference.
+				optimization stability, hyperparameter transfer, and robust inference, with applications in collider
+				physics and astronomy.
 			</p>
 			<div class="hero__actions">
 				<a class="button button--primary" href="/docs/Gage-DeZoort-Resume.pdf" target="_blank" rel="noreferrer">
@@ -107,6 +129,7 @@ const creativePhotos = [
 				<a class="button button--ghost" href="/docs/Gage-DeZoort-CV.pdf" target="_blank" rel="noreferrer">
 					CV
 				</a>
+				<a class="button button--ghost" href="mailto:jdezoort@princeton.edu">Email</a>
 			</div>
 		</div>
 		<div class="hero__portrait">
@@ -124,15 +147,32 @@ const creativePhotos = [
 	</header>
 
 	<main class="content">
+		<section class="section-card ongoing-card" id="ongoing">
+			<h2 class="section-title">Current Work</h2>
+			<h3 class="ongoing-card__title">{currentWork.title}</h3>
+			<p class="ongoing-card__lede">{currentWork.lede}</p>
+			<div class="ongoing-card__apps">
+				{currentWork.applications.map((app) => (
+					<div>
+						<h4>{app.title}</h4>
+						<p>{app.description}</p>
+					</div>
+				))}
+			</div>
+			<p class="ongoing-card__link">
+				<a href={currentWork.url} target="_blank" rel="noreferrer">{currentWork.citation}</a>
+			</p>
+		</section>
+
 		<section class="section-card work-card" id="work">
-			<h2 class="section-title">Selected work</h2>
+			<h2 class="section-title">Publications</h2>
 			<a href={featured.url} class="featured-paper" target="_blank" rel="noreferrer">
 				<div class="featured-paper__figure">
 					<img src={featured.image} alt={featured.imageAlt} loading="lazy" decoding="async" />
 				</div>
 				<div class="featured-paper__text">
 					<h3>{featured.title} <span class="item-year">{featured.year}</span></h3>
-					<p class="featured-paper__authors">{featured.authors}</p>
+					<p class="paper-citation">{featured.citation}</p>
 					<p>{featured.description}</p>
 				</div>
 			</a>
@@ -143,7 +183,7 @@ const creativePhotos = [
 					</div>
 					<div class="review-card__text">
 						<h3>{paper.title} <span class="item-year">{paper.year}</span></h3>
-						{paper.authors && <p class="featured-paper__authors">{paper.authors}</p>}
+						<p class="paper-citation">{paper.citation}</p>
 						<p>{paper.description}</p>
 					</div>
 				</a>
@@ -152,6 +192,7 @@ const creativePhotos = [
 				{highlights.map((item) => (
 					<a href={item.url} class="highlight-card" target="_blank" rel="noreferrer">
 						<h3>{item.title} <span class="item-year">{item.year}</span></h3>
+						<p class="paper-citation">{item.citation}</p>
 						<p>{item.description}</p>
 					</a>
 				))}
@@ -329,10 +370,62 @@ const creativePhotos = [
 	}
 
 	.work-card .section-title,
+	.ongoing-card .section-title,
 	.tutorials-card .section-title,
 	.creative-card .section-title,
 	.connect .section-title {
 		margin-bottom: 0;
+	}
+
+	.ongoing-card__title {
+		margin: 0.85rem 0 0;
+		font-size: 1.12rem;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		color: var(--text);
+	}
+
+	.ongoing-card__lede {
+		margin: 0.7rem 0 0;
+		max-width: 46rem;
+		font-size: 1rem;
+		line-height: 1.7;
+		color: var(--text-soft);
+	}
+
+	.ongoing-card__apps {
+		display: grid;
+		gap: 1.15rem;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		margin-top: 1.15rem;
+	}
+
+	.ongoing-card__apps h4 {
+		margin: 0;
+		font-size: 0.98rem;
+		font-weight: 600;
+		color: var(--text);
+	}
+
+	.ongoing-card__apps p {
+		margin: 0.4rem 0 0;
+		font-size: 1rem;
+		line-height: 1.65;
+		color: var(--text-soft);
+	}
+
+	.ongoing-card__link {
+		margin: 1.1rem 0 0;
+	}
+
+	.ongoing-card__link a {
+		color: var(--text-soft);
+		font-weight: 500;
+	}
+
+	.ongoing-card__link a:hover,
+	.ongoing-card__link a:focus-visible {
+		color: var(--accent);
 	}
 
 	.featured-paper,
@@ -421,9 +514,10 @@ const creativePhotos = [
 		content: '· ';
 	}
 
-	.featured-paper__authors {
-		font-size: 1rem !important;
-		color: rgba(243, 244, 249, 0.72) !important;
+	.paper-citation {
+		font-size: 0.92rem !important;
+		color: rgba(243, 244, 249, 0.62) !important;
+		line-height: 1.5 !important;
 	}
 
 	.featured-paper:hover,
@@ -624,7 +718,8 @@ const creativePhotos = [
 		.review-card,
 		.tutorials-card__entry,
 		.creative-card,
-		.highlight-grid {
+		.highlight-grid,
+		.ongoing-card__apps {
 			grid-template-columns: 1fr;
 		}
 
